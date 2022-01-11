@@ -19,6 +19,8 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
             integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/4c53668ab7.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
     {% block extra_css %}
@@ -47,7 +49,105 @@
 
 <body>
     
-    <header class="container-fluid fixed-top"></header>
+    <header id="main-navigation-bar" class="container-fluid fixed-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-4 col-md-2 d-flex justify-content-beggining align-items-center">
+                    <!-- Image for logo made on https://www.freelogodesign.org/ -->
+                    <!-- Muscle Gym Logo -->
+                    <a href="{% url 'home' %}"><img id="header-gym-logo" src="/media/muscle-gym-logo-full-yelow.png"
+                            alt="Muscle gym logo"></a>
+                </div>
+                <div id="navigation-links" class="col d-none d-md-flex justify-content-end align-items-center">
+                    <!-- Navigation links -->
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item"><a class="navigation-link-text" href="{% url 'home' %}">Home</a></li>
+                        <li class="list-inline-item"><a class="navigation-link-text" href="#">Products</a>
+                        </li>
+                        <li class="list-inline-item"><a class="navigation-link-text" href="#">Contacts</a></li>
+                        
+                    </ul>
+                </div>
+                <!-- Log In Button -->
+                <div class="col-2 d-none d-md-flex justify-content-end align-items-center my-account">
+                        <a class="navigation-link-text btn-group dropleft" href="#" id="user-options" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <div class="text-center">
+                                <div><i class="fas fa-user fa-lg"></i></div>
+                                <p>My Account</p>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu burger-menu-items-box" aria-labelledby="user-options">
+                            {% if request.user.is_authenticated %}
+                                {% if request.user.is_superuser %}
+                                  <a href="" class="burger-menu-text">Product Management</a>
+                                {% endif %}
+                                <a href="" class="dropdown-item burger-menu-text">My Profile</a>
+                                <a href="{% url 'account_logout' %}" class="dropdown-item burger-menu-text">Logout</a>
+                            {% else %}
+                                <a href="{% url 'account_signup' %}" class="dropdown-item burger-menu-text">Register</a>
+                                <a href="{% url 'account_login' %}" class="dropdown-item burger-menu-text">Login</a>
+                            {% endif %}
+                        </div>
+                </div>
+                <div class="col-2 d-none d-md-flex justify-content-center align-items-center">
+                    <a class="{% if grand_total %} navigation-link-text-white {% else %} navigation-link-text {% endif %}" href="">
+                        <div class="text-center">
+                            <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                            <p class="my-0">
+                                {% if grand_total %}
+                                ${{ grand_total|floatformat:2 }}
+                                {% else %}
+                                $0.00
+                                {% endif %}
+                            </p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Burger Menu [Code coppyd from https://getbootstrap.com/]-->
+                <div class="col d-flex d-md-none justify-content-end align-items-center">
+                    <div class="btn-group dropleft">
+                        <!-- "Toggle" icon -->
+                        <button id="burger-menu-icon" type="button" class="btn btn-secondary" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        <!-- "Toggle" icon drop down menu links -->
+                        <div class="dropdown-menu dropleft burger-menu-items-box">
+                            <a class="dropdown-item burger-menu-text" href="{% url 'home' %}"><i class="fas fa-home"></i><span>Home</span></a>
+                            <a class="dropdown-item burger-menu-text" href="#"><i class="far fa-money-bill-alt"></i><span>Products</span></a>
+                            <a class="dropdown-item burger-menu-text" href="#"><i class="fas fa-phone"></i><span>Contacts</span></a>
+                            <br>
+                            {% if request.user.is_authenticated %}
+                                    {% if request.user.is_superuser %}
+                                      <a href="" class="burger-menu-text">Product Management</a>
+                                    {% endif %}
+                                    <a href="" class="dropdown-item burger-menu-text">My Profile</a>
+                                    <a href="{% url 'account_logout' %}" class="dropdown-item burger-menu-text">Logout</a>
+                                {% else %}
+                                    <a href="{% url 'account_signup' %}" class="dropdown-item burger-menu-text">Register</a>
+                                    <a href="{% url 'account_login' %}" class="dropdown-item burger-menu-text">Login</a>
+                                {% endif %}
+                            <br>
+                            <a class="navigation-link-text {% if grand_total %}text-info font-weight-bold{% else %}text-white{% endif %} nav-link"
+                                href="">
+                                <i class="fas fa-shopping-bag fa-lg"></i>
+                                <span class="my-0">
+                                    {% if grand_total %}
+                                        ${{ grand_total|floatformat:2 }}
+                                    {% else %}
+                                        $0.00
+                                    {% endif %}
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of burger Menu -->
+            </div>
+        </div>
+    </header>
 
     <!-- Message container -->
     {% if messages %}
