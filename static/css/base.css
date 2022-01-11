@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+
+/*  Images copied from [https://www.pexels.com/photo/blur-chains-chrome-close-up-220237/]
+    on 2021-05-11
+    Author: Pixabay */
 body {
     background: url('/media/pexels-pixabay-220237.jpg') no-repeat center center fixed;
     background-size: cover;

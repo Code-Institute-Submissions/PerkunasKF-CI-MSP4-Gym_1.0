@@ -68,7 +68,7 @@
                         
                     </ul>
                 </div>
-                <!-- Log In Button -->
+                <!-- My account button -->
                 <div class="col-2 d-none d-md-flex justify-content-end align-items-center my-account">
                         <a class="navigation-link-text btn-group dropleft" href="#" id="user-options" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
@@ -90,6 +90,7 @@
                             {% endif %}
                         </div>
                 </div>
+                <!-- Shopping cart button -->
                 <div class="col-2 d-none d-md-flex justify-content-center align-items-center">
                     <a class="{% if grand_total %} navigation-link-text-white {% else %} navigation-link-text {% endif %}" href="">
                         <div class="text-center">
@@ -107,6 +108,20 @@
 
                 <!-- Burger Menu [Code coppyd from https://getbootstrap.com/]-->
                 <div class="col d-flex d-md-none justify-content-end align-items-center">
+                    <!-- Shoping cart total -->
+                    <div class="col d-flex d-md-none justify-content-end align-items-center my-account">
+                        <a class="text-center {% if grand_total %} navigation-link-text-white {% else %} navigation-link-text {% endif %}"
+                            href="">
+                            <i class="fas fa-shopping-bag fa-lg"></i>
+                            <span class="my-0">
+                                {% if grand_total %}
+                                    ${{ grand_total|floatformat:2 }}
+                                {% else %}
+                                    $0.00
+                                {% endif %}
+                            </span>
+                        </a>
+                    </div>
                     <div class="btn-group dropleft">
                         <!-- "Toggle" icon -->
                         <button id="burger-menu-icon" type="button" class="btn btn-secondary" data-toggle="dropdown"
@@ -118,6 +133,7 @@
                             <a class="dropdown-item burger-menu-text" href="{% url 'home' %}"><i class="fas fa-home"></i><span>Home</span></a>
                             <a class="dropdown-item burger-menu-text" href="#"><i class="far fa-money-bill-alt"></i><span>Products</span></a>
                             <a class="dropdown-item burger-menu-text" href="#"><i class="fas fa-phone"></i><span>Contacts</span></a>
+                            <!-- Register/Login and my account buttons -->
                             <br>
                             {% if request.user.is_authenticated %}
                                     {% if request.user.is_superuser %}
@@ -129,18 +145,6 @@
                                     <a href="{% url 'account_signup' %}" class="dropdown-item burger-menu-text">Register</a>
                                     <a href="{% url 'account_login' %}" class="dropdown-item burger-menu-text">Login</a>
                                 {% endif %}
-                            <br>
-                            <a class="navigation-link-text {% if grand_total %}text-info font-weight-bold{% else %}text-white{% endif %} nav-link"
-                                href="">
-                                <i class="fas fa-shopping-bag fa-lg"></i>
-                                <span class="my-0">
-                                    {% if grand_total %}
-                                        ${{ grand_total|floatformat:2 }}
-                                    {% else %}
-                                        $0.00
-                                    {% endif %}
-                                </span>
-                            </a>
                         </div>
                     </div>
                 </div>
