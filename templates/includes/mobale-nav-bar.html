@@ -1,0 +1,32 @@
+<!-- Burger Menu [Code coppyd from https://getbootstrap.com/]-->
+<div class="col d-flex d-md-none justify-content-end align-items-center">
+    
+    <!-- Shoping cart total -->
+        <a class="text-center {% if grand_total %} navigation-link-text-white {% else %} navigation-link-text {% endif %}"
+            href="">
+            <i class="fas fa-shopping-bag fa-lg"></i>
+            <span class="my-0">
+                {% if grand_total %}
+                    ${{ grand_total|floatformat:2 }}
+                {% else %}
+                    $0.00
+                {% endif %}
+            </span>
+        </a>
+
+    <div class="btn-group dropleft">
+        <!-- "Toggle" icon -->
+        <button id="burger-menu-icon" type="button" class="btn btn-secondary" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+        </button>
+        <!-- "Toggle" icon drop down menu links -->
+        <div class="dropdown-menu dropleft burger-menu-items-box">
+            <a class="dropdown-item burger-menu-text" href="{% url 'home' %}"><i class="fas fa-home"></i><span>Home</span></a>
+            <a class="dropdown-item burger-menu-text" href="#"><i class="far fa-money-bill-alt"></i><span>Products</span></a>
+            <a class="dropdown-item burger-menu-text" href="#"><i class="fas fa-phone"></i><span>Contacts</span></a>
+            <!-- Register/Login and my account buttons -->
+        </div>
+    </div>
+</div>
+<!-- End of burger Menu -->

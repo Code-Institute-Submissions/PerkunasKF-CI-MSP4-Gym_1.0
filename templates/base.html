@@ -21,6 +21,7 @@
             integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <script src="https://kit.fontawesome.com/4c53668ab7.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <link rel="stylesheet" href="{% static 'css/mobal.css' %}">
     {% endblock %}
 
     {% block extra_css %}
@@ -106,51 +107,13 @@
                     </a>
                 </div>
 
-                <!-- Burger Menu [Code coppyd from https://getbootstrap.com/]-->
-                <div class="col d-flex d-md-none justify-content-end align-items-center">
-                    <!-- Shoping cart total -->
-                    <div class="col d-flex d-md-none justify-content-end align-items-center my-account">
-                        <a class="text-center {% if grand_total %} navigation-link-text-white {% else %} navigation-link-text {% endif %}"
-                            href="">
-                            <i class="fas fa-shopping-bag fa-lg"></i>
-                            <span class="my-0">
-                                {% if grand_total %}
-                                    ${{ grand_total|floatformat:2 }}
-                                {% else %}
-                                    $0.00
-                                {% endif %}
-                            </span>
-                        </a>
-                    </div>
-                    <div class="btn-group dropleft">
-                        <!-- "Toggle" icon -->
-                        <button id="burger-menu-icon" type="button" class="btn btn-secondary" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-bars"></i>
-                        </button>
-                        <!-- "Toggle" icon drop down menu links -->
-                        <div class="dropdown-menu dropleft burger-menu-items-box">
-                            <a class="dropdown-item burger-menu-text" href="{% url 'home' %}"><i class="fas fa-home"></i><span>Home</span></a>
-                            <a class="dropdown-item burger-menu-text" href="#"><i class="far fa-money-bill-alt"></i><span>Products</span></a>
-                            <a class="dropdown-item burger-menu-text" href="#"><i class="fas fa-phone"></i><span>Contacts</span></a>
-                            <!-- Register/Login and my account buttons -->
-                            <br>
-                            {% if request.user.is_authenticated %}
-                                    {% if request.user.is_superuser %}
-                                      <a href="" class="burger-menu-text">Product Management</a>
-                                    {% endif %}
-                                    <a href="" class="dropdown-item burger-menu-text">My Profile</a>
-                                    <a href="{% url 'account_logout' %}" class="dropdown-item burger-menu-text">Logout</a>
-                                {% else %}
-                                    <a href="{% url 'account_signup' %}" class="dropdown-item burger-menu-text">Register</a>
-                                    <a href="{% url 'account_login' %}" class="dropdown-item burger-menu-text">Login</a>
-                                {% endif %}
-                        </div>
-                    </div>
-                </div>
-                <!-- End of burger Menu -->
+                {% include 'includes/mobale-nav-bar.html' %}
+                
             </div>
         </div>
+
+        {% include 'includes/mobale-user-tools.html' %}
+
     </header>
 
     <!-- Message container -->
