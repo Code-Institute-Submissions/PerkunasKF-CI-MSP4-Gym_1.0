@@ -1,0 +1,132 @@
+[
+    {
+      "pk": 1,
+      "model": "products.product",
+      "fields": {
+        "sku": "8WE-BUI-SPL-INT",
+        "name": "8 Week Mass Building",
+        "description": "This 4-day program will help intermediate and advanced trainees gain size and strength. Rest-pause set, drop sets, and negatives will kick your muscle gains into high gear!",
+        "price": 50.00,
+        "category": 1,
+        "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641993337/the%20gym/pexels-victor-freitas-841130_zw38mm.jpg",
+        "image": "pexels-victor-freitas-841130.jpg"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "products.product",
+        "fields": {
+            "sku": "THE-ASD-SPL-DFG",
+            "name": "The Bes 15-Minute Warm-Ups",
+            "description": "Maximize your workout with these versatile and quick warm-up routines! In just 15 minutes, you will be better prepared for any workout program that you take on.",
+            "price": 0.00,
+            "category": 1,
+            "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641993918/the%20gym/pexels-li-sun-2294361_fmnp62.jpg",
+            "image": "pexels-li-sun-2294361.jpg"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "products.product",
+        "fields": {
+            "sku": "PEC-ASD-SPL-DFG",
+            "name": "Pec-Pounder: 8 Week Chest Workout to Shatter Your Plateau",
+            "description": "Tired of hitting bench press every Monday and not seeing the results you want? Alternate these workouts into your routine to grow your chest into the colossal chest you’ve been chasing after.",
+            "price": 75.00,
+            "category": 1,
+            "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641994304/the%20gym/pexels-anush-gorak-1431283_tgv2ur.jpg",
+            "image": "pexels-anush-gorak-1431283.jpg"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "products.product",
+        "fields": {
+            "sku": "20M-ASD-SPL-DFG",
+            "name": "20 Minute HIIT Workout You Can Do Anywhere",
+            "description": "This 20-minute workout will help you burn calories, increase endurance, improve athleticism, and even challenge you mentally. All you need is just your bodyweight!",
+            "price": 20.00,
+            "category": 1,
+            "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641994585/the%20gym/pexels-anna-tarazevich-4839736_ihhu1f.jpg",
+            "image": "pexels-anna-tarazevich-4839736.jpg"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "products.product",
+        "fields": {
+            "sku": "6WE-ASD-SPL-DFG",
+            "name": "6 Week Summer Workout Challenge",
+            "description": "Get in shape and look great for summer in 6 short weeks! This 6-day fat-loss program combines supersets and HIIT for the ultimate calorie-burning combination.",
+            "price": 0.00,
+            "category": 1,
+            "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641994712/the%20gym/pexels-pixabay-416809_gqjtrp.jpg",
+            "image": "pexels-pixabay-416809.jpg"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "products.product",
+        "fields": {
+            "sku": "SUM-ASD-SPL-DFG",
+            "name": "Summer Shape Up at Home: Women's 6 Week Fat-Burning Workout",
+            "description": "Are you stuck working out at home, and still want to look and feel your best for summer? This 6-week fat-burning workout will have you beach-ready in no time!",
+            "price": 45.00,
+            "category": 1,
+            "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641994836/the%20gym/pexels-pixabay-414029_dzrln9.jpg",
+            "image": "pexels-pixabay-414029.jpg"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "products.product",
+        "fields": {
+            "sku": "COR-ASD-SPL-DFG",
+            "name": "Core Destroyer: 8 Week At Home Ab Workout",
+            "description": "Ab training shouldn’t be complicated. Add this twice-weekly workout to your routine to help build core strength and ab definition for the six pack of your dreams.",
+            "price": 0.00,
+            "category": 1,
+            "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641995018/the%20gym/pexels-pixabay-416778_lannc8.jpg",
+            "image": "pexels-pixabay-416778.jpg"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "products.product",
+        "fields": {
+            "sku": "8PA-ASD-SPL-DFG",
+            "name": "8 Pack Abs Workout: How To Get The Ultimate 8 Pack",
+            "description": "A stronger core equals a stronger body. These three intense abdominal workouts will help you boost gains and build a thick 8 pack!",
+            "price": 35.00,
+            "category": 1,
+            "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641995161/the%20gym/pexels-li-sun-2294363_lpscto.jpg",
+            "image": "pexels-li-sun-2294363.jpg"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "products.product",
+        "fields": {
+            "sku": "KET-ASD-SPL-DFG",
+            "name": "Kettlebell Ab Workout: 12 Week Progression for Increased Core Strength",
+            "description": "Build a strong and sturdy core for improved athleticism and a complete physique! This 3 day workout is designed to help you strengthen your core with just 4 exercises.",
+            "price": 40.00,
+            "category": 1,
+            "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641995546/the%20gym/pexels-ivan-samkov-4162444_wxw33v.jpg",
+            "image": "pexels-ivan-samkov-4162444.jpg"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "products.product",
+        "fields": {
+          "sku": "5DA-ASD-SPL-DFG",
+          "name": "5 Day Minimal Equipment Home Workout Routine",
+          "description": "Don't let closed gyms and quarantine hold you back from reaching your goals. These 5 at-home workouts will keep you on track, all with minimal to no equipment.",
+          "price": 30.00,
+          "category": 1,
+          "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641995727/the%20gym/pexels-ketut-subiyanto-4803893_vo6dlj.jpg",
+          "image": "pexels-ketut-subiyanto-4803893"
+          }
+      }
+]
