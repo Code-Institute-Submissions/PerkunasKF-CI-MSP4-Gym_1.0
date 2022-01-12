@@ -120,13 +120,143 @@
         "pk": 10,
         "model": "products.product",
         "fields": {
-          "sku": "5DA-ASD-SPL-DFG",
-          "name": "5 Day Minimal Equipment Home Workout Routine",
-          "description": "Don't let closed gyms and quarantine hold you back from reaching your goals. These 5 at-home workouts will keep you on track, all with minimal to no equipment.",
-          "price": 30.00,
-          "category": 1,
-          "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641995727/the%20gym/pexels-ketut-subiyanto-4803893_vo6dlj.jpg",
-          "image": "pexels-ketut-subiyanto-4803893"
-          }
-      }
+            "sku": "5DA-ASD-SPL-DFG",
+            "name": "5 Day Minimal Equipment Home Workout Routine",
+            "description": "Don't let closed gyms and quarantine hold you back from reaching your goals. These 5 at-home workouts will keep you on track, all with minimal to no equipment.",
+            "price": 30.00,
+            "category": 1,
+            "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641995727/the%20gym/pexels-ketut-subiyanto-4803893_vo6dlj.jpg",
+            "image": "pexels-ketut-subiyanto-4803893.jpg"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "products.product",
+        "fields": {
+            "sku": "CHA-TYJ-958-DFG",
+            "name": "Champion Resistance Tube",
+            "description": "Increase muscle tone, strength, and flexibility with the Champion resistance tubes. These bands are perfect to use for resistance tube exercises as they have a plastic swivel handle with comfortable grips to hold onto during any workout or exercise. These resistance band tubes range from 10lbs-100lbs and have resistance from 1-10. Use for a great resistance band workout when rehabbing from an injury.",
+            "price": 15.95,
+            "category": 2,
+            "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641996544/the%20gym/pexels-ricky-nugraha-6667512_phal2r.jpg",
+            "image": "pexels-ricky-nugraha-6667512.jpg"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "products.product",
+        "fields": {
+            "sku": "CHA-546-987-LFG",
+            "name": "Champion Rhino Stretch Training Fitness Bands",
+            "description": "The Champion Rhino Stretch Training Fitness Bands are great for muscle, strength and flexibility training. These versatile resistance bands are also a great option for group fitness classes that focus on cardio and maintenance. These multi-use fitness bands also promote safe stretching, proper form and can be useful when rehabilitating injuries. The Rhino training bands are offered in resistance levels from 5lbs to 100lbs. Resistance band exercises are easy with the lighter resistance level bands and gradually get tougher all the way up to the super heavy resistance level. These bands are an essential part of any fitness class or personal workout routine.",
+            "price": 19.95,
+            "category": 2,
+            "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641996754/the%20gym/pexels-pavel-danilyuk-6339596_fryoaf.jpg",
+            "image": "pexels-pavel-danilyuk-6339596.jpg"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "products.product",
+        "fields": {
+            "sku": "KET-546-987-LFG",
+            "name": "KETTLEBELLS",
+            "description": "Kettlebells are one of the simplest and yet most broadly functional pieces of fitness equipment. Kettlebell movements train core-to-extremity motor patterns that are universally applicable to all exercise programs and perfect for cultivating strength, stability, and explosiveness in elite athletes. X Training Equipment Kettlebells were designed to bring you functionality along with unmatched durability, grip, and ease of use.",
+            "price": 19.95,
+            "category": 2,
+            "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641997325/the%20gym/pexels-cottonbro-7671465_goffwe.jpg",
+            "image": "pexels-cottonbro-7671465.jpg"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "products.product",
+        "fields": {
+            "sku": "RUB-546-987-LFG",
+            "name": "RUBBER HEX DUMBBELLS",
+            "description": "Rubber Hex Dumbbells offer one of the most effective ways to add variance to any training program. Functional dumbbell movements cultivate stability, coordination and strength in ways that cannot be achieved using a barbell.",
+            "price": 69.95,
+            "category": 2,
+            "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641997481/the%20gym/pexels-lee-catherine-collins-2652236_fhksom.jpg",
+            "image": "pexels-lee-catherine-collins-2652236.jpg"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "products.product",
+        "fields": {
+            "sku": "X3S-546-987-LFG",
+            "name": "X3 SQUAT STAND",
+            "description": "Upgrade your studio or garage gym today with the most functional squat rack on the market. The X3 Squat Rack provides maximum functionality within a small footprint. Rated for up to 1,000 lbs, this squat stand is incredibly sturdy and great for any type of lifter, and the pull-up bar attachment extends X3 Squat Rack's use beyond a simple bench press and squat station.",
+            "price": 579.00,
+            "category": 2,
+            "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641997767/the%20gym/pexels-ketut-subiyanto-4853705_gcutjf.jpg",
+            "image": "pexels-ketut-subiyanto-4853705.jpg"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "products.product",
+        "fields": {
+            "sku": "HEX-546-987-LFG",
+            "name": "HEX TRAP BAR",
+            "description": "The 50LB Hex Trap Bar is an essential tool for any gym to provide variation to barbell deadlift and squats. You get the same full-body strength work as a conventional movements without worrying about scraped shins and maintaining leg contact with the barbell. The Hex Trap bar improves lifting efficiency and relieves lower back stress by lifting with arms by your sides in a neutral grip instead of in front of your body.",
+            "price": 199.00,
+            "category": 2,
+            "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641997919/the%20gym/pexels-matthew-hintz-9845021_zdu2op.jpg",
+            "image": "pexels-matthew-hintz-9845021.jpg"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "products.product",
+        "fields": {
+            "sku": "PRE-546-987-LFG",
+            "name": "PREMIUM BLACK BUMPER PLATES",
+            "description": "Designed and tested by coaches and athletes, these plates are made to take on any lift or WOD. The steel inserts fit snug on all standard Olympic bars. If you are looking to add more plates to your gym, or need a set for home, these are the perfect choice. Made from durable 100% rubber, the X Training Bumper Plate is designed for low bounce, and high durability.",
+            "price": 59.95,
+            "category": 2,
+            "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641998104/the%20gym/pexels-ivan-samkov-4164468_xav8ks.jpg",
+            "image": "pexels-ivan-samkov-4164468.jpg"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "products.product",
+        "fields": {
+            "sku": "CHE-546-987-555",
+            "name": "Chest Press",
+            "description": "Chest Press represents the powerful and comfortable performance. It is built to last, allowing users to do high-intensity exercise. Building and toning major upper-body muscle groups in a simple way is its specialty. With ergonomics design, it delivers enjoyable and intuitive experience from a comfortable seat.",
+            "price": 995.95,
+            "category": 2,
+            "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641998393/the%20gym/pexels-andrea-piacquadio-3838926_iwhimi.jpg",
+            "image": "pexels-andrea-piacquadio-3838926.jpg"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "products.product",
+        "fields": {
+            "sku": "CEVO-546-987-555",
+            "name": "EVOLUTION LIGHT COMMERCIAL LAT PULLDOWN / LOW ROW COMBO MACHINE",
+            "description": "What are the best back exercises for a complete back workout? The Tuff Stuff CLM-855WS combination back machine offers both a high pulley station and low pulley station for strengthening and developing back muscles. From the upper pulley you can perform wide straight arm lat pulldowns, reverse grip lat pull downs, and tricep press downs. From the lower pulley you can perform seated rows for mid back, upright rows for traps and shoulders, and standing bicep curls.",
+            "price": 1620.00,
+            "category": 2,
+            "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641998767/the%20gym/pexels-ivan-samkov-4162542_akdgql.jpg",
+            "image": "pexels-ivan-samkov-4162542.jpg"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "products.product",
+        "fields": {
+            "sku": "PBE-546-987-555",
+            "name": "PB Extreme Foam Plyobox",
+            "description": "PB Extreme Foam Plyoboxes have a 100% foam core, offering the ultimate combination of durability, stability and safety.",
+            "price": 165.00,
+            "category": 2,
+            "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641999010/the%20gym/pexels-leon-ardho-1552248_kupa0w.jpg",
+            "image": "pexels-leon-ardho-1552248.jpg"
+        }
+    }
 ]
