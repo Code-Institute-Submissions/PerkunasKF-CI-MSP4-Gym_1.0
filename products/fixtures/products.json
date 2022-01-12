@@ -258,5 +258,83 @@
             "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641999010/the%20gym/pexels-leon-ardho-1552248_kupa0w.jpg",
             "image": "pexels-leon-ardho-1552248.jpg"
         }
+    },
+    {
+        "pk": 21,
+        "model": "products.product",
+        "fields": {
+            "sku": "MOT-546-987-555",
+            "name": "MotionTex Exercise Equipment Mat",
+            "description": "Exercise equipment mat: measuring 24 inches by 48 inches, this protective floor mat stays safely in place under most stationary spin bikes and small exercise machines",
+            "price": 26.45,
+            "category": 3,
+            "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641999247/the%20gym/pexels-karolina-grabowska-4498605_uxzbxw.jpg",
+            "image": "pexels-karolina-grabowska-4498605.jpg"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "products.product",
+        "fields": {
+            "sku": "WEI-546-987-555",
+            "name": "Weightlifting Gloves",
+            "description": "PERFECT FIT: The Skott Evo 2 is Designed With the New Snug and Comfortable 3-Dimentional Unisex Fit System, to Make Sure That the Gloves Fit Both Men And Women.",
+            "price": 24.99,
+            "category": 3,
+            "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641999530/the%20gym/pexels-koolshooters-8519698_hj32pf.jpg",
+            "image": "pexels-koolshooters-8519698.jpg"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "products.product",
+        "fields": {
+            "sku": "PRO-546-987-574",
+            "name": "ProsourceFit Puzzle Exercise Mat",
+            "description": "PROTECTIVE WORKOUT FLOORING - Durable, non-skid textured tiles protect floors while creating a comfortable workout space",
+            "price": 25.99,
+            "category": 3,
+            "image_url": "",
+            "image": ""
+        }
+    },
+    {
+        "pk": 24,
+        "model": "products.product",
+        "fields": {
+            "sku": "DAI-546-987-574",
+            "name": "Daily Fitness Planner",
+            "description": "The best fitness planner, training log and food journal for accomplishing your fitness goals. Made for serious athletes, by serious athletes. See page layout and sample entries in the image section.",
+            "price": 18.95,
+            "category": 3,
+            "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641999875/the%20gym/pexels-eva-elijas-7965804_tbfa5q.jpg",
+            "image": "pexels-eva-elijas-7965804.jpg"
+        }
+    },
+    {
+        "pk": 25,
+        "model": "products.product",
+        "fields": {
+            "sku": "FIT-546-987-574",
+            "name": "Fitness Skipping Rope",
+            "description": "Most convenient cardio exercise: With RENPHO smart jump rope, you can get a more efficient, more low-cost, and happier cardio exercise. The jump rope is lightweight and portable, it can be flexibly used indoors or outdoors. Keep workouts, it will help you keep a fit body and effectively improve cardiopulmonary functions and endurance.",
+            "price": 16.99,
+            "category": 3,
+            "image_url": "https://res.cloudinary.com/silorak/image/upload/v1642000019/the%20gym/pexels-dom-j-45056_jn6yl6.jpg",
+            "image": "pexels-dom-j-45056.jpg"
+        }
+    },
+    {
+        "pk": 26,
+        "model": "products.product",
+        "fields": {
+            "sku": "SHA-546-987-574",
+            "name": "Shaker",
+            "description": "Bringing convenience and ease to your supplements with our premium, insulated shakers. Designed to be simple to use and a breeze to clean, robust and a large 735ml capacity ensuring that you can use this shaker on the go. The double-wall construction keeps your shakes nice and cool!",
+            "price": 17.99,
+            "category": 3,
+            "image_url": "https://res.cloudinary.com/silorak/image/upload/v1642000291/the%20gym/pexels-ketut-subiyanto-4804055_abfe6b.jpg",
+            "image": "pexels-ketut-subiyanto-4804055.jpg"
+        }
     }
 ]
