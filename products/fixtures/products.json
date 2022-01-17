@@ -336,5 +336,109 @@
             "image_url": "https://res.cloudinary.com/silorak/image/upload/v1642000291/the%20gym/pexels-ketut-subiyanto-4804055_abfe6b.jpg",
             "image": "pexels-ketut-subiyanto-4804055.jpg"
         }
-    }
+    },
+    {
+        "pk": 27,
+        "model": "products.product",
+        "fields": {
+            "sku": "IMP-546-987-574",
+            "name": "Impact Whey Protein",
+            "description": "High quality whey with 21g of protein per serving, getting the protein you need from a high quality source — the same cows that produce your milk and cheese. It is simply filtered and spray dried to produce all-natural nutrients.",
+            "price": 10.99,
+            "category": 5,
+            "image_url": "",
+            "image": ""
+        }
+    },
+    {
+        "pk": 28,
+        "model": "products.product",
+        "fields": {
+            "sku": "MUL-546-987-574",
+            "name": "Alpha Men Multivitamin",
+            "description": "This exclusive product, which contains essential vitamins and minerals, including calcium, vitamin D, selenium, vitamin B5, biotin and energy-giving natural extracts 3 , will help you stay in shape even during hard workouts and withstand the stresses of a stressful life.",
+            "price": 18.99,
+            "category": 5,
+            "image_url": "https://res.cloudinary.com/silorak/image/upload/v1642414618/the%20gym/pexels-anna-shvets-3683074_k0ndnh.jpg",
+            "image": "pexels-anna-shvets-3683074.jpg"
+        }
+    },
+    {
+        "pk": 29,
+        "model": "products.product",
+        "fields": {
+            "sku": "SUP-OME-3-574",
+            "name": "Super Omega 3",
+            "description": "Super Omega 3 is a high strength fish oil providing a minimum of 760mg Omega 3 for every 1000mg softgel, making it one of the highest concentrations on the market.",
+            "price": 20.99,
+            "category": 5,
+            "image_url": "https://res.cloudinary.com/silorak/image/upload/v1642414782/the%20gym/pexels-dear-w-2919591_v2s6xn.jpg",
+            "image": "pexels-dear-w-2919591.jpg"
+        }
+    },
+    {
+        "pk": 30,
+        "model": "products.product",
+        "fields": {
+            "sku": "CLE-WHE-ISO-574",
+            "name": "Clear Whey Isolate",
+            "description": "Clear Whey Isolate is more than just a protein shake. We’ve created a lightweight, revitalizing alternative to conventional milk-based protein shakes from high-quality whey protein.",
+            "price": 39.99,
+            "category": 5,
+            "image_url": "",
+            "image": ""
+        }
+    },
+    {
+        "pk": 31,
+        "model": "products.product",
+        "fields": {
+            "sku": "EXT-GAI-BLE-574",
+            "name": "Extreme Gainer Blend",
+            "description": "Our product contains as much as  35 g of protein  and  61 g of carbohydrates , which is a whopping  446 calories  per serving, which will help achieve the goal of gaining muscle and volume.",
+            "price": 42.49,
+            "category": 5,
+            "image_url": "",
+            "image": ""
+        }
+    },
+    {
+        "pk": 32,
+        "model": "products.product",
+        "fields": {
+            "sku": "MPC-WOM-BOO-SHO",
+            "name": "MP Curve Women's Booty Shorts",
+            "description": "Crafted with contouring textures, your confidence will be sky high whilst rocking these booty shorts. Look good whilst feeling good, with a supportive high waisted waistband, for a secure and comfy workout. Distractions and irritations are no more as these shorts are seamless. These shorts will regulate heat with their sweat wicking finish, meaning you will feel cooler during your workout.",
+            "price": 30.00,
+            "category": 6,
+            "image_url": "https://res.cloudinary.com/silorak/image/upload/v1642415446/the%20gym/pexels-maksim-goncharenok-4348621_pqhwci.jpg",
+            "image": "pexels-maksim-goncharenok-4348621.jpg"
+        }
+    },
+    {
+        "pk": 33,
+        "model": "products.product",
+        "fields": {
+            "sku": "PER-LON-SLE-TOP",
+            "name": "Performance Long Sleeve Top",
+            "description": "Built for performance, this long sleeve t-shirt is designed to stretch and not limit movement. Crafted with soft touch fabrics, comfort is also a plus.  ",
+            "price": 28.00,
+            "category": 6,
+            "image_url": "https://res.cloudinary.com/silorak/image/upload/v1642415716/the%20gym/pexels-mister-mister-3490348_ymp3an.jpg",
+            "image": "pexels-mister-mister-3490348.jpg"
+        }
+    },
+    {
+        "pk": 34,
+        "model": "products.product",
+        "fields": {
+          "sku": "RES-DAY-TSH-TOP",
+          "name": "Rest Day T-shirt",
+          "description": "Feel free to wear our Rest Day sleeveless t-shirt, perfect for relaxing and making the most of your leisure time.",
+          "price": 32.00,
+          "category": 6,
+          "image_url": "https://res.cloudinary.com/silorak/image/upload/v1642415915/the%20gym/pexels-rodnae-productions-8173590_xpnxuu.jpg",
+          "image": "pexels-rodnae-productions-8173590.jpg"
+          }
+      }
 ]
