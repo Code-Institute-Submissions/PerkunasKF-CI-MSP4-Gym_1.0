@@ -382,7 +382,7 @@
         "fields": {
             "sku": "CLE-WHE-ISO-574",
             "name": "Clear Whey Isolate",
-            "description": "Clear Whey Isolate is more than just a protein shake. We’ve created a lightweight, revitalizing alternative to conventional milk-based protein shakes from high-quality whey protein.",
+            "description": "Clear Whey Isolate is more than just a protein shake. We created a lightweight, revitalizing alternative to conventional milk-based protein shakes from high-quality whey protein.",
             "price": 39.99,
             "category": 5,
             "image_url": "",
@@ -421,7 +421,7 @@
         "fields": {
             "sku": "PER-LON-SLE-TOP",
             "name": "Performance Long Sleeve Top",
-            "description": "Built for performance, this long sleeve t-shirt is designed to stretch and not limit movement. Crafted with soft touch fabrics, comfort is also a plus.  ",
+            "description": "Built for performance, this long sleeve t-shirt is designed to stretch and not limit movement. Crafted with soft touch fabrics, comfort is also a plus.",
             "price": 28.00,
             "category": 6,
             "image_url": "https://res.cloudinary.com/silorak/image/upload/v1642415716/the%20gym/pexels-mister-mister-3490348_ymp3an.jpg",
