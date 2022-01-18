@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="card-columns card-container">
+                {% for product in products %}
+                    <div class="card product-card">
+                        <a href="">
+                            {% if product.image %}
+                                    <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                            {% else %}
+                                    <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top" alt="{{ product.name }}">
+                            {% endif %}
+                            <div class="card-body">
+                                <h5 class="card-title feuter-title-text">{{ product.name }}</h5>
+                                <p class="card-text text-right text-small-black">
+                                    {% if product.price != 0 %}
+                                        {{ product.price }} €
+                                    {% else %}
+                                        Free for registered users!
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -49,87 +49,88 @@
 
 
 <body>
-    
-    <header id="main-navigation-bar" class="container-fluid fixed-top">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-4 col-md-2 d-flex justify-content-beggining align-items-center">
-                    <!-- Image for logo made on https://www.freelogodesign.org/ -->
-                    <!-- Muscle Gym Logo -->
-                    <a href="{% url 'home' %}"><img id="header-gym-logo" src="/media/page-img/muscle-gym-logo-full-yelow.png"
-                            alt="Muscle gym logo"></a>
-                </div>
-                <div id="navigation-links" class="col d-none d-md-flex justify-content-end align-items-center">
-                    <!-- Navigation links -->
-                    <ul class="list-inline text-center">
-                        <li class="list-inline-item"><a class="navigation-link-text" href="{% url 'home' %}">Home</a></li>
-                        <li class="list-inline-item"><a class="navigation-link-text" href="#">Products</a>
-                        </li>
-                        <li class="list-inline-item"><a class="navigation-link-text" href="#">Contacts</a></li>
-                        
-                    </ul>
-                </div>
-                <!-- My account button -->
-                <div class="col-2 d-none d-md-flex justify-content-end align-items-center my-account">
-                        <a class="navigation-link-text btn-group dropleft" href="#" id="user-options" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
+    <div id="content-holder" class="container-fluid">
+        <header id="main-navigation-bar" class="container-fluid sticky-top">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-4 col-md-2 d-flex justify-content-beggining align-items-center">
+                        <!-- Image for logo made on https://www.freelogodesign.org/ -->
+                        <!-- Muscle Gym Logo -->
+                        <a href="{% url 'home' %}"><img id="header-gym-logo" src="/media/page-img/muscle-gym-logo-full-yelow.png"
+                                alt="Muscle gym logo"></a>
+                    </div>
+                    <div id="navigation-links" class="col d-none d-md-flex justify-content-end align-items-center">
+                        <!-- Navigation links -->
+                        <ul class="list-inline text-center">
+                            <li class="list-inline-item"><a class="navigation-link-text" href="{% url 'home' %}">Home</a></li>
+                            <li class="list-inline-item"><a class="navigation-link-text" href="{% url 'products' %}">Products</a>
+                            </li>
+                            <li class="list-inline-item"><a class="navigation-link-text" href="#">Contacts</a></li>
+                            
+                        </ul>
+                    </div>
+                    <!-- My account button -->
+                    <div class="col-2 d-none d-md-flex justify-content-end align-items-center my-account">
+                            <a class="navigation-link-text btn-group dropleft" href="#" id="user-options" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <div class="text-center">
+                                    <div><i class="fas fa-user fa-lg"></i></div>
+                                    <p>My Account</p>
+                                </div>
+                            </a>
+                            <div class="dropdown-menu burger-menu-items-box" aria-labelledby="user-options">
+                                {% if request.user.is_authenticated %}
+                                    {% if request.user.is_superuser %}
+                                    <a href="" class="burger-menu-text">Product Management</a>
+                                    {% endif %}
+                                    <a href="" class="dropdown-item burger-menu-text">My Profile</a>
+                                    <a href="{% url 'account_logout' %}" class="dropdown-item burger-menu-text">Logout</a>
+                                {% else %}
+                                    <a href="{% url 'account_signup' %}" class="dropdown-item burger-menu-text">Register</a>
+                                    <a href="{% url 'account_login' %}" class="dropdown-item burger-menu-text">Login</a>
+                                {% endif %}
+                            </div>
+                    </div>
+                    <!-- Shopping cart button -->
+                    <div class="col-2 d-none d-md-flex justify-content-center align-items-center">
+                        <a class="{% if grand_total %} navigation-link-text-white {% else %} navigation-link-text {% endif %}" href="">
                             <div class="text-center">
-                                <div><i class="fas fa-user fa-lg"></i></div>
-                                <p>My Account</p>
+                                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                                <p class="my-0">
+                                    {% if grand_total %}
+                                    ${{ grand_total|floatformat:2 }}
+                                    {% else %}
+                                    $0.00
+                                    {% endif %}
+                                </p>
                             </div>
                         </a>
-                        <div class="dropdown-menu burger-menu-items-box" aria-labelledby="user-options">
-                            {% if request.user.is_authenticated %}
-                                {% if request.user.is_superuser %}
-                                  <a href="" class="burger-menu-text">Product Management</a>
-                                {% endif %}
-                                <a href="" class="dropdown-item burger-menu-text">My Profile</a>
-                                <a href="{% url 'account_logout' %}" class="dropdown-item burger-menu-text">Logout</a>
-                            {% else %}
-                                <a href="{% url 'account_signup' %}" class="dropdown-item burger-menu-text">Register</a>
-                                <a href="{% url 'account_login' %}" class="dropdown-item burger-menu-text">Login</a>
-                            {% endif %}
-                        </div>
-                </div>
-                <!-- Shopping cart button -->
-                <div class="col-2 d-none d-md-flex justify-content-center align-items-center">
-                    <a class="{% if grand_total %} navigation-link-text-white {% else %} navigation-link-text {% endif %}" href="">
-                        <div class="text-center">
-                            <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                            <p class="my-0">
-                                {% if grand_total %}
-                                ${{ grand_total|floatformat:2 }}
-                                {% else %}
-                                $0.00
-                                {% endif %}
-                            </p>
-                        </div>
-                    </a>
-                </div>
+                    </div>
 
-                {% include 'includes/mobale-nav-bar.html' %}
-                
+                    {% include 'includes/mobale-nav-bar.html' %}
+                    
+                </div>
             </div>
-        </div>
 
-        {% include 'includes/mobale-user-tools.html' %}
+            {% include 'includes/mobale-user-tools.html' %}
 
-    </header>
+        </header>
 
-    <!-- Message container -->
-    {% if messages %}
-        <div class="message-container"></div>
-    {% endif %}
+        <!-- Message container -->
+        {% if messages %}
+            <div class="message-container"></div>
+        {% endif %}
 
-    {% block page_header %}
-    {% endblock %}
+        {% block page_header %}
+        {% endblock %}
 
-    {% block content %}
-    {% endblock %}
+        {% block content %}
+        {% endblock %}
 
-    {% block postloadjs %}
-    {% endblock %}
+        {% block postloadjs %}
+        {% endblock %}
 
+    </div>  
 </body>
 
 </html>

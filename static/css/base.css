@@ -13,8 +13,20 @@ body {
     color: #fff;
 }
 
+.text-small-black {
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+
 .braker {
     margin: 0px 8px 0px 5px;
+}
+
+#content-holder{
+    margin: 0;
+    padding: 0;
 }
 
 /*-------------------------------------------------------------------------------------------------------------------------*/
@@ -23,6 +35,7 @@ body {
 
 #main-navigation-bar {
     background-color: #000;
+    margin-bottom: 20px;
 }
 
 .navigation-link-text {
@@ -101,4 +114,40 @@ body {
     #header-login-button {
         padding: 3px 15px 3px;
     }
+}
+
+
+/*-------------------------------------------------------------------------------------------------------------------------*/
+/*                                                  Navigation bar Styles                                                  */
+/*-------------------------------------------------------------------------------------------------------------------------*/
+
+.card-container {
+    margin-bottom: 15px;
+}
+
+.card-container a {
+text-decoration: none;
+}
+
+.card-container .card {
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+.card-container .card:hover {
+    border-color: #fca311;
+}
+
+.card-container .card-text {
+    border-top: 1px solid grey;
+    margin-top: 10px;
+}
+
+.feuter-title-text {
+    color: #000000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+
+    margin: 0 10px 0;
 }

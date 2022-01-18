@@ -9,7 +9,7 @@
         "price": 50.00,
         "category": 1,
         "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641993337/the%20gym/pexels-victor-freitas-841130_zw38mm.jpg",
-        "image": "pexels-victor-freitas-841130.jpg"
+        "image": "product-img/pexels-victor-freitas-841130.jpg"
         }
     },
     {
@@ -22,7 +22,7 @@
             "price": 0.00,
             "category": 1,
             "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641993918/the%20gym/pexels-li-sun-2294361_fmnp62.jpg",
-            "image": "pexels-li-sun-2294361.jpg"
+            "image": "product-img/pexels-li-sun-2294361.jpg"
         }
     },
     {
@@ -35,7 +35,7 @@
             "price": 75.00,
             "category": 1,
             "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641994304/the%20gym/pexels-anush-gorak-1431283_tgv2ur.jpg",
-            "image": "pexels-anush-gorak-1431283.jpg"
+            "image": "product-img/pexels-anush-gorak-1431283.jpg"
         }
     },
     {
@@ -48,7 +48,7 @@
             "price": 20.00,
             "category": 1,
             "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641994585/the%20gym/pexels-anna-tarazevich-4839736_ihhu1f.jpg",
-            "image": "pexels-anna-tarazevich-4839736.jpg"
+            "image": "product-img/pexels-anna-tarazevich-4839736.jpg"
         }
     },
     {
@@ -61,7 +61,7 @@
             "price": 0.00,
             "category": 1,
             "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641994712/the%20gym/pexels-pixabay-416809_gqjtrp.jpg",
-            "image": "pexels-pixabay-416809.jpg"
+            "image": "product-img/pexels-pixabay-416809.jpg"
         }
     },
     {
@@ -74,7 +74,7 @@
             "price": 45.00,
             "category": 1,
             "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641994836/the%20gym/pexels-pixabay-414029_dzrln9.jpg",
-            "image": "pexels-pixabay-414029.jpg"
+            "image": "product-img/pexels-pixabay-414029.jpg"
         }
     },
     {
@@ -87,7 +87,7 @@
             "price": 0.00,
             "category": 1,
             "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641995018/the%20gym/pexels-pixabay-416778_lannc8.jpg",
-            "image": "pexels-pixabay-416778.jpg"
+            "image": "product-img/pexels-pixabay-416778.jpg"
         }
     },
     {
@@ -100,7 +100,7 @@
             "price": 35.00,
             "category": 1,
             "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641995161/the%20gym/pexels-li-sun-2294363_lpscto.jpg",
-            "image": "pexels-li-sun-2294363.jpg"
+            "image": "product-img/pexels-li-sun-2294363.jpg"
         }
     },
     {
@@ -113,7 +113,7 @@
             "price": 40.00,
             "category": 1,
             "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641995546/the%20gym/pexels-ivan-samkov-4162444_wxw33v.jpg",
-            "image": "pexels-ivan-samkov-4162444.jpg"
+            "image": "product-img/pexels-ivan-samkov-4162444.jpg"
         }
     },
     {
@@ -126,7 +126,7 @@
             "price": 30.00,
             "category": 1,
             "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641995727/the%20gym/pexels-ketut-subiyanto-4803893_vo6dlj.jpg",
-            "image": "pexels-ketut-subiyanto-4803893.jpg"
+            "image": "product-img/pexels-ketut-subiyanto-4803893.jpg"
         }
     },
     {
@@ -139,7 +139,7 @@
             "price": 15.95,
             "category": 2,
             "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641996544/the%20gym/pexels-ricky-nugraha-6667512_phal2r.jpg",
-            "image": "pexels-ricky-nugraha-6667512.jpg"
+            "image": "product-img/pexels-ricky-nugraha-6667512.jpg"
         }
     },
     {
@@ -152,7 +152,7 @@
             "price": 19.95,
             "category": 2,
             "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641996754/the%20gym/pexels-pavel-danilyuk-6339596_fryoaf.jpg",
-            "image": "pexels-pavel-danilyuk-6339596.jpg"
+            "image": "product-img/pexels-pavel-danilyuk-6339596.jpg"
         }
     },
     {
@@ -165,7 +165,7 @@
             "price": 19.95,
             "category": 2,
             "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641997325/the%20gym/pexels-cottonbro-7671465_goffwe.jpg",
-            "image": "pexels-cottonbro-7671465.jpg"
+            "image": "product-img/pexels-cottonbro-7671465.jpg"
         }
     },
     {
@@ -178,7 +178,7 @@
             "price": 69.95,
             "category": 2,
             "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641997481/the%20gym/pexels-lee-catherine-collins-2652236_fhksom.jpg",
-            "image": "pexels-lee-catherine-collins-2652236.jpg"
+            "image": "product-img/pexels-lee-catherine-collins-2652236.jpg"
         }
     },
     {
@@ -191,7 +191,7 @@
             "price": 579.00,
             "category": 2,
             "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641997767/the%20gym/pexels-ketut-subiyanto-4853705_gcutjf.jpg",
-            "image": "pexels-ketut-subiyanto-4853705.jpg"
+            "image": "product-img/pexels-ketut-subiyanto-4853705.jpg"
         }
     },
     {
@@ -204,7 +204,7 @@
             "price": 199.00,
             "category": 2,
             "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641997919/the%20gym/pexels-matthew-hintz-9845021_zdu2op.jpg",
-            "image": "pexels-matthew-hintz-9845021.jpg"
+            "image": "product-img/pexels-matthew-hintz-9845021.jpg"
         }
     },
     {
@@ -217,7 +217,7 @@
             "price": 59.95,
             "category": 2,
             "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641998104/the%20gym/pexels-ivan-samkov-4164468_xav8ks.jpg",
-            "image": "pexels-ivan-samkov-4164468.jpg"
+            "image": "product-img/pexels-ivan-samkov-4164468.jpg"
         }
     },
     {
@@ -230,7 +230,7 @@
             "price": 995.95,
             "category": 2,
             "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641998393/the%20gym/pexels-andrea-piacquadio-3838926_iwhimi.jpg",
-            "image": "pexels-andrea-piacquadio-3838926.jpg"
+            "image": "product-img/pexels-andrea-piacquadio-3838926.jpg"
         }
     },
     {
@@ -243,7 +243,7 @@
             "price": 1620.00,
             "category": 2,
             "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641998767/the%20gym/pexels-ivan-samkov-4162542_akdgql.jpg",
-            "image": "pexels-ivan-samkov-4162542.jpg"
+            "image": "product-img/pexels-ivan-samkov-4162542.jpg"
         }
     },
     {
@@ -256,7 +256,7 @@
             "price": 165.00,
             "category": 2,
             "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641999010/the%20gym/pexels-leon-ardho-1552248_kupa0w.jpg",
-            "image": "pexels-leon-ardho-1552248.jpg"
+            "image": "product-img/pexels-leon-ardho-1552248.jpg"
         }
     },
     {
@@ -269,7 +269,7 @@
             "price": 26.45,
             "category": 3,
             "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641999247/the%20gym/pexels-karolina-grabowska-4498605_uxzbxw.jpg",
-            "image": "pexels-karolina-grabowska-4498605.jpg"
+            "image": "product-img/pexels-karolina-grabowska-4498605.jpg"
         }
     },
     {
@@ -282,7 +282,7 @@
             "price": 24.99,
             "category": 3,
             "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641999530/the%20gym/pexels-koolshooters-8519698_hj32pf.jpg",
-            "image": "pexels-koolshooters-8519698.jpg"
+            "image": "product-img/pexels-koolshooters-8519698.jpg"
         }
     },
     {
@@ -308,7 +308,7 @@
             "price": 18.95,
             "category": 3,
             "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641999875/the%20gym/pexels-eva-elijas-7965804_tbfa5q.jpg",
-            "image": "pexels-eva-elijas-7965804.jpg"
+            "image": "product-img/pexels-eva-elijas-7965804.jpg"
         }
     },
     {
@@ -321,7 +321,7 @@
             "price": 16.99,
             "category": 3,
             "image_url": "https://res.cloudinary.com/silorak/image/upload/v1642000019/the%20gym/pexels-dom-j-45056_jn6yl6.jpg",
-            "image": "pexels-dom-j-45056.jpg"
+            "image": "product-img/pexels-dom-j-45056.jpg"
         }
     },
     {
@@ -334,7 +334,7 @@
             "price": 17.99,
             "category": 3,
             "image_url": "https://res.cloudinary.com/silorak/image/upload/v1642000291/the%20gym/pexels-ketut-subiyanto-4804055_abfe6b.jpg",
-            "image": "pexels-ketut-subiyanto-4804055.jpg"
+            "image": "product-img/pexels-ketut-subiyanto-4804055.jpg"
         }
     },
     {
@@ -360,7 +360,7 @@
             "price": 18.99,
             "category": 5,
             "image_url": "https://res.cloudinary.com/silorak/image/upload/v1642414618/the%20gym/pexels-anna-shvets-3683074_k0ndnh.jpg",
-            "image": "pexels-anna-shvets-3683074.jpg"
+            "image": "product-img/pexels-anna-shvets-3683074.jpg"
         }
     },
     {
@@ -373,7 +373,7 @@
             "price": 20.99,
             "category": 5,
             "image_url": "https://res.cloudinary.com/silorak/image/upload/v1642414782/the%20gym/pexels-dear-w-2919591_v2s6xn.jpg",
-            "image": "pexels-dear-w-2919591.jpg"
+            "image": "product-img/pexels-dear-w-2919591.jpg"
         }
     },
     {
@@ -412,7 +412,7 @@
             "price": 30.00,
             "category": 6,
             "image_url": "https://res.cloudinary.com/silorak/image/upload/v1642415446/the%20gym/pexels-maksim-goncharenok-4348621_pqhwci.jpg",
-            "image": "pexels-maksim-goncharenok-4348621.jpg"
+            "image": "product-img/pexels-maksim-goncharenok-4348621.jpg"
         }
     },
     {
@@ -425,7 +425,7 @@
             "price": 28.00,
             "category": 6,
             "image_url": "https://res.cloudinary.com/silorak/image/upload/v1642415716/the%20gym/pexels-mister-mister-3490348_ymp3an.jpg",
-            "image": "pexels-mister-mister-3490348.jpg"
+            "image": "product-img/pexels-mister-mister-3490348.jpg"
         }
     },
     {
@@ -438,7 +438,7 @@
           "price": 32.00,
           "category": 6,
           "image_url": "https://res.cloudinary.com/silorak/image/upload/v1642415915/the%20gym/pexels-rodnae-productions-8173590_xpnxuu.jpg",
-          "image": "pexels-rodnae-productions-8173590.jpg"
+          "image": "product-img/pexels-rodnae-productions-8173590.jpg"
           }
       }
 ]
