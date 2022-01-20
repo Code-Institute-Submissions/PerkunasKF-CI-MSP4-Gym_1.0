@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block content %}
+    <!-- Category bar -->
     <div class="row categories-list">
         <div class="col d-none d-md-flex justify-content-center">
             <ul class="list-inline">
@@ -27,7 +28,7 @@
                     <p>Choose a Category</p>
                 </div>
             </a>
-            <!-- User tools -->
+            <!-- Dropdown items, product categories -->
             <div class="dropdown-menu burger-menu-items-box w-100" aria-labelledby="user-options">
                 <ul class="navigation-link-text">
                     <li><a class="navigation-link-text" href="{% url 'products' %}?category=workout_plans">Workout Plans</a></li>
@@ -39,6 +40,29 @@
             </div>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col sort-buttons">
+            <ul style="list-style-type:none;">
+                <br>
+                <li data-toggle="tooltip" data-placement="right" title="Sort by price ascending">
+                    <a href="{% url 'products' %}?sort=price&direction=asc">
+                        <i class="fas fa-euro-sign"></i> 
+                        <i class="fas fa-chevron-up"></i>
+                    </a>
+                </li>
+                <br>
+                <li  data-toggle="tooltip" data-placement="right" title="Sort by price descending">
+                    <a href="{% url 'products' %}?sort=price&direction=desc">
+                        <i class="fas fa-euro-sign"></i> 
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Product container -->
     <div class="container">
         <div class="card-columns card-container">
                 {% for product in products %}
@@ -65,4 +89,10 @@
             </div>
         </div>
     </div>
+
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
 {% endblock %}
