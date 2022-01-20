@@ -5,6 +5,40 @@
 {% endblock %}
 
 {% block content %}
+    <div class="row categories-list">
+        <div class="col d-none d-md-flex justify-content-center">
+            <ul class="list-inline navigation-link-text-black">
+                <li class="list-inline-item">Workout Plans</li>
+                <li class="list-inline-item text-left braker">|</li>
+                <li class="list-inline-item">Training Equipment</li>
+                <li class="list-inline-item text-left braker">|</li>
+                <li class="list-inline-item">Accessories</li>
+                <li class="list-inline-item text-left braker">|</li>
+                <li class="list-inline-item">Supplements</li>
+                <li class="list-inline-item text-left braker">|</li>
+                <li class="list-inline-item">Clothes</li>
+            </ul>
+        </div>
+        <div class="col d-flex d-md-none justify-content-center">
+            <!-- Drop down menu button for Categories -->
+            <a class="navigation-link-text-black btn-group dropleft" href="#" id="user-options" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <div class="text-center">
+                    <p>Choose a Category</p>
+                </div>
+            </a>
+            <!-- User tools -->
+            <div class="dropdown-menu burger-menu-items-box w-100" aria-labelledby="user-options">
+                <ul class="navigation-link-text">
+                    <li>Workout Plans</li>
+                    <li>Training Equipment</li>
+                    <li>Accessories</li>
+                    <li>Supplements</li>
+                    <li>Clothes</li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="card-columns card-container">
                 {% for product in products %}
