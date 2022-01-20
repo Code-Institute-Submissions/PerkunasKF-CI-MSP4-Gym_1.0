@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+{% endblock %}
+
+{% block content %}
+
+    <!-- Bootstrap code snipet for horizontal card -->
+    <div class="card mb-3" style="max-width: 90%; margin-left: 5%;">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                {% if product.image %}
+                    <a href="{{ product.image_url }}" target=_blank>
+                        <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                    </a>
+                {% else %}
+                    <a href="/media/muscle-gym-logo-full-yelow.png">
+                        <img src="/media/muscle-gym-logo-full-yelow.png" class="card-img-top" alt="{{ product.name }}">
+                    </a>
+                {% endif %}
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <!-- Product name -->
+                    <h5 class="card-title feuter-title-text">{{ product.name }}</h5>
+                    <br>
+                    <!-- Product price -->
+                    <p class="card-footer text-right text-small-black">
+                        {% if product.price != 0 %}
+                            {{ product.price }} €
+                        {% else %}
+                            Free for registered users!
+                        {% endif %}
+                    </p>
+                    <br>
+                    <!-- Product description -->
+                    <p class="card-text text-general">
+                        {{ product.description }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
