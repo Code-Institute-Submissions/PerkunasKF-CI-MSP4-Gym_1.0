@@ -224,3 +224,7 @@ body {
 a {
     margin-top: 15px;
 }
+
+.categories-list a:hover {
+    color: #000;
+}

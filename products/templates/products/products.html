@@ -7,16 +7,16 @@
 {% block content %}
     <div class="row categories-list">
         <div class="col d-none d-md-flex justify-content-center">
-            <ul class="list-inline navigation-link-text-black">
-                <li class="list-inline-item">Workout Plans</li>
-                <li class="list-inline-item text-left braker">|</li>
-                <li class="list-inline-item">Training Equipment</li>
-                <li class="list-inline-item text-left braker">|</li>
-                <li class="list-inline-item">Accessories</li>
-                <li class="list-inline-item text-left braker">|</li>
-                <li class="list-inline-item">Supplements</li>
-                <li class="list-inline-item text-left braker">|</li>
-                <li class="list-inline-item">Clothes</li>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a class="navigation-link-text-black" href="{% url 'products' %}?category=workout_plans">Workout Plans</a></li>
+                <li class="list-inline-item text-left braker navigation-link-text-black">|</li>
+                <li class="list-inline-item"><a class="navigation-link-text-black" href="{% url 'products' %}?category=training_equipment">Training Equipment</a></li>
+                <li class="list-inline-item text-left braker navigation-link-text-black">|</li>
+                <li class="list-inline-item"><a class="navigation-link-text-black" href="{% url 'products' %}?category=accessories">Accessories</a></li>
+                <li class="list-inline-item text-left braker navigation-link-text-black">|</li>
+                <li class="list-inline-item"><a class="navigation-link-text-black" href="{% url 'products' %}?category=supplements">Supplements</a></li>
+                <li class="list-inline-item text-left braker navigation-link-text-black">|</li>
+                <li class="list-inline-item"><a class="navigation-link-text-black" href="{% url 'products' %}?category=clothes">Clothes</a></li>
             </ul>
         </div>
         <div class="col d-flex d-md-none justify-content-center">
@@ -30,11 +30,11 @@
             <!-- User tools -->
             <div class="dropdown-menu burger-menu-items-box w-100" aria-labelledby="user-options">
                 <ul class="navigation-link-text">
-                    <li>Workout Plans</li>
-                    <li>Training Equipment</li>
-                    <li>Accessories</li>
-                    <li>Supplements</li>
-                    <li>Clothes</li>
+                    <li><a class="navigation-link-text" href="{% url 'products' %}?category=workout_plans">Workout Plans</a></li>
+                    <li><a class="navigation-link-text" href="{% url 'products' %}?category=training_equipment">Training Equipment</a></li>
+                    <li><a class="navigation-link-text" href="{% url 'products' %}?category=accessories">Accessories</a></li>
+                    <li><a class="navigation-link-text" href="{% url 'products' %}?category=supplements">Supplements</a></li>
+                    <li><a class="navigation-link-text" href="{% url 'products' %}?category=clothes">Clothes</a></li>
                 </ul>
             </div>
         </div>
