@@ -53,14 +53,15 @@
         <header id="main-navigation-bar" class="container-fluid sticky-top">
             <div class="container-fluid">
                 <div class="row">
+                    <!-- Logo -->
                     <div class="col-4 col-md-2 d-flex justify-content-beggining align-items-center">
                         <!-- Image for logo made on https://www.freelogodesign.org/ -->
                         <!-- Muscle Gym Logo -->
                         <a href="{% url 'home' %}"><img id="header-gym-logo" src="/media/muscle-gym-logo-full-yelow.png"
                                 alt="Muscle gym logo"></a>
                     </div>
+                    <!-- Navigation links -->
                     <div id="navigation-links" class="col d-none d-md-flex justify-content-end align-items-center">
-                        <!-- Navigation links -->
                         <ul class="list-inline text-center">
                             <li class="list-inline-item"><a class="navigation-link-text" href="{% url 'home' %}">Home</a></li>
                             <li class="list-inline-item"><a class="navigation-link-text" href="{% url 'products' %}">Products</a>
@@ -71,6 +72,7 @@
                     </div>
                     <!-- My account button -->
                     <div class="col-2 d-none d-md-flex justify-content-end align-items-center my-account">
+                            <!-- Drop down menu button for user tools -->
                             <a class="navigation-link-text btn-group dropleft" href="#" id="user-options" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
                                 <div class="text-center">
@@ -78,14 +80,18 @@
                                     <p>My Account</p>
                                 </div>
                             </a>
+                            <!-- User tools -->
                             <div class="dropdown-menu burger-menu-items-box" aria-labelledby="user-options">
                                 {% if request.user.is_authenticated %}
+                                    <!-- Admin Tools -->
                                     {% if request.user.is_superuser %}
-                                    <a href="" class="burger-menu-text">Product Management</a>
+                                        <a href="" class="burger-menu-text">Product Management</a>
                                     {% endif %}
+                                    <!-- Login user tools -->
                                     <a href="" class="dropdown-item burger-menu-text">My Profile</a>
                                     <a href="{% url 'account_logout' %}" class="dropdown-item burger-menu-text">Logout</a>
                                 {% else %}
+                                    <!-- New User tools -->
                                     <a href="{% url 'account_signup' %}" class="dropdown-item burger-menu-text">Register</a>
                                     <a href="{% url 'account_login' %}" class="dropdown-item burger-menu-text">Login</a>
                                 {% endif %}
@@ -98,9 +104,9 @@
                                 <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                                 <p class="my-0">
                                     {% if grand_total %}
-                                    ${{ grand_total|floatformat:2 }}
+                                        ${{ grand_total|floatformat:2 }}
                                     {% else %}
-                                    $0.00
+                                        $0.00
                                     {% endif %}
                                 </p>
                             </div>
@@ -113,6 +119,25 @@
             </div>
 
             {% include 'includes/mobale-user-tools.html' %}
+
+            <!-- Search bar -->
+            <div class="row search-bar">
+                <div class="col-md-4 offset-md-8">
+                    <form class="search-form" method="GET" action="{% url 'products' %}">
+                        <div class="input-group">
+                            <input class="form-control" type="text" name="q"
+                                placeholder="Search for Products">
+                            <div class="input-group-append">
+                                <button class="form-control btn" type="submit">
+                                    <span class="navigation-link-text search-icon">
+                                        <i class="fas fa-search"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
 
         </header>
 

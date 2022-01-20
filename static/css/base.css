@@ -40,7 +40,7 @@ body {
 }
 
 /*-------------------------------------------------------------------------------------------------------------------------*/
-/*                                                  Product Details Styles                                                 */
+/*                                                 Navigation Bar Styles                                                   */
 /*-------------------------------------------------------------------------------------------------------------------------*/
 
 #main-navigation-bar {
@@ -126,6 +126,23 @@ body {
     }
 }
 
+.search-bar {
+    min-height: 50px;
+}
+
+.search-form {
+    border: 2px solid #fca311;
+    border-radius: 5px;
+}
+
+.search-icon:hover {
+    color: #fff;
+}
+
+.search-bar .btn {
+    padding-top: 2px;
+    padding-bottom: 0;
+}
 
 /*-------------------------------------------------------------------------------------------------------------------------*/
 /*                                                  Product Styles                                                     */
@@ -167,4 +184,13 @@ body {
     max-height: 100%;
     margin: auto;
     display: block;
+}
+
+.dproduct-title-text {
+    color: #000000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+
+    margin: 0 10px 0;
 }
