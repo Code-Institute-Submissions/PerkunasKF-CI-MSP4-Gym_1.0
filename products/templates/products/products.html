@@ -5,19 +5,28 @@
 {% endblock %}
 
 {% block content %}
+
     <!-- Category bar -->
     <div class="row categories-list">
         <div class="col d-none d-md-flex justify-content-center">
             <ul class="list-inline">
-                <li class="list-inline-item"><a class="navigation-link-text-black" href="{% url 'products' %}?category=workout_plans">Workout Plans</a></li>
+                <li class="list-inline-item"><a class="navigation-link-text-black" href="{% url 'products' %}">All
+                        Products</a></li>
                 <li class="list-inline-item text-left braker navigation-link-text-black">|</li>
-                <li class="list-inline-item"><a class="navigation-link-text-black" href="{% url 'products' %}?category=training_equipment">Training Equipment</a></li>
+                <li class="list-inline-item"><a class="navigation-link-text-black"
+                        href="{% url 'products' %}?category=workout_plans">Workout Plans</a></li>
                 <li class="list-inline-item text-left braker navigation-link-text-black">|</li>
-                <li class="list-inline-item"><a class="navigation-link-text-black" href="{% url 'products' %}?category=accessories">Accessories</a></li>
+                <li class="list-inline-item"><a class="navigation-link-text-black"
+                        href="{% url 'products' %}?category=training_equipment">Training Equipment</a></li>
                 <li class="list-inline-item text-left braker navigation-link-text-black">|</li>
-                <li class="list-inline-item"><a class="navigation-link-text-black" href="{% url 'products' %}?category=supplements">Supplements</a></li>
+                <li class="list-inline-item"><a class="navigation-link-text-black"
+                        href="{% url 'products' %}?category=accessories">Accessories</a></li>
                 <li class="list-inline-item text-left braker navigation-link-text-black">|</li>
-                <li class="list-inline-item"><a class="navigation-link-text-black" href="{% url 'products' %}?category=clothes">Clothes</a></li>
+                <li class="list-inline-item"><a class="navigation-link-text-black"
+                        href="{% url 'products' %}?category=supplements">Supplements</a></li>
+                <li class="list-inline-item text-left braker navigation-link-text-black">|</li>
+                <li class="list-inline-item"><a class="navigation-link-text-black"
+                        href="{% url 'products' %}?category=clothes">Clothes</a></li>
             </ul>
         </div>
         <div class="col d-flex d-md-none justify-content-center">
@@ -31,68 +40,80 @@
             <!-- Dropdown items, product categories -->
             <div class="dropdown-menu burger-menu-items-box w-100" aria-labelledby="user-options">
                 <ul class="navigation-link-text">
-                    <li><a class="navigation-link-text" href="{% url 'products' %}?category=workout_plans">Workout Plans</a></li>
-                    <li><a class="navigation-link-text" href="{% url 'products' %}?category=training_equipment">Training Equipment</a></li>
-                    <li><a class="navigation-link-text" href="{% url 'products' %}?category=accessories">Accessories</a></li>
-                    <li><a class="navigation-link-text" href="{% url 'products' %}?category=supplements">Supplements</a></li>
+                    <li><a class="navigation-link-text" href="{% url 'products' %}">All Products</a></li>
+                    <li><a class="navigation-link-text" href="{% url 'products' %}?category=workout_plans">Workout Plans</a>
+                    </li>
+                    <li><a class="navigation-link-text" href="{% url 'products' %}?category=training_equipment">Training
+                            Equipment</a></li>
+                    <li><a class="navigation-link-text" href="{% url 'products' %}?category=accessories">Accessories</a>
+                    </li>
+                    <li><a class="navigation-link-text" href="{% url 'products' %}?category=supplements">Supplements</a>
+                    </li>
                     <li><a class="navigation-link-text" href="{% url 'products' %}?category=clothes">Clothes</a></li>
                 </ul>
             </div>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col sort-buttons">
-            <ul style="list-style-type:none;">
-                <br>
-                <li data-toggle="tooltip" data-placement="right" title="Sort by price ascending">
-                    <a href="{% url 'products' %}?sort=price&direction=asc">
-                        <i class="fas fa-euro-sign"></i> 
-                        <i class="fas fa-chevron-up"></i>
-                    </a>
-                </li>
-                <br>
-                <li  data-toggle="tooltip" data-placement="right" title="Sort by price descending">
-                    <a href="{% url 'products' %}?sort=price&direction=desc">
-                        <i class="fas fa-euro-sign"></i> 
-                        <i class="fas fa-chevron-down"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
     <!-- Product container -->
     <div class="container">
-        <div class="card-columns card-container">
-                {% for product in products %}
-                    <a href="{% url 'product_detail' product.id %}">
-                        <div class="card product-card">
-                            {% if product.image %}
-                                    <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
-                            {% else %}
-                                    <img src="/media/noimage.png" class="card-img-top" alt="{{ product.name }}">
-                            {% endif %}
-                            <div class="card-body">
-                                <h5 class="card-title feuter-title-text">{{ product.name }}</h5>
-                                <p class="card-text text-right text-small-black">
-                                    {% if product.price != 0 %}
-                                        {{ product.price }} €
-                                    {% else %}
-                                        Free for registered users!
-                                    {% endif %}
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                {% endfor %}
+        <!-- Sort by price buttons -->
+        <div class="row">
+            <div class="col sort-buttons">
+                <ul style="list-style-type:none;">
+                    <br>
+                    <li data-toggle="tooltip" data-placement="right" title="Sort by price ascending">
+                        <a href="{% url 'products' %}?sort=price&direction=asc">
+                            <i class="fas fa-euro-sign"></i>
+                            <i class="fas fa-chevron-up"></i>
+                        </a>
+                    </li>
+                    <br>
+                    <li data-toggle="tooltip" data-placement="right" title="Sort by price descending">
+                        <a href="{% url 'products' %}?sort=price&direction=desc">
+                            <i class="fas fa-euro-sign"></i>
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
+        <div class="card-columns card-container h-100">
+            {% for product in products %}
+                <div class="card product-card">
+                    {% if product.image %}
+                        <a href="{% url 'product_detail' product.id %}">
+                            <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                        </a>
+                    {% else %}
+                    <a href="{% url 'product_detail' product.id %}">
+                        <img src="/media/noimage.png" class="card-img-top" alt="{{ product.name }}">
+                    </a>
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title feuter-title-text">{{ product.name }}</h5>
+                        {% if product.category %}
+                            <div class="row">
+                                <div class="col text-right">
+                                    <br>
+                                    <a class="text-small-black" href="{% url 'products' %}?category={{ product.category.name }}"><i
+                                            class="fas fa-tag"></i>
+                                        {{ product.category.friendly_name }}</a>
+                                </div>
+                            </div>
+                        {% endif %}
+                        <p class="card-text text-right text-small-black">
+                            {% if product.price != 0 %}
+                                {{ product.price }} €
+                            {% else %}
+                                Free for registered users!
+                            {% endif %}
+                        </p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        
     </div>
 
-    <script>
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
-        })
-    </script>
 {% endblock %}

@@ -33,6 +33,14 @@
                             Free for registered users!
                         {% endif %}
                     </p>
+                    {% if product.category %}
+                        <div class="row">
+                            <div class="col text-right">
+                                <br>
+                                <a class="text-small-black" href="{% url 'products' %}?category={{ product.category.name }}"><i class="fas fa-tag"></i> {{ product.category.friendly_name }}</a>
+                            </div>
+                        </div>
+                    {% endif %}
                     <br>
                     <!-- Product description -->
                     <p class="card-text text-general">
