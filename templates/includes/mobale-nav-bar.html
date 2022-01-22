@@ -3,7 +3,7 @@
     
     <!-- Shoping cart total -->
         <a class="text-center {% if grand_total %} navigation-link-text-white {% else %} navigation-link-text {% endif %}"
-            href="">
+            href="{% url 'view_bag' %}">
             <i class="fas fa-shopping-bag fa-lg"></i>
             <span class="my-0">
                 {% if grand_total %}
