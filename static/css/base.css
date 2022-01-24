@@ -181,9 +181,11 @@ body {
 
 .card-container {
     margin-bottom: 15px;
+    margin-left: 5%;
     background-color: #fff;
     padding: 15px 5px 15px 5px;
     border-radius: 5px;
+    width: 90%;
 }
 
 .card-container a {
@@ -193,11 +195,37 @@ body {
 .card-container .card {
     border: 3px solid #000;
     border-radius: 5px;
+    height: 450px;
+    margin-bottom: 15px;
 }
 
 .card-container-nohover .card {
     border: 3px solid #000;
     border-radius: 5px;
+}
+
+.card-container .card-img-container {
+    height: 200px;
+}
+
+.card-img-container img {
+    height: 200px;
+    object-fit:  cover;
+}
+
+@media (min-width: 960px) {
+    .card-container .card-img-container {
+        height: 325px;
+    }
+
+    .card-img-container img {
+        height: 325px;
+        object-fit:  cover;
+    }
+
+    .card-container .card {
+        height: 550px;
+    }
 }
 
 .card-container .card:hover {
@@ -214,8 +242,6 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     font-weight: 600;
-
-    margin: 0 10px 0;
 }
 
 .dproduct-img {

@@ -8,6 +8,8 @@
 
     <!-- Category bar -->
     <div class="row categories-list">
+
+        <!-- Category filter bar -->
         <div class="col d-none d-md-flex justify-content-center">
             <ul class="list-inline">
                 <li class="list-inline-item"><a class="navigation-link-text-black" href="{% url 'products' %}">All
@@ -29,6 +31,7 @@
                         href="{% url 'products' %}?category=clothes">Clothes</a></li>
             </ul>
         </div>
+
         <div class="col d-flex d-md-none justify-content-center">
             <!-- Drop down menu button for Categories -->
             <a class="navigation-link-text-black btn-group dropleft" href="#" id="user-options" data-toggle="dropdown"
@@ -37,6 +40,7 @@
                     <p>Choose a Category</p>
                 </div>
             </a>
+
             <!-- Dropdown items, product categories -->
             <div class="dropdown-menu burger-menu-items-box w-100" aria-labelledby="user-options">
                 <ul class="navigation-link-text">
@@ -55,63 +59,72 @@
         </div>
     </div>
 
-    <!-- Product container -->
-    <div class="container">
-        <!-- Sort by price buttons -->
-        <div class="row">
-            <div class="col sort-buttons">
-                <ul style="list-style-type:none;">
-                    <br>
-                    <li data-toggle="tooltip" data-placement="right" title="Sort by price ascending">
-                        <a href="{% url 'products' %}?sort=price&direction=asc">
-                            <i class="fas fa-euro-sign"></i>
-                            <i class="fas fa-chevron-up"></i>
-                        </a>
-                    </li>
-                    <br>
-                    <li data-toggle="tooltip" data-placement="right" title="Sort by price descending">
-                        <a href="{% url 'products' %}?sort=price&direction=desc">
-                            <i class="fas fa-euro-sign"></i>
-                            <i class="fas fa-chevron-down"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="card-columns card-container h-100">
-            {% for product in products %}
-                <div class="card product-card">
-                    {% if product.image %}
-                        <a href="{% url 'product_detail' product.id %}">
-                            <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
-                        </a>
-                    {% else %}
-                    <a href="{% url 'product_detail' product.id %}">
-                        <img src="/media/noimage.png" class="card-img-top" alt="{{ product.name }}">
+     <!-- Sort by price buttons -->
+     <div class="row">
+        <div class="col sort-buttons">
+            <ul style="list-style-type:none;">
+                <br>
+                <li data-toggle="tooltip" data-placement="right" title="Sort by price ascending">
+                    <a href="{% url 'products' %}?sort=price&direction=asc">
+                        <i class="fas fa-euro-sign"></i>
+                        <i class="fas fa-chevron-up"></i>
                     </a>
-                    {% endif %}
-                    <div class="card-body">
-                        <h5 class="card-title feuter-title-text">{{ product.name }}</h5>
-                        {% if product.category %}
-                            <div class="row">
-                                <div class="col text-right">
-                                    <br>
-                                    <a class="text-small-black" href="{% url 'products' %}?category={{ product.category.name }}"><i
-                                            class="fas fa-tag"></i>
-                                        {{ product.category.friendly_name }}</a>
-                                </div>
-                            </div>
-                        {% endif %}
-                        <p class="card-text text-right text-small-black">
-                            {% if product.price != 0 %}
-                                {{ product.price }} €
+                </li>
+                <br>
+                <li data-toggle="tooltip" data-placement="right" title="Sort by price descending">
+                    <a href="{% url 'products' %}?sort=price&direction=desc">
+                        <i class="fas fa-euro-sign"></i>
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Product container -->
+    <div class="container-fluid">
+
+        <!-- Product cards/containers -->
+        <div class="row card-container">
+                {% for product in products %}
+                <div class="col-12 col-xl-3 col-md-4 col-sm-6">
+                    <div class="card product-card">
+                        <!-- Card/Product image Container -->
+                        <div class="card-img-container">
+                            {% if product.image %}
+                                <a href="{% url 'product_detail' product.id %}">
+                                    <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                                </a>
                             {% else %}
-                                Free for registered users!
+                                <a href="{% url 'product_detail' product.id %}">
+                                    <img src="/media/noimage.png" class="card-img-top" alt="{{ product.name }}">
+                                </a>
                             {% endif %}
-                        </p>
+                        </div>
+                        <!-- Card/Product name, price, category container -->
+                        <div class="card-body">
+                            {% if product.category %}
+                                <div class="row">
+                                    <div class="col text-right">
+                                        <br>
+                                        <a class="text-small-black" href="{% url 'products' %}?category={{ product.category.name }}"><i
+                                                class="fas fa-tag"></i>
+                                            {{ product.category.friendly_name }}</a>
+                                    </div>
+                                </div>
+                            {% endif %}
+                            <p class="card-text text-right text-small-black">
+                                {% if product.price != 0 %}
+                                    {{ product.price }} €
+                                {% else %}
+                                    Free for registered users!
+                                {% endif %}
+                            </p>
+                            <h5 class="card-title feuter-title-text">{{ product.name }}</h5>
+                        </div>
                     </div>
                 </div>
-            {% endfor %}
+                {% endfor %}
         </div>
         
     </div>
