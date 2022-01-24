@@ -15,14 +15,35 @@
             </div>
         </div>
     
-        <div class="row">
-            <div class="col">
-                {% if bag_items %}
-                    <div>
-                        {{ bag_items }}
-                    </div>
-                {% endif %}
-            </div>
+        <!-- Shopping bag items list -->
+        <div class="container-fluid">
+            {% if bag_items %}
+                <table class="table feuter-title-text">
+                    <thead>
+                        <tr>
+                          <th scope="col">Product Info</th>
+                          <th scope="col"></th>
+                          <th scope="col">Product Price</th>
+                          <th scope="col">Qty</th>
+                          <th scope="col">Subtotal</th>
+                        </tr>
+                      </thead>
+                    {% for item in bag_items %}
+                        <tbody>
+                            <tr>
+                                <td class="p-3 w-25"><img class="sb-img" src="{{ item.product.image.url }}" alt="{{ item.product.name }}"></td>
+                                <td>
+                                    <p >{{ item.product.name }}</p>
+                                    <p class="small">{{ item.product.sku }}</p>
+                                </td>
+                                <td class="p-3">{{ item.product.price }} €</td>
+                                <td class="p-3">{{ item.quantity }}</td>
+                                <td class="p-3">{{ item.product.price }} €</td>
+                            </tr>
+                        </tbody>
+                    {% endfor %}
+                </table>
+            {% endif %}      
         </div>
     </div>
 
