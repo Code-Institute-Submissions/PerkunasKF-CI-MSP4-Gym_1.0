@@ -385,7 +385,7 @@ a {
     object-fit:  cover;
 }
 
-/* ----- */
+
 /* Message styles */
 
 .message-container {
@@ -403,4 +403,20 @@ a {
     height: 2px;
 }
 
-/* ----- */
+
+/* Succes toast styles */
+.bag-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.toast-btn {
+    border: 2px solid #000;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+.toast-btn:hover {
+    background-color: #fca311;
+}
