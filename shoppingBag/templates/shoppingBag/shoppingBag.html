@@ -53,7 +53,7 @@
                                 </td>
                                 <td class="p-3">{{ item.product.price }} €</td>
                                 <td class="p-3">
-                                    <form class="form update-form" action="" method="POST">
+                                    <form class="form update-form" action="{% url 'adjust_bag' item.item_id %}" method="POST">
                                         {% csrf_token %}
                                             <ul class="list-inline">
                                                 <li class="list-inline-item form-group">
@@ -68,11 +68,11 @@
                                             </ul>
                                     </form>
                                     <ul class="list-inline">
-                                        <li class="list-inline-item sb-img ">
-                                            <a class="update-link text-info" href=""><small>Update</small></a>
+                                        <li class="list-inline-item">
+                                            <a class="update-link text-info cursor-fix"><small>Update</small></a>
                                         </li>
-                                        <li class="list-inline-item sb-img">
-                                            <a class="remove-item text-danger" id="remove_{{ item.item_id }}" data-size="{{ item.size }}" href=""><small>Remove</small></a>
+                                        <li class="list-inline-item cursor-fix">
+                                            <a class="remove-item text-danger" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small>Remove</small></a>
                                         </li>
                                     </ul>
                                 </td>
@@ -80,6 +80,13 @@
                             </tr>
                         </tbody>
                     {% endfor %}
+                    <tr>
+                        <td colspan="5" class="pt-5 text-right">
+                            <h6><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h6>
+                            <h6>Delivery: ${{ delivery|floatformat:2 }}</h6>
+                            <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
+                        </td>
+                    </tr>
                 </table>
             {% else %}
                 <h5 class="text-general">Your Bag is Emty</h5>
@@ -102,14 +109,14 @@
         $('.remove-item').click(function(e) {
             var csrfToken = "{{ csrf_token }}";
             var itemId = $(this).attr('id').split('remove_')[1];
-            var size = $(this).data('size');
-            var url = '/bag/remove/${itemId}';
-            var data = {'crsfmiddlewaretoken': csrfToken, 'size': size}
+            var size = $(this).data('product_size');
+            var url = `/shoppingBag/remove/${itemId}/`;
+            var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': size};
 
             $.post(url, data)
                 .done(function() {
                     location.reload();
-                });
+            });
         })
     </script>
 
