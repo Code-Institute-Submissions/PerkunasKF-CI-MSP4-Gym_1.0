@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% load shoppingBag_tools %}
+
 {% block page_header %}
 {% endblock %}
 
@@ -76,7 +78,7 @@
                                         </li>
                                     </ul>
                                 </td>
-                                <td class="p-3">{{ item.product.price }} €</td>
+                                <td class="p-3">{{ item.product.price | calc_subtotal:item.quantity }} €</td>
                             </tr>
                         </tbody>
                     {% endfor %}
