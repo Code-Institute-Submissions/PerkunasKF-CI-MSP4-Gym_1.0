@@ -97,6 +97,8 @@ LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'gym.wsgi.application'
 
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
 
 AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`

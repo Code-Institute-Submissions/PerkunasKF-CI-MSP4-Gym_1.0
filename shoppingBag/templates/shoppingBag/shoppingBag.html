@@ -96,6 +96,13 @@
         </div>
     </div>
 
+    <!-- Scroll back to top button -->
+    <div id="scrol-top" class="row">
+        <div class="col text-center" onclick="topFunction()" title="Go to top">
+            <i class="fas fa-arrow-up"></i>
+        </div>
+    </div>
+
 {% endblock %}
 
 {% block postloadjs %}
@@ -120,6 +127,16 @@
                     location.reload();
             });
         })
+
+        // Function from www.w3schools.com to return to top of the page
+        //Get the button:
+        scrolTopBtn = document.getElementById("scrot-top");
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
     </script>
 
 {% endblock %}
