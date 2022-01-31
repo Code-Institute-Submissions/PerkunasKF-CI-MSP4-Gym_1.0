@@ -17,7 +17,20 @@
     
         <!-- Shopping bag items list -->
         <div class="container-fluid">
+            <div class="row">
+                <div class="col col-md-4 offset-md-8">
+                    <div class="details-bbtn text-center">
+                        <a href="{% url 'products' %}" class="text-orange">
+                            Keep Shopping
+                        </a>
+                    </div>
+                </div>
+            </div>
             {% if bag_items %}
+                {{ bag_items }}
+                <br>
+                <br>
+                {{ request.session.bag }}
                 <table class="table feuter-title-text">
                     <thead>
                         <tr>
@@ -33,7 +46,8 @@
                             <tr>
                                 <td class="p-3 w-25"><img class="sb-img" src="{{ item.product.image.url }}" alt="{{ item.product.name }}"></td>
                                 <td>
-                                    <p >{{ item.product.name }}</p>
+                                    <p>{{ item.product.name }}</p>
+                                    <p>Size: {% if item.product.has_size %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
                                     <p class="small">{{ item.product.sku }}</p>
                                 </td>
                                 <td class="p-3">{{ item.product.price }} €</td>
@@ -43,6 +57,8 @@
                         </tbody>
                     {% endfor %}
                 </table>
+            {% else %}
+                <h5 class="text-general">Your Bag is Emty</h5>
             {% endif %}      
         </div>
     </div>

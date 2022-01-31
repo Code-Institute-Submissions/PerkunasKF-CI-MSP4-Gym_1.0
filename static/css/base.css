@@ -330,29 +330,24 @@ a {
     margin-left: 12.5%;
     width: 75%;
     min-height: 50px;
-    border: 2px solid #fca311;
+    border: 2px solid #000;
     border-radius: 5px;
-    background-color: #000;
+    background-color: #fff;
     padding-top: 2%;
 }
 
 .details-bbtn a {
-    color: #c07d12;
+    color: #000;
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
     font-weight: 500;
     letter-spacing: 2px;
-    width: 100%;
     text-decoration: none;
+    margin: 0;
 }
 
 .details-bbtn:hover {
-    border: 2px solid #000;
-    background-color: #fca311
-}
-
-.details-bbtn a:hover {
-    color: #000;
+    background-color: #fca311;
 }
 
 .details-price {
