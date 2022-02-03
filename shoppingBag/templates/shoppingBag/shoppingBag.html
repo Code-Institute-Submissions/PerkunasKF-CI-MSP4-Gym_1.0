@@ -20,12 +20,10 @@
         <!-- Shopping bag items list -->
         <div class="container-fluid">
             <div class="row">
-                <div class="col col-md-4 offset-md-8">
-                    <div class="details-bbtn text-center">
-                        <a href="{% url 'products' %}" class="text-orange">
-                            Keep Shopping
-                        </a>
-                    </div>
+                <div class="col col-md-4 offset-md-8 text-center">
+                    <a class="btn return-bbtn" href="{% url 'products' %}">
+                        Keep Shopping
+                    </a>
                 </div>
             </div>
             <br>
@@ -46,7 +44,7 @@
                                 {% if item.product.image %}
                                     <td class="p-3 w-25"><img class="sb-img" src="{{ item.product.image.url }}" alt="{{ item.product.name }}"></td>
                                 {% else %}
-                                    <td class="p-3 w-25"><img class="sb-img" src="/media/noimage.png" alt="{{ item.product.name }}"></td>
+                                    <td class="p-3 w-25"><img class="sb-img" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}"></td>
                                 {% endif %}
                                 <td>
                                     <p>{{ item.product.name }}</p>
@@ -83,6 +81,14 @@
                         </tbody>
                     {% endfor %}
                     <tr>
+                        <td class="text-center align-middle">
+                            <a href="{% url 'checkout' %}" class="details-bbtn-checkout">
+                                <span class="icon">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                                <span class="text-uppercase">Secure Checkout</span>
+                            </a>
+                        </td>
                         <td colspan="5" class="pt-5 text-right">
                             <h6><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h6>
                             <h6>Delivery: ${{ delivery|floatformat:2 }}</h6>
