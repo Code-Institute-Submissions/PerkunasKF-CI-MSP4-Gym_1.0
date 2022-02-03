@@ -6,8 +6,6 @@ from django.conf import settings
 
 from products.models import Product
 
-# Create your models here.
-
 
 class Order(models.Model):
     order_number = models.CharField(max_length=32, null=False, editable=False)
@@ -33,11 +31,9 @@ class Order(models.Model):
 
     def update_total(self):
         """
-        Update grand total each time a line item is added,
-        accounting for delivery costs.
+        Update grand total each time a line item is added
         """
         self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum']
-        self.delivery_cost = self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
         self.grand_total = self.order_total + self.delivery_cost
         self.save()
 
@@ -63,8 +59,8 @@ class OrderLineItem(models.Model):
 
     def save(self, *args, **kwargs):
         """
-        Override the original save method to set the order number
-        if it hasn't been set already.
+        Override the original save method to set the lineitem total
+        and update the order total.
         """
         self.lineitem_total = self.product.price * self.quantity
         super().save(*args, **kwargs)
