@@ -8,6 +8,7 @@ from products.models import Product
 
 
 class Order(models.Model):
+    """Dummy"""
     order_number = models.CharField(max_length=32, null=False, editable=False)
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
@@ -31,9 +32,11 @@ class Order(models.Model):
 
     def update_total(self):
         """
-        Update grand total each time a line item is added
+        Update grand total each time a line item is added,
+        accounting for delivery costs.
         """
         self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum']
+        self.delivery_cost = self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
         self.grand_total = self.order_total + self.delivery_cost
         self.save()
 
