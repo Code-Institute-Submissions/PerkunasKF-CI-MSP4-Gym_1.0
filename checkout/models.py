@@ -63,6 +63,9 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
+    """
+    Dummy
+    """
     order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
     product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
     product_size = models.CharField(max_length=2, null=True, blank=True) # XS, S, M, L, XL
