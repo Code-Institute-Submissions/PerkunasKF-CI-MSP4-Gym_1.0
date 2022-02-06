@@ -83,6 +83,19 @@
                         </div>
                     </div>
                     <!-- Product details -->
+
+                    <!-- Supper user management toosls -->
+                    {% if request.user.is_superuser %}
+                    <div class="row">
+                        <div class="col text-right">
+                            <small class="m1-3">
+                                <a href="{% url 'edit_product' product.id %}">Edit</a>
+                                <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                            </small>    
+                        </div>
+                    </div>
+                    {% endif %}
+
                     {% if product.category %}
                         <div class="row">
                             <div class="col text-right">
@@ -104,11 +117,9 @@
                 <br>
                 <div class="row">
                     <div class="col col-md-4 offset-md-8">
-                        <div class="details-bbtn text-center">
-                            <a href="{% url 'products' %}" class="text-orange">
-                                <span>Keep Shopping</span>
-                            </a>
-                        </div>
+                        <a href="{% url 'products' %}" class="btn transparent-bbtn">
+                            <span>Keep Shopping</span>
+                        </a>
                     </div>
                 </div>
                 <br>

@@ -103,10 +103,20 @@
                         </div>
                         <!-- Card/Product name, price, category container -->
                         <div class="card-body">
+                            <!-- Supper user management toosls -->
+                            {% if request.user.is_superuser %}
+                            <div class="row">
+                                <div class="col text-right">
+                                    <small class="m1-3">
+                                        <a href="{% url 'edit_product' product.id %}">Edid</a>
+                                        <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                    </small>    
+                                </div>
+                            </div>
+                            {% endif %}
                             {% if product.category %}
                                 <div class="row">
                                     <div class="col text-right">
-                                        <br>
                                         <a class="text-small-black" href="{% url 'products' %}?category={{ product.category.name }}"><i
                                                 class="fas fa-tag"></i>
                                             {{ product.category.friendly_name }}</a>
