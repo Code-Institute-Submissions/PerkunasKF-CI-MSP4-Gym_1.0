@@ -127,6 +127,17 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.fform-transparent {
+    border: 1px solid #000;
+    border-radius: 5px;
+
+    font-family: 'Roboto', sans-serif;
+}
+
+.fform-transparent:hover {
+    background-color: #fca311;
+}
+
 /* --- --- */
 
 /*-------------------------------------------------------------------------------------------------------------------------*/
@@ -574,3 +585,32 @@ a {
 }
 
 /* ----- */
+
+
+/* Product Form styles */
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.custom-checbox .cutom-control-label::before {
+    border-color: #dc3545;
+}
+
+.custom-checbox .custom-control-input:checked~.custom-cntrol-label::before {
+    background-color: #dc3535;
+    border-color: #dc3545;
+}
+
+/* --- --- */
