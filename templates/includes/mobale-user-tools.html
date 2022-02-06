@@ -6,7 +6,7 @@
                     {% if request.user.is_superuser %}
                     <div class="row admin-tools w-100">
                         <div class="col text-center">
-                            <a href="" class="navigation-link-text-white">Management</a>
+                            <a href="{% url 'add_product' %}" class="navigation-link-text-white">Product Management</a>
                         </div>
                     </div>
                     {% endif %}
