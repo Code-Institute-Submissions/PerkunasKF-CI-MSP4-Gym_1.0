@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block page_header %}
+{% endblock %}
+
+{% block content %}
+
+    <div class="container-fluis card-container">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <hr>
+                <h2 class="mb-4 ">Product Managment</h2>
+                <h5 class="text-muted">Edit a Product</h5>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row w-100">
+            <div class="col-12 col-md-6">
+                <form action="{% url 'edit_product' product.id %}" method="POST" class="form mb-2" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    <div class="text-right">
+                        <a href="{% url 'products' %}" class="btn transparent-bbtn">Cancel</a>
+                        <button class="btn colored-bbtn" type="submit">Update Product</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
