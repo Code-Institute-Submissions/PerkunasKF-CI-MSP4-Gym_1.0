@@ -2,8 +2,8 @@ from django import forms
 from .models import Product, Category
 
 
-class ProductForm(form.ModelForm):
-    """Dummy tag"""
+class ProductForm(forms.ModelForm):
+    """Dummy Tag"""
 
     class Meta:
         """Dummy Tag"""
@@ -11,10 +11,10 @@ class ProductForm(form.ModelForm):
         fields = '__all__'
 
     def __init__(self, *args, **kwargs):
-        supper().__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         categories = Category.objects.all()
-        friendly_name = [(c.id, c.get_friendly_name()) for c in categories]
+        friendly_names = [(c.id, c.get_friendly_name()) for c in categories]
 
         self.fields['category'].choices = friendly_names
         for field_name, field in self.fields.items():
-            field.widget.attrs['class'] = 'transparent-bbtn'
+            field.widget.attrs['class'] = 'fform'

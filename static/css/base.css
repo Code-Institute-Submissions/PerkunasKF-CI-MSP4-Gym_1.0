@@ -110,9 +110,6 @@ body {
     font-size: 20px;
     font-weight: 500;
     letter-spacing: 2px;
-
-    /* standard bootstrap btn transitions */
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
 .colored-bbtn:hover:hover {	
@@ -120,6 +117,17 @@ body {
     background-color: #222;
     border-color: #fca311;
 }
+
+/* General Form Style */
+
+.fform {
+    border: 1px solid #000;
+    border-radius: 5px;
+
+    font-family: 'Roboto', sans-serif;
+}
+
+/* --- --- */
 
 /*-------------------------------------------------------------------------------------------------------------------------*/
 /*                                                 Navigation Bar Styles                                                   */
@@ -246,6 +254,8 @@ body {
     padding: 15px 5px 15px 5px;
     border-radius: 5px;
     width: 90%;
+
+    padding: 5px 10px 5px 15px;
 }
 
 .card-container a {
