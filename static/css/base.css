@@ -150,6 +150,7 @@ body {
     z-index: 3000;
 }
 
+/* --- Navigation bar text --- */
 .navigation-link-text {
     color: #fca311;
     font-family: 'Roboto', sans-serif;
@@ -166,6 +167,7 @@ body {
     letter-spacing: 2px;
 }
 
+
 .navigation-link-text-black {
     color: #000;
     font-family: 'Roboto', sans-serif;
@@ -181,6 +183,7 @@ body {
 .navigation-link-text-white:hover {
     color: rgb(123, 216, 86);
 }
+/* --- --- --- */
 
 #header-gym-logo {
     height: 65px;
@@ -219,23 +222,6 @@ body {
     margin-top: 20px;
 }
 
-@media (min-width: 768px) and (max-width: 1075.98px) {
-    .navigation-link-text {
-        font-size: 20px;
-        letter-spacing: 0;
-    }
-    
-    #navigation-links li {
-        margin: 0 10px 0;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1119.98px) {
-    #header-login-button {
-        padding: 3px 15px 3px;
-    }
-}
-
 .search-bar {
     min-height: 50px;
 }
@@ -252,6 +238,12 @@ body {
 .search-bar .btn {
     padding-top: 2px;
     padding-bottom: 0;
+}
+
+@media (min-width: 768px) and (max-width: 1119.98px) {
+    #header-login-button {
+        padding: 3px 15px 3px;
+    }
 }
 
 /*-------------------------------------------------------------------------------------------------------------------------*/
@@ -549,7 +541,7 @@ a {
 	/* btn */
 	display: inline-block;
     font-weight: 400;
-    color: #fff;
+    color: #000;
     text-align: center;
     vertical-align: middle;
     -webkit-user-select: none;
@@ -580,10 +572,6 @@ a {
     border-color: #fca311;
 }
 
-.allauth-form-inner-content a {
-	color: #17a2b8; /* text-info */
-}
-
 /* ----- */
 
 
@@ -611,6 +599,60 @@ a {
 .custom-checbox .custom-control-input:checked~.custom-cntrol-label::before {
     background-color: #dc3535;
     border-color: #dc3545;
+}
+
+/* --- --- */
+
+
+/* Smaler screen styler */
+
+@media (min-width: 768px) and (max-width: 1075.98px) {
+    /* Navigation bar styles */
+    .navigation-link-text,
+    .navigation-link-text-white {
+        font-size: 20px;
+        letter-spacing: 0;
+    }
+    
+    #navigation-links li {
+        margin: 0 10px 0;
+    }
+    /* --- --- */
+}
+
+@media (max-width: 355px) {
+    /* Navigation bar styles */
+    .navigation-link-text {
+        font-size: 10px;
+        letter-spacing: 0;
+    }
+    
+    #navigation-links li {
+        margin: 0 10px 0;
+    }
+    /* --- --- */
+
+    /* Buttons */
+    .transparent-bbtn {
+        min-height:35px;
+        font-size: 15px;
+        padding: 5px;
+    }
+
+    .colored-bbtn {
+        min-height: 35px;
+        font-size: 15px;
+        padding: 5px;
+    }
+    /* --- --- */
+
+    /* Allauth buttons */
+    .allauth-form-inner-content button {
+        padding: 5px;
+        min-height: 35px;
+        font-size: 15px;
+    }
+    /* --- --- */
 }
 
 /* --- --- */

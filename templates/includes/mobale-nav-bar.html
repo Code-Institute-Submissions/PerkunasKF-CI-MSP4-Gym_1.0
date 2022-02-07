@@ -1,10 +1,11 @@
 <!-- Burger Menu [Code coppyd from https://getbootstrap.com/]-->
-<div class="col d-flex d-md-none justify-content-end align-items-center">
+<div class="col-8 col-md d-flex d-md-none justify-content-end align-items-center">
     
     <!-- Shoping cart total -->
         <a class="text-center {% if grand_total %} navigation-link-text-white {% else %} navigation-link-text {% endif %}"
             href="{% url 'view_bag' %}">
             <i class="fas fa-shopping-bag fa-lg"></i>
+            <br>
             <span class="my-0">
                 {% if grand_total %}
                     ${{ grand_total|floatformat:2 }}
@@ -16,7 +17,7 @@
 
     <div class="btn-group dropleft">
         <!-- "Toggle" icon -->
-        <button id="burger-menu-icon" type="button" class="btn btn-secondary" data-toggle="dropdown"
+        <button id="burger-menu-icon" type="button" class="btn btn-secondary navigation-link-text" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-bars"></i>
         </button>
@@ -26,6 +27,23 @@
             <a class="dropdown-item burger-menu-text" href="{% url 'products' %}"><i class="far fa-money-bill-alt"></i><span>Products</span></a>
             <a class="dropdown-item burger-menu-text" href="#"><i class="fas fa-phone"></i><span>Contacts</span></a>
             <!-- Register/Login and my account buttons -->
+            {% if request.user.is_authenticated %}
+                {% if request.user.is_superuser %}
+                    <!-- Admin Tools -->
+                    <a href="{% url 'add_product' %}" class="dropdown-item burger-menu-text">Product Management</a>
+                    <!-- Login user tools -->
+                    <a href="{% url 'profile' %}" class="dropdown-item burger-menu-text">My Profile</a>
+                    <a href="{% url 'account_logout' %}" class="dropdown-item burger-menu-text">Logout</a>
+                {% else %}
+                    <!-- Login user tools -->
+                    <a href="{% url 'profile' %}" class="dropdown-item burger-menu-text">My Profile</a>
+                    <a href="{% url 'account_logout' %}" class="dropdown-item burger-menu-text">Logout</a>
+                {% endif %}
+            {% else %}
+                <!-- New User tools -->
+                <a href="{% url 'account_signup' %}" class="dropdown-item burger-menu-text">Register</a>
+                <a href="{% url 'account_login' %}" class="dropdown-item burger-menu-text">Login</a>
+            {% endif %}
         </div>
     </div>
 </div>

@@ -55,6 +55,7 @@
         <header id="main-navigation-bar" class="container-fluid sticky-top">
             <div class="container-fluid">
                 <div class="row">
+
                     <!-- Logo -->
                     <div class="col-4 col-md-2 d-flex justify-content-beggining align-items-center">
                         <!-- Image for logo made on https://www.freelogodesign.org/ -->
@@ -62,8 +63,9 @@
                         <a href="{% url 'home' %}"><img id="header-gym-logo" src="{{ MEDIA_URL }}muscle-gym-logo-full-yelow.png"
                                 alt="Muscle gym logo"></a>
                     </div>
+
                     <!-- Navigation links -->
-                    <div id="navigation-links" class="col d-none d-md-flex justify-content-end align-items-center">
+                    <div id="navigation-links" class="col col-md-6 d-none d-md-flex justify-content-end align-items-center">
                         <ul class="list-inline text-center">
                             <li class="list-inline-item"><a class="navigation-link-text" href="{% url 'home' %}">Home</a></li>
                             <li class="list-inline-item"><a class="navigation-link-text" href="{% url 'products' %}">Products</a>
@@ -72,6 +74,7 @@
                             
                         </ul>
                     </div>
+
                     <!-- My account button -->
                     <div class="col-2 d-none d-md-flex justify-content-end align-items-center my-account">
                             <!-- Drop down menu button for user tools -->
@@ -82,6 +85,7 @@
                                     <p>My Account</p>
                                 </div>
                             </a>
+
                             <!-- User tools -->
                             <div class="dropdown-menu burger-menu-items-box" aria-labelledby="user-options">
                                 {% if request.user.is_authenticated %}
@@ -103,6 +107,7 @@
                                 {% endif %}
                             </div>
                     </div>
+
                     <!-- Shopping cart button -->
                     <div class="col-2 d-none d-md-flex justify-content-center align-items-center">
                         <a class="{% if grand_total %} navigation-link-text-white {% else %} navigation-link-text {% endif %}" href="{% url 'view_bag' %}">
@@ -123,8 +128,6 @@
                     
                 </div>
             </div>
-
-            {% include 'includes/mobale-user-tools.html' %}
 
             <!-- Search bar -->
             <div class="row search-bar">

@@ -53,3 +53,10 @@
             border-top: 2px solid #fff;
             border-bottom: 2px solid #fff;
         }
+        
+        @media (max-width: 355px) {
+            .burger-menu-text {
+                font-size: 15px;
+                letter-spacing: 0;
+            }
+        }
