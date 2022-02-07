@@ -507,7 +507,8 @@ a {
     background-color: #000;
     color: #fca311;
 }
-/* ----- */
+
+/* --- --- */
 
 
 /* Allauth form formatting */
@@ -616,6 +617,24 @@ a {
     
     #navigation-links li {
         margin: 0 10px 0;
+    }
+    /* --- --- */
+
+    /* Shopping bag image */
+    .sb-img {
+        height: 150px;
+        max-width: auto;
+        object-fit:  cover;
+    }
+    /* --- --- */
+}
+
+@media (max-width: 768px) {
+    /* Shopping bag image */
+    .sb-img {
+        height: 150px;
+        max-width: auto;
+        object-fit:  cover;
     }
     /* --- --- */
 }
