@@ -653,6 +653,12 @@ a {
         font-size: 15px;
     }
     /* --- --- */
+
+    /* Product details */
+    #id_product_size {
+        margin-bottom: 10px;
+    }
+    /* --- --- */
 }
 
 /* --- --- */
