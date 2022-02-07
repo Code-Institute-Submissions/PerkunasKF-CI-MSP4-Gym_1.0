@@ -632,7 +632,7 @@ a {
 @media (max-width: 768px) {
     /* Shopping bag image */
     .sb-img {
-        height: 150px;
+        height: 100px;
         max-width: auto;
         object-fit:  cover;
     }
