@@ -3,7 +3,9 @@ from .models import Product, Category
 
 # Register your models here.
 
+
 class ProductAdmin(admin.ModelAdmin):
+    """ Dummy Tag """
     list_display = (
         'sku',
         'name',
@@ -16,6 +18,7 @@ class ProductAdmin(admin.ModelAdmin):
 
 
 class CategoryAdmin(admin.ModelAdmin):
+    """ Dummy Tag """
     list_display = (
         'friendly_name',
         'name',

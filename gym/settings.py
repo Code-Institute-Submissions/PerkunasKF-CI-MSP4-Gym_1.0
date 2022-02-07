@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-from storages.backends.s3boto3 import S3Boto3Storage
 import os
 import dj_database_url
 
