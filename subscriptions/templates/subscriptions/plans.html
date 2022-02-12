@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'subscriptions/css/plans.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <!-- Subscription container -->
+    <div class="container-fluid">
+
+        <!-- Subbscription cards/containers -->
+        <div class="row card-container">
+                
+            {% for plan in plans %}
+                <div class="col-12 col-xl-4 col-md-4 col-sm-6">
+                    <div class="card product-card">
+                        <!-- Card/Subscription Plan image Container -->
+                        <div class="card-img-container">
+                            {% if plan.image %}
+                                <a href="#">
+                                    <img src="{{ plan.image.url }}" class="card-img-top" alt="{{ plan.name }}">
+                                </a>
+                            {% else %}
+                                <a href="#">
+                                    <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top" alt="{{ plan.name }}">
+                                </a>
+                            {% endif %}
+                        </div>
+                        <!-- Card/Product name, price, category container -->
+                        <div class="card-body {% if plan.name == 'Bronze Plan' %}bronze-background
+                            {% elif plan.name == 'Silver Plan' %}silver-background
+                            {% elif plan.name == 'Gold Plan' %}gold-background
+                            {% endif %}">
+                            <!-- Supper user management toosls -->
+                            {% if request.user.is_superuser %}
+                            <div class="row">
+                                <div class="col text-right">
+                                    <small class="m1-3">
+                                        <a href="#">Edid</a>
+                                        |
+                                        <a class="text-danger" href="#">Delete</a>
+                                    </small>    
+                                </div>
+                            </div>
+                            {% endif %}
+                            <div class="row">
+                                <div class="col">
+                                    <h5 class="card-title feuter-title-text">{{ plan.name }}</h5>
+                                    <p class="card-text text-right text-small-black">
+                                        {{ plan.price }} €/month
+                                    </p>
+
+                                    <br>
+                                    <ul class="list text-general plan-details">
+                                        {% if plan.line1 != "" %}
+                                            <li class="list-item">{{ plan.line1 }}</li>
+                                        {% endif %}
+                                        {% if plan.line2 != "" %}
+                                            <li class="list-item">{{ plan.line2 }}</li>
+                                        {% endif %}
+                                        {% if plan.line3 != "" %}
+                                            <li class="list-item">{{ plan.line3 }}</li>
+                                        {% endif %}
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Subscription plan details button -->
+                            <br>
+                            <div class="row">
+                                <div class="col col-md-4 offset-md-7">
+                                    <a href="#" class="btn transparent-bbtn">
+                                        <span>Details</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+        </div>
+        
+    </div>
+
+{% endblock %}

@@ -268,7 +268,7 @@ body {
 .card-container .card {
     border: 3px solid #000;
     border-radius: 5px;
-    height: 450px;
+    min-height: 450px;
     margin-bottom: 15px;
 }
 
@@ -297,7 +297,7 @@ body {
     }
 
     .card-container .card {
-        height: 550px;
+        min-height: 550px;
     }
 }
 
@@ -603,6 +603,30 @@ a {
 }
 
 /* --- --- */
+
+
+/*-------------------------------------------------------------------------------------------------------------------------*/
+/*                                                Subscriptions plans styles                                               */
+/*-------------------------------------------------------------------------------------------------------------------------*/
+
+.bronze-background {
+    background-color: #b08d57;
+}
+
+.silver-background {
+    background-color: #c2bdb0;
+}
+
+.gold-background {
+    background-color: #e7bd42;
+}
+
+.plan-details {
+    min-height: 125px;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------*/
+
 
 
 /* Smaler screen styler */
