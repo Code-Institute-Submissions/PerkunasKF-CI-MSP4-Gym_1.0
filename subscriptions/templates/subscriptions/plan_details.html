@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <!-- Bootstrap code snipet for horizontal card -->
+    <div class="card mb-3" style="max-width: 90%; margin-left: 5%;">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                {% if plan.image %}
+                    <a href="{{ plan.image_url }}" target=_blank>
+                        <img src="{{ plan.image.url }}" class="card-img-top" alt="{{ plan.name }}">
+                    </a>
+                {% else %}
+                    <a href="{{ MEDIA_URL }}noimage.png">
+                        <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top" alt="{{ plan.name }}">
+                    </a>
+                {% endif %}
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+
+                    <!-- Subscription plan cDetails-->
+                    <div class="card-footer">
+                        <br>
+                        <form class="form" action="" method="POST" class="row">
+                            {% csrf_token %}
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <!-- Subscripction plan name -->
+                                    <h5 class="card-title dproduct-title-text">{{ plan.name }}</h5>
+                                </li>
+                                <li class="list-inline-item float-right">
+                                    <input type="submit" class="btn colored-bbtn" value="">
+                                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                </li>
+                            </ul>
+                        </form>
+                        <br>
+
+                        <!-- Product price -->
+                        <div class="row details-price">
+                            <div class="col">
+                                <p class="text-right detail-price">
+                                    {{ plan.price }} €/month
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product details -->
+
+                    <!-- Supper user management toosls -->
+                    {% if request.user.is_superuser %}
+                    <div class="row">
+                        <div class="col text-right">
+                            <small class="m1-3">
+                                <a href="#">Edit</a>
+                                |
+                                <a class="text-danger" href="#">Delete</a>
+                            </small>    
+                        </div>
+                    </div>
+                    {% endif %}
+                    <br>
+
+                    <!-- Subscription plan description -->
+                    <ul class="list text-general plan-details">
+                        {% if plan.line1 != "" %}
+                            <li class="list-item">{{ plan.line1 }}</li>
+                        {% endif %}
+                        {% if plan.line2 != "" %}
+                            <li class="list-item">{{ plan.line2 }}</li>
+                        {% endif %}
+                        {% if plan.line3 != "" %}
+                            <li class="list-item">{{ plan.line3 }}</li>
+                        {% endif %}
+                    </ul>
+                </div>
+
+                <!-- Keep shopping button -->
+                <br>
+                <div class="row">
+                    <div class="col col-md-4 offset-md-8">
+                        <a href="{% url 'plans' %}" class="btn transparent-bbtn">
+                            <span>Subscription plans</span>
+                        </a>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

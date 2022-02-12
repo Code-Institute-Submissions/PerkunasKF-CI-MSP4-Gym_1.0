@@ -19,7 +19,7 @@
                         <!-- Card/Subscription Plan image Container -->
                         <div class="card-img-container">
                             {% if plan.image %}
-                                <a href="#">
+                                <a href="">
                                     <img src="{{ plan.image.url }}" class="card-img-top" alt="{{ plan.name }}">
                                 </a>
                             {% else %}
@@ -71,7 +71,7 @@
                             <br>
                             <div class="row">
                                 <div class="col col-md-4 offset-md-7">
-                                    <a href="#" class="btn transparent-bbtn">
+                                    <a href="{% url 'plan_details' plan.id %}" class="btn transparent-bbtn">
                                         <span>Details</span>
                                     </a>
                                 </div>

@@ -7,6 +7,7 @@ from .models import Plan
 class PlanAdmin(admin.ModelAdmin):
     """ Dummy Tag """
     list_display = (
+        'id',
         'name',
         'line1',
         'line2',
