@@ -1,7 +1,6 @@
 [
   {
     "pk": 9999997,
-    "subscription": true,
     "model": "subscriptions.plan",
     "fields": {
       "name": "Bronze Plan",
@@ -10,12 +9,12 @@
       "line3": "",
       "price": 10.00,
       "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641993337/the%20gym/pexels-victor-freitas-841130_zw38mm.jpg",
-      "image": "pexels-victor-freitas-841130.jpg"
+      "image": "pexels-victor-freitas-841130.jpg",
+      "unique": true
       }
   },
   {
       "pk": 9999998,
-      "subscription": true,
       "model": "subscriptions.plan",
       "fields": {
         "name": "Silver Plan",
@@ -24,7 +23,8 @@
         "line3": "",
         "price": 20.00,
         "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641993337/the%20gym/pexels-victor-freitas-841130_zw38mm.jpg",
-        "image": "pexels-victor-freitas-841130.jpg"
+        "image": "pexels-victor-freitas-841130.jpg",
+        "unique": true
         }
     },
     {
@@ -38,7 +38,8 @@
         "line3": "",
         "price": 25.00,
         "image_url": "https://res.cloudinary.com/silorak/image/upload/v1641993337/the%20gym/pexels-victor-freitas-841130_zw38mm.jpg",
-        "image": "pexels-victor-freitas-841130.jpg"
+        "image": "pexels-victor-freitas-841130.jpg",
+        "unique": true
         }
     }
 ]

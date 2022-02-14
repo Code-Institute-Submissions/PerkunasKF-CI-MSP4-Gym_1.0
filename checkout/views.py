@@ -39,6 +39,7 @@ def checkout(request):
     """
     Dummy
     """
+
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -110,7 +111,7 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-         # Attempt to prefill the form with any info the user maintains in their profile
+        # Attempt to prefill the form with any info the user maintains in their profile
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
