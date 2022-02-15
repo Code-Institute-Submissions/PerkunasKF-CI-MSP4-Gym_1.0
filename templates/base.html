@@ -92,11 +92,10 @@
                                     {% if request.user.is_superuser %}
                                         <!-- Admin Tools -->
                                         <a href="{% url 'add_product' %}" class="dropdown-item burger-menu-text">Product Management</a>
-                                        {% else %}
-                                        <!-- Login user tools -->
-                                        <a href="{% url 'profile' %}" class="dropdown-item burger-menu-text">My Profile</a>
-                                        <a href="{% url 'account_logout' %}" class="dropdown-item burger-menu-text">Logout</a>
                                     {% endif %}
+                                    <!-- Login user tools -->
+                                    <a href="{% url 'profile' %}" class="dropdown-item burger-menu-text">My Profile</a>
+                                    <a href="{% url 'account_logout' %}" class="dropdown-item burger-menu-text">Logout</a>
                                 {% else %}
                                     <!-- New User tools -->
                                     <a href="{% url 'account_signup' %}" class="dropdown-item burger-menu-text">Register</a>
