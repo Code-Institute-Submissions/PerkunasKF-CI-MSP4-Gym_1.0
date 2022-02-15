@@ -9,25 +9,25 @@
         <!-- Subbscription cards/containers -->
         <div class="row card-container">
                 
-            {% for plan in plans %}
+            {% for item in items %}
                 <div class="col-12 col-xl-4 col-md-4 col-sm-6">
                     <div class="card product-card">
                         <!-- Card/Subscription Plan image Container -->
                         <div class="card-img-container">
-                            {% if plan.image %}
+                            {% if item.image %}
                                 <a href="">
-                                    <img src="{{ plan.image.url }}" class="card-img-top" alt="{{ plan.name }}">
+                                    <img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.name }}">
                                 </a>
                             {% else %}
                                 <a href="#">
-                                    <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top" alt="{{ plan.name }}">
+                                    <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top" alt="{{ item.name }}">
                                 </a>
                             {% endif %}
                         </div>
                         <!-- Card/Product name, price, category container -->
-                        <div class="card-body {% if plan.name == 'Bronze Plan' %}bronze-background
-                            {% elif plan.name == 'Silver Plan' %}silver-background
-                            {% elif plan.name == 'Gold Plan' %}gold-background
+                        <div class="card-body {% if item.name == 'Bronze Plan' %}bronze-background
+                            {% elif item.name == 'Silver Plan' %}silver-background
+                            {% elif item.name == 'Gold Plan' %}gold-background
                             {% endif %}">
                             <!-- Supper user management toosls -->
                             {% if request.user.is_superuser %}
@@ -43,21 +43,21 @@
                             {% endif %}
                             <div class="row">
                                 <div class="col">
-                                    <h5 class="card-title feuter-title-text">{{ plan.name }}</h5>
+                                    <h5 class="card-title feuter-title-text">{{ item.name }}</h5>
                                     <p class="card-text text-right text-small-black">
-                                        {{ plan.price }} €/month
+                                        {{ item.price }} €/month
                                     </p>
 
                                     <br>
                                     <ul class="list text-general plan-details">
-                                        {% if plan.line1 != "" %}
-                                            <li class="list-item">{{ plan.line1 }}</li>
+                                        {% if item.line1 != "" %}
+                                            <li class="list-item">{{ item.line1 }}</li>
                                         {% endif %}
-                                        {% if plan.line2 != "" %}
-                                            <li class="list-item">{{ plan.line2 }}</li>
+                                        {% if item.line2 != "" %}
+                                            <li class="list-item">{{ item.line2 }}</li>
                                         {% endif %}
-                                        {% if plan.line3 != "" %}
-                                            <li class="list-item">{{ plan.line3 }}</li>
+                                        {% if item.line3 != "" %}
+                                            <li class="list-item">{{ item.line3 }}</li>
                                         {% endif %}
                                     </ul>
                                 </div>
@@ -67,7 +67,7 @@
                             <br>
                             <div class="row">
                                 <div class="col col-md-4 offset-md-7">
-                                    <a href="{% url 'plan_details' plan.id %}" class="btn transparent-bbtn">
+                                    <a href="{% url 'plan_details' item.id %}" class="btn transparent-bbtn">
                                         <span>Details</span>
                                     </a>
                                 </div>

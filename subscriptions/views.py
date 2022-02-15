@@ -7,22 +7,22 @@ from .models import Plan
 def plans(request):
     """ A view to show subscriptions plans """
 
-    plans = Plan.objects.all()
+    items = Plan.objects.all()
 
     context = {
-        'plans': plans,
+        'items': items,
     }
     
     return render(request, 'subscriptions/plans.html', context)
 
 
-def plan_details(request, plan_id):
+def plan_details(request, item_id):
     """ A view to show specific subscription plan """
 
-    plan = get_object_or_404(Plan, pk=plan_id)
+    item = get_object_or_404(Plan, pk=item_id)
 
     context = {
-        'plan': plan,
+        'item': item,
     }
     
     return render(request, 'subscriptions/plan_details.html', context)

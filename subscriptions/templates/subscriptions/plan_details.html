@@ -7,13 +7,13 @@
     <div class="card mb-3" style="max-width: 90%; margin-left: 5%;">
         <div class="row no-gutters">
             <div class="col-md-4">
-                {% if plan.image %}
-                    <a href="{{ plan.image_url }}" target=_blank>
-                        <img src="{{ plan.image.url }}" class="card-img-top" alt="{{ plan.name }}">
+                {% if item.image %}
+                    <a href="{{ item.image_url }}" target=_blank>
+                        <img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.name }}">
                     </a>
                 {% else %}
                     <a href="{{ MEDIA_URL }}noimage.png">
-                        <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top" alt="{{ plan.name }}">
+                        <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top" alt="{{ item.name }}">
                     </a>
                 {% endif %}
             </div>
@@ -23,16 +23,14 @@
                     <!-- Subscription plan cDetails-->
                     <div class="card-footer">
                         <br>
-                        <form class="form" action="{% url 'add_to_bag' plan.id %}" method="POST" class="row">
+                        <form class="form" action="{% url 'unique_buy' item.id %}" method="POST" class="row">
                             {% csrf_token %}
                             <ul class="list-inline">
                                 <li class="list-inline-item">
                                     <!-- Subscripction plan name -->
-                                    <h5 class="card-title dproduct-title-text">{{ plan.name }}</h5>
+                                    <h5 class="card-title dproduct-title-text">{{ item.name }}</h5>
                                 </li>
                                 <li class="list-inline-item float-right">
-                                    <input class="form-control text-center" type="number" name="quantity" value="1" min="1" max="99"
-                                                                data-item_id="{{ plan.id }}" data-unique="{{ plan.unique }}" data-item="plan" id="id_qty_{{ plan.id }}">
                                     <input type="submit" class="btn colored-bbtn" value="Subscribe">
                                 </li>
                             </ul>
@@ -43,7 +41,7 @@
                         <div class="row details-price">
                             <div class="col">
                                 <p class="text-right detail-price">
-                                    {{ plan.price }} €/month
+                                    {{ item.price }} €/month
                                 </p>
                             </div>
                         </div>
@@ -66,14 +64,14 @@
 
                     <!-- Subscription plan description -->
                     <ul class="list text-general plan-details">
-                        {% if plan.line1 != "" %}
-                            <li class="list-item">{{ plan.line1 }}</li>
+                        {% if item.line1 != "" %}
+                            <li class="list-item">{{ item.line1 }}</li>
                         {% endif %}
-                        {% if plan.line2 != "" %}
-                            <li class="list-item">{{ plan.line2 }}</li>
+                        {% if item.line2 != "" %}
+                            <li class="list-item">{{ item.line2 }}</li>
                         {% endif %}
-                        {% if plan.line3 != "" %}
-                            <li class="list-item">{{ plan.line3 }}</li>
+                        {% if item.line3 != "" %}
+                            <li class="list-item">{{ item.line3 }}</li>
                         {% endif %}
                     </ul>
                 </div>

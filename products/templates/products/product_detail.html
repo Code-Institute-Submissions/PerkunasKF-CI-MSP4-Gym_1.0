@@ -30,7 +30,7 @@
                         <div class="row">
                             <div class="col">
                                 <form class="form" action="{% if product.unique %}
-                                                                {% url 'checkout_unique' product.id %}
+                                                                {% url 'unique_buy' product.id %}
                                                             {% else %}
                                                                 {% url 'add_to_bag' product.id %}
                                                             {% endif %}"
