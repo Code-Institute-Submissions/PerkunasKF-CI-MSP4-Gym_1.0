@@ -3,6 +3,7 @@ import uuid
 from django.db import models
 
 from profiles.models import UserProfile
+from products.models import Product
 
 
 class OrderUnique(models.Model):
@@ -32,3 +33,14 @@ class OrderUnique(models.Model):
 
     def __str__(self):
         return self.order_number
+
+
+class OrderLineItemUnique(models.Model):
+    """ Model for unique order  """
+
+    order = models.ForeignKey(OrderUnique, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
+    product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
+    lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
+
+    def __str__(self):
+        return f'Order {self.order.order_number}'
