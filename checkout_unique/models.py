@@ -8,6 +8,7 @@ from products.models import Product
 
 class OrderUnique(models.Model):
     """ Model for unique items checkouts """
+
     order_number = models.CharField(max_length=32, null=False, editable=False)
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
                                      null=True, blank=True,
@@ -27,6 +28,7 @@ class OrderUnique(models.Model):
     def save(self, *args, **kwargs):
         """ Override the original save method to set the order number
         if it hasn't been set already. """
+        
         if not self.order_number:
             self.order_number = self._generate_order_number()
         super().save(*args, **kwargs)
