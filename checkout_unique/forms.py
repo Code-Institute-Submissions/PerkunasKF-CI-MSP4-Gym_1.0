@@ -2,14 +2,14 @@ from django import forms
 from .models import OrderUnique
 
 
-class OrderForm(forms.ModelForm):
+class OrderFormUnique(forms.ModelForm):
     """ Dummy Tag """
 
     class Meta:
         """ Dummy Tag """
 
         model = OrderUnique
-        fields = ('user_profile', 'email',)
+        fields = ('username', 'email',)
 
     def __init__(self, *args, **kwargs):
         """
@@ -18,17 +18,14 @@ class OrderForm(forms.ModelForm):
         """
 
         super().__init__(*args, **kwargs)
-        placeholders = {
-            'user_profile': 'User Profile',
-            'email': 'Email Address',
-        }
+        # placeholders = {
+        #     'username': 'User Profile',
+        #     'email': 'Email Address',
+        # }
 
-        self.fields['user_profile'].widget.attrs['autofocus'] = True
+        # self.fields['username'].widget.attrs['autofocus'] = True
         for field in self.fields:
-            if self.fields[field].required:
-                placeholder = f'{placeholders[field]} *'
-            else:
-                placeholder = placeholders[field]
-            self.fields[field].widget.attrs['placeholder'] = placeholder
+            # self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'fform'
+            self.fields[field].widget.attrs['readonly'] = True
             self.fields[field].label = False

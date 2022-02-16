@@ -29,7 +29,11 @@
                     <div class="card-footer">
                         <div class="row">
                             <div class="col">
-                                <form class="form" action="{% url 'add_to_bag' product.id %}"
+                                <form class="form" action=" {% if product.unique %}
+                                                                {% url 'checkout_unique' product.id %}
+                                                            {% else %}
+                                                                {% url 'add_to_bag' product.id %}
+                                                            {% endif %}"
                                                     method="POST" class="row">
                                     {% csrf_token %}
                                     <!-- Quantaty input -->
@@ -37,31 +41,38 @@
                                         {% with product.has_sizes as s %}
                                             <div class="col">
                                                 <ul class="list-inline">
-                                                    {% if s %}
-                                                        <li class="col-sm-6 col-md-4 col-ld-2 list-inline-item"><p><strong>Size:</strong></p></li>
+                                                    {% if not product.unique %}
+                                                        {% if s %}
+                                                            <li class="col-sm-6 col-md-4 col-ld-2 list-inline-item"><p><strong>Size:</strong></p></li>
+                                                            <li class="col-sm-6 col-md-4 col-ld-2 list-inline-item">
+                                                                <select name="product_size" id="id_product_size" class="form-control">
+                                                                    <option value="xs">SX</option>
+                                                                    <option value="s">S</option>
+                                                                    <option value="m" selected>M</option>
+                                                                    <option value="l">L</option>
+                                                                    <option value="xl">XL</option>
+                                                                </select>
+                                                            </li>
+                                                        {% endif %}
                                                         <li class="col-sm-6 col-md-4 col-ld-2 list-inline-item">
-                                                            <select name="product_size" id="id_product_size" class="form-control">
-                                                                <option value="xs">SX</option>
-                                                                <option value="s">S</option>
-                                                                <option value="m" selected>M</option>
-                                                                <option value="l">L</option>
-                                                                <option value="xl">XL</option>
-                                                            </select>
+                                                            <p><strong>Quantity:</strong></p>
+                                                        </li>
+                                                        <li class="col-sm-6 col-md-4 col-ld-2 list-inline-item form-group">
+                                                            <div class="input-group quantaty-container">
+                                                                <input class="form-control text-center" type="number" name="quantity" value="1" min="1" max="99"
+                                                                    data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                                                            </div>
+                                                        </li>
+                                                        <!-- Add to bag button product -->
+                                                        <li class="col-sm-12 col-ld-3 list-inline-item text-right">
+                                                            <input type="submit" class="btn colored-bbtn" value="Add to bag">
+                                                        </li>
+                                                    {% else %}
+                                                        <!-- Add to bag button -->
+                                                        <li class="col-sm-12 col-ld-3 list-inline-item text-right">
+                                                            <input type="submit" class="btn colored-bbtn" value="Add to Inventory">
                                                         </li>
                                                     {% endif %}
-                                                    <li class="col-sm-6 col-md-4 col-ld-2 list-inline-item">
-                                                        <p><strong>Quantity:</strong></p>
-                                                    </li>
-                                                    <li class="col-sm-6 col-md-4 col-ld-2 list-inline-item form-group">
-                                                        <div class="input-group quantaty-container">
-                                                            <input class="form-control text-center" type="number" name="quantity" value="1" min="1" max="99"
-                                                                data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
-                                                        </div>
-                                                    </li>
-                                                    <!-- Add to bag button -->
-                                                    <li class="col-sm-12 col-ld-3 list-inline-item text-right">
-                                                        <input type="submit" class="btn colored-bbtn" value="Add to bag">
-                                                    </li>
                                                 </ul>
                                             </div>
                                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
