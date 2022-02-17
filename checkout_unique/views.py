@@ -9,7 +9,6 @@ import json
 from products.models import Product
 from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
-from shoppingBag.contexts import bag_contents
 from .forms import OrderFormUnique
 from .models import OrderUnique, OrderLineItemUnique
 
@@ -38,9 +37,20 @@ def checkout_unique(request, item_id):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
-    if request.method == 'POST':
-        if request.user.is_authenticated:
-            item = get_object_or_404(Product, pk=item_id)
+    item = get_object_or_404(Product, pk=item_id)
+
+    item_price = item.price
+    stripe_price = round(item_price * 100)
+    stripe.api_key = stripe_secret_key
+    intent = stripe.PaymentIntent.create(
+        amount=stripe_price,
+        currency=settings.STRIPE_CURRENCY,
+    )
+    print('---------Test------------')
+    print(intent)
+
+    if request.user.is_authenticated:
+        if request.method == 'POST':
             try:
                 profile = UserProfile.objects.get(user=request.user)
                 order_form = OrderFormUnique(initial={
@@ -50,25 +60,34 @@ def checkout_unique(request, item_id):
             except UserProfile.DoesNotExist:
                 order_form = OrderFormUnique()
         else:
-            messages.error(request, "Only registered users can purches this item")
-            return redirect(reverse('product'))
+            if not item:
+                messages.error(request, "There's nothing to add to your Inventory")
+                return redirect(reverse('product_detail', args=[item_id]))
+            
+            item_price = item.price
+            stripe_price = round(item_price * 100)
+            stripe.api_key = stripe_secret_key
+            intent = stripe.PaymentIntent.create(
+                amount=stripe_price,
+                currency=settings.STRIPE_CURRENCY,
+            )
+            print('---------Test------------')
+            print(intent)
 
-        item = get_object_or_404(Product, pk=item_id)
-    if not item:
-        messages.error(request, "There's nothing to add to your Inventory")
-        return redirect(reverse('products'))
+        if not stripe_public_key:
+            messages.warning(request, 'Stripe public key is missing. \
+                Did you forget to set it in your environment?')
 
-    if not stripe_public_key:
-        messages.warning(request, 'Stripe public key is missing. \
-            Did you forget to set it in your environment?')
-
-    template = 'checkout_unique/checkout_unique.html'
-    context = {
-        'item': item,
-        'order_form': order_form,
-        'stripe_public_key': stripe_public_key,
-        # 'client_secret': intent.client_secret,
-    }
+        template = 'checkout_unique/checkout_unique.html'
+        context = {
+            'item': item,
+            'order_form': order_form,
+            'stripe_public_key': stripe_public_key,
+            'client_secret': intent.client_secret,
+        }
+    else:
+        messages.error(request, "Only registered users can purches this item")
+        return redirect(reverse('product_detail', args=[item_id]))
 
     return render(request, template, context)
 
