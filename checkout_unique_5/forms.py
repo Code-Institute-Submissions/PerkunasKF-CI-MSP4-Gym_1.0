@@ -19,5 +19,6 @@ class OrderFormUnique(forms.ModelForm):
         
         super().__init__(*args, **kwargs)
         
-        self.fields[field].widget.attrs['class'] = 'fform'
-        self.fields[field].label = False
+        for field in self.fields:
+            self.fields[field].widget.attrs['class'] = 'fform'
+            self.fields[field].widget.attrs['readonly'] = True
