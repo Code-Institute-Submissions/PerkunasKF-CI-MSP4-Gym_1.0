@@ -5,8 +5,8 @@
     https://stripe.com/docs/stripe-js
 */
 
-var stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
-var clientSecret = $('#id_client_secret').text().slice(1, -1);
+var stripePublicKey = $('#id_stripe_public_key_unique').text().slice(1, -1);
+var clientSecret = $('#id_client_secret_unique').text().slice(1, -1);
 var stripe = Stripe(stripePublicKey);
 var elements = stripe.elements();
 var style = {
@@ -42,10 +42,9 @@ form.addEventListener('submit', function(ev) {
     var postData = {
         'csrfmiddlewaretoken': csrfToken,
         'client_secret': clientSecret,
-        'save_info': saveInfo,
     };
-    var url = '/checkout_unique_5/cache_checkout_data/';
-
+    // var url = '/checkout_unique_5/cache_checkout_data/';
+    console.log('------ Test ----------')
     $.post(url, postData).done(function() {
         stripe.confirmCardPayment(clientSecret, {
             payment_method: {
@@ -57,7 +56,8 @@ form.addEventListener('submit', function(ev) {
             },
         }).then(function(result) {
             if (result.error) {
-                var errorDiv = document.getElementById('card-errors');
+                console.log('---------error---------')
+                var errorDiv = document.getElementById('card-errors-unique');
                 var html = `
                     <span role="alert">
                     <i class="fas fa-times"></i>
@@ -69,6 +69,7 @@ form.addEventListener('submit', function(ev) {
                 card.update({ 'disabled': false});
                 $('#submit-button-unique').attr('disabled', false);
             } else {
+                console.log('--------succeeded----------')
                 if (result.paymentIntent.status === 'succeeded') {
                     form.submit();
                 }
@@ -78,4 +79,4 @@ form.addEventListener('submit', function(ev) {
         // jus reload the page, the error will be in django messages
         location.reload();
     })
-});
+// });

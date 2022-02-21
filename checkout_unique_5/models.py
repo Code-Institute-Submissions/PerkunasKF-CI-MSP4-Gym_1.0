@@ -27,14 +27,13 @@ class OrderUnique(models.Model):
 
         return uuid.uuid4().hex.upper()
 
-    # def update_total(self):
-    #     """ Update grand total each time a line item is added,
-    #     accounting for delivery costs. """
+    def update_total(self):
+        """ Update grand total each time a line item is added,
+        accounting for delivery costs. """
 
-    #     self.order_total = self.lineitems.aggregate('lineitem_total'))[ or 0
-    #     self.delivery_cost = self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
-    #     self.grand_total = self.order_total + self.delivery_cost
-    #     self.save()
+        self.order_total = self.lineitems.aggregate('lineitem_total') or 0
+        self.save()
+        print(order_total)
 
     def save(self, *args, **kwargs):
         """ Override the original save method to set the order number
@@ -58,8 +57,8 @@ class OrderLineItemUnique(models.Model):
         """ Override the original save method to set the lineitem total
         and update the order total. """
         
-        self.lineitem_total = self.product.price * self.quantity
+        self.lineitem_total = self.product.price
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return f'SKU {self.product.sku} on order {self.order.order_number}'
+        return f'Order {self.order.order_number}'

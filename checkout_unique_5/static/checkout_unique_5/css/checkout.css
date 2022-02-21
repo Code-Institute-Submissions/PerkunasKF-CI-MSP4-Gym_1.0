@@ -30,7 +30,7 @@
     right: .5rem;
 }
 
-#payment-form .form-control,
+#payment-form-unique .form-control,
 #card-element-unique {
     color: #000;
     border: 1px solid #000;
@@ -46,7 +46,7 @@ select option[value=""] {
   color: #aab7c4 !important;
 }
 
-#loading-overlay {
+#loading-overlay-unique {
   display: none;
   position: fixed;
   top: 0;

@@ -29,11 +29,7 @@
                     <div class="card-footer">
                         <div class="row">
                             <div class="col">
-                                <form class="form" action=" {% if product.unique %}
-                                                                {% url 'checkout_unique_form' product.id %}
-                                                            {% else %}
-                                                                {% url 'add_to_bag' product.id %}
-                                                            {% endif %}"
+                                <form class="form" action="{% url 'add_to_bag' product.id %}"
                                                     method="POST" class="row">
                                     {% csrf_token %}
                                     <!-- Quantaty input -->
@@ -70,7 +66,7 @@
                                                     {% else %}
                                                         <!-- Add to bag button -->
                                                         <li class="col-sm-12 col-ld-3 list-inline-item text-right">
-                                                            <input type="submit" class="btn colored-bbtn" value="Add to Inventory">
+                                                            <a href="{% url 'checkout_unique' product.id %}" class="btn colored-bbtn" >Add to Inventory</a>
                                                         </li>
                                                     {% endif %}
                                                 </ul>
