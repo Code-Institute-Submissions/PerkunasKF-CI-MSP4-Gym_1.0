@@ -41,30 +41,34 @@ def checkout_unique_form(request, item_id):
         messages.warning(request, 'Stripe public key is missing. \
             Did you forget to set it in your environment?')
 
-    item = get_object_or_404(Product, pk=item_id)
-    total = item.price
-    stripe_total = round(total * 100)
-    stripe.api_key = stripe_secret_key
-    intent = stripe.PaymentIntent.create(
-        amount=stripe_total,
-        currency=settings.STRIPE_CURRENCY,
-    )
+    if request.user.is_authenticated:
+        item = get_object_or_404(Product, pk=item_id)
+        total = item.price
+        stripe_total = round(total * 100)
+        stripe.api_key = stripe_secret_key
+        intent = stripe.PaymentIntent.create(
+            amount=stripe_total,
+            currency=settings.STRIPE_CURRENCY,
+        )
 
-    profile = UserProfile.objects.get(user=request.user)
-    order_form = OrderFormUnique(initial={
-        'username': profile.user.username,
-        'email': profile.user.email,
-    })
+        profile = UserProfile.objects.get(user=request.user)
+        order_form = OrderFormUnique(initial={
+            'username': profile.user.username,
+            'email': profile.user.email,
+        })
 
-    template = 'checkout_unique_5/checkout_unique_form.html'
-    context = {
-        'item': item,
-        'order_form': order_form,
-        'stripe_public_key': stripe_public_key,
-        'client_secret': intent.client_secret,
-    }
+        template = 'checkout_unique_5/checkout_unique_form.html'
+        context = {
+            'item': item,
+            'order_form': order_form,
+            'stripe_public_key': stripe_public_key,
+            'client_secret': intent.client_secret,
+        }
 
-    return render(request, template, context)
+        return render(request, template, context)
+    else:
+        messages.warning(request, 'Only registered users can purches this item')
+        return redirect(reverse('product_detail', args=[item_id]))
 
 
 # def checkout_unique(request):
