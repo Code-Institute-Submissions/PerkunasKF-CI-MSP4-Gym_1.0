@@ -1,10 +1,16 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+
+from .models import UserInventory
 
 
-def inventory(request):
+def user_inventory(request):
     """ Displays users inventory """
 
+    inventory = get_object_or_404(UserInventory, user=request.user)
+
     template = 'user_inventory/inventory.html'
-    context = {}
+    context = {
+        'inventory': inventory,
+    }
 
     return render(request, template, context)
