@@ -19,8 +19,6 @@ def cache_checkout_data_unique(request):
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
-        print('------Testas 1 ----------')
-        print(pid)
         stripe.PaymentIntent.modify(pid, metadata={
             'username': request.user,
         })
@@ -88,7 +86,7 @@ def checkout_unique(request, item_id):
         
         order_form = OrderFormUnique(form_data)
         if order_form.is_valid():
-            print('------- Test 4 ------')
+            print('------- Test 4 ------') #--------------------
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret_unique').split('_secret_unique')[0]
             order.stripe_pid = pid
