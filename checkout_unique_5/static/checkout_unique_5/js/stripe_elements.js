@@ -43,20 +43,19 @@ form.addEventListener('submit', function(ev) {
         'csrfmiddlewaretoken': csrfToken,
         'client_secret': clientSecret,
     };
-    // var url = '/checkout_unique_5/cache_checkout_data/';
-    console.log('------ Test ----------')
+    var url = '/checkout_unique_5/cache_checkout_data_unique/';
     $.post(url, postData).done(function() {
         stripe.confirmCardPayment(clientSecret, {
             payment_method: {
                 card: card,
                 billing_details: {
-                    username: $.trim(form.username.value),
+                    name: $.trim(form.username.value),
                     email: $.trim(form.email.value),
                 }
             },
         }).then(function(result) {
             if (result.error) {
-                console.log('---------error---------')
+                console.log('---------error---------') //----------------
                 var errorDiv = document.getElementById('card-errors-unique');
                 var html = `
                     <span role="alert">
@@ -69,7 +68,7 @@ form.addEventListener('submit', function(ev) {
                 card.update({ 'disabled': false});
                 $('#submit-button-unique').attr('disabled', false);
             } else {
-                console.log('--------succeeded----------')
+                console.log('--------succeeded----------') //---------------------------------
                 if (result.paymentIntent.status === 'succeeded') {
                     form.submit();
                 }
@@ -79,4 +78,4 @@ form.addEventListener('submit', function(ev) {
         // jus reload the page, the error will be in django messages
         location.reload();
     })
-// });
+});

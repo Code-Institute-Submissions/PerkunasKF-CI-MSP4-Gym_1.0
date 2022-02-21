@@ -13,28 +13,26 @@ from .forms import OrderFormUnique
 from .models import OrderUnique, OrderLineItemUnique
 
 
-# @require_POST
-# def cache_checkout_data(request):
-#     """ Dummy Tag """
-#     try:
-#         pid = request.POST.get('client_secret').split('_secret')[0]
-#         stripe.api_key = settings.STRIPE_SECRET_KEY
-#         stripe.PaymentIntent.modify(pid, metadata={
-#             'bag': json.dumps(request.session.get('bag', {})),
-#             'save_info': request.POST.get('save_info'),
-#             'username': request.user,
-#         })
-#         return HttpResponse(status=200)
-#     except Exception as e:
-#         messages.error(request, 'Sorry, your payment cannot be \
-#             processed right now. Please try again later.')
-#         return HttpResponse(content=e, status=400)
+@require_POST
+def cache_checkout_data_unique(request):
+    """ Dummy Tag """
+    try:
+        pid = request.POST.get('client_secret').split('_secret')[0]
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        print('------Testas 1 ----------')
+        print(pid)
+        stripe.PaymentIntent.modify(pid, metadata={
+            'username': request.user,
+        })
+        return HttpResponse(status=200)
+    except Exception as e:
+        messages.error(request, 'Sorry, your payment cannot be \
+            processed right now. Please try again later.')
+        return HttpResponse(content=e, status=400)
 
 
 def checkout_unique(request, item_id):
     """ Dummy Tag """
-
-    print('------- Test 1 ------')
 
     # stripe_public_key = settings.STRIPE_PUBLIC_KEY
     # stripe_secret_key = settings.STRIPE_SECRET_KEY
@@ -70,7 +68,6 @@ def checkout_unique(request, item_id):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
-    print('------- Test 2 ------')
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
             Did you forget to set it in your environment?')
@@ -83,9 +80,7 @@ def checkout_unique(request, item_id):
         amount=stripe_total,
         currency=settings.STRIPE_CURRENCY,
     )
-    print('------- Test 2.1 ------')
     if request.method == 'POST':
-        print('------- Test 3 POST ------')
         form_data = {
             'username': request.POST['username'],
             'email': request.POST['email'],
@@ -105,16 +100,12 @@ def checkout_unique(request, item_id):
                 product=product,
             )
             order_line_item.save()
-            print('------- checkout_succes_unique call ---------')
             return redirect(reverse('checkout_success_unique', args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
     else:
         if request.user.is_authenticated:
-            print('------- Test 5 ------')
-            print(request.method)
-
             profile = UserProfile.objects.get(user=request.user)
             order_form = OrderFormUnique(initial={
                 'username': profile.user.username,
@@ -144,8 +135,6 @@ def checkout_success_unique(request, order_number):
 
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
-        print('-------- item_price -------')
-        print(order.order_total)
         # Attach the user's profile to the order
         order.user_profile = profile
         order.save()
