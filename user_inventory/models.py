@@ -12,6 +12,7 @@ class UserInventory(models.Model):
     unique item inventory and order history
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    username = models.CharField(max_length=50, null=False, blank=False)
 
     def __str__(self):
         return self.user.username

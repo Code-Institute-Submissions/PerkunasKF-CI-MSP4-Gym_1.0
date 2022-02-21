@@ -9,6 +9,7 @@ import json
 from products.models import Product
 from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
+from user_inventory.models import UserInventory
 from .forms import OrderFormUnique
 from .models import OrderUnique, OrderLineItemUnique
 
@@ -86,7 +87,6 @@ def checkout_unique(request, item_id):
         
         order_form = OrderFormUnique(form_data)
         if order_form.is_valid():
-            print('------- Test 4 ------') #--------------------
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret_unique').split('_secret_unique')[0]
             order.stripe_pid = pid
@@ -132,9 +132,10 @@ def checkout_success_unique(request, order_number):
     order = get_object_or_404(OrderUnique, order_number=order_number)
 
     if request.user.is_authenticated:
-        profile = UserProfile.objects.get(user=request.user)
+        print('-------testas-------')
+        profile = UserInventory.objects.get(user=request.user)
         # Attach the user's profile to the order
-        order.user_profile = profile
+        order.user_inventory = profile
         order.save()
 
     messages.success(request, f'Order successfully processed! \

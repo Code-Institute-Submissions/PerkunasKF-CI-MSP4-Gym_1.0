@@ -48,7 +48,6 @@ class StripeWHHandlerUnique:
         """
 
         intent = event.data.object
-        print(intent)
         pid = intent.id
 
         billing_details = intent.charges.data[0].billing_details

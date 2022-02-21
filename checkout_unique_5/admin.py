@@ -19,7 +19,7 @@ class OrderAdminUnique(admin.ModelAdmin):
     readonly_fields = ('order_number', 'date', 'order_total',
                        'stripe_pid')
 
-    fields = ('order_number', 'user_profile', 'date', 'username',
+    fields = ('order_number', 'user_inventory', 'date', 'username',
               'email', 'order_total', 'stripe_pid')
 
     list_display = ('order_number', 'date', 'username',
