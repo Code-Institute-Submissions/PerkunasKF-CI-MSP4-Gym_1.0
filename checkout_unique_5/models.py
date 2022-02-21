@@ -15,7 +15,7 @@ class OrderUnique(models.Model):
 
     order_number = models.CharField(max_length=32, null=False, editable=False)
     user_inventory = models.ForeignKey(UserInventory, on_delete=models.SET_NULL,
-                                     null=True, blank=True, related_name='orders_unique')
+                                       null=True, blank=True, related_name='orders_unique')
     username = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
     date = models.DateTimeField(auto_now_add=True)

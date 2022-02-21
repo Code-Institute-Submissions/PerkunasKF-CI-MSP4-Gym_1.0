@@ -70,7 +70,7 @@ form.addEventListener('submit', function(ev) {
             } else {
                 console.log('--------succeeded----------') //---------------------------------
                 if (result.paymentIntent.status === 'succeeded') {
-                    // form.submit();
+                    form.submit();
                 }
             }
         });
