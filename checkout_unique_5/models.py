@@ -33,7 +33,6 @@ class OrderUnique(models.Model):
 
         self.order_total = self.lineitems.aggregate('lineitem_total') or 0
         self.save()
-        print(order_total)
 
     def save(self, *args, **kwargs):
         """ Override the original save method to set the order number
