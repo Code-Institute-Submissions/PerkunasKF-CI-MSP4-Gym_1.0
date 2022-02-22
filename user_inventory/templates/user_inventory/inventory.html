@@ -39,14 +39,14 @@
                             {% for order in orders %}
                                 <tr>
                                     <td>
-                                        <a href="{% url 'order_history_unique' order.order_number %}" title="{{ order.order_number }}">
+                                        <a href="{% url 'order_history_unique' order %}" title="{{ order.order_number }}">
                                             {{ order.order_number|truncatechars:6 }}
                                         </a>
                                     </td>
                                     <td>{{ order.date }}</td>
                                     <td>
-                                        {% for item in order.lineitems.all %}
-                                            <li class="small" name="{{ item.product.id }}" id="inventory-itme-{{ item.product.id }}">
+                                        {% for item in order.lineitems_unique.all %}
+                                            <li class="small">
                                                 {{ item.product.name }}
                                             </li>
                                         {% endfor %}

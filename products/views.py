@@ -6,6 +6,7 @@ from django.db.models.functions import Lower
 
 from .models import Product, Category
 from .forms import ProductForm
+from user_inventory.models import UserInventory
 
 # Create your views here.
 
@@ -63,9 +64,12 @@ def product_detail(request, product_id):
     """ A view to show specific product """
 
     product = get_object_or_404(Product, pk=product_id)
+    # inventory = get_object_or_404(UserInventory, user=request.user)
+    # orders = inventory.orders_unique.all()
 
     context = {
-        'product': product
+        'product': product,
+        # 'orders': orders,
     }
     
     return render(request, 'products/product_detail.html', context)

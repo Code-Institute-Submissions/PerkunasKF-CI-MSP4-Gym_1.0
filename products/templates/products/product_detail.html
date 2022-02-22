@@ -50,22 +50,22 @@
                                                                 </select>
                                                             </li>
                                                         {% endif %}
-                                                        <li class="col-sm-6 col-md-4 col-ld-2 list-inline-item">
-                                                            <p><strong>Quantity:</strong></p>
-                                                        </li>
-                                                        <li class="col-sm-6 col-md-4 col-ld-2 list-inline-item form-group">
-                                                            <div class="input-group quantaty-container">
-                                                                <input class="form-control text-center" type="number" name="quantity" value="1" min="1" max="99"
-                                                                    data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
-                                                            </div>
-                                                        </li>
-                                                        <!-- Add to bag button product -->
-                                                        <li class="col-sm-12 col-ld-3 list-inline-item text-right">
-                                                            <input type="submit" class="btn colored-bbtn" value="Add to bag">
-                                                        </li>
+                                                    <li class="col-sm-6 col-md-4 col-ld-2 list-inline-item">
+                                                        <p><strong>Quantity:</strong></p>
+                                                    </li>
+                                                    <li class="col-sm-6 col-md-4 col-ld-2 list-inline-item form-group">
+                                                        <div class="input-group quantaty-container">
+                                                            <input class="form-control text-center" type="number" name="quantity" value="1" min="1" max="99"
+                                                                data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                                                        </div>
+                                                    </li>
+                                                    <!-- Add to bag button product -->
+                                                    <li class="col-sm-12 col-ld-3 list-inline-item text-right">
+                                                        <input type="submit" class="btn colored-bbtn" value="Add to bag">
+                                                    </li>
                                                     {% else %}
-                                                        <!-- Add to bag button -->
-                                                        <li class="col-sm-12 col-ld-3 list-inline-item text-right">
+                                                            <!-- Add to bag button -->
+                                                            <li class="col-sm-12 col-ld-3 list-inline-item text-right">
                                                             <a href="{% url 'checkout_unique' product.id %}" class="btn colored-bbtn" >Add to Inventory</a>
                                                         </li>
                                                     {% endif %}
@@ -135,5 +135,32 @@
             </div>
         </div>
     </div>
+
+    {% for order in orders %}
+        {% for item in order.lineitems.all %}
+            {% if product.id == item.product.id %}
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+
+    {% for order in orders %}
+    <tr>
+        <td>
+            <a href="{% url 'order_history_unique' order.order_number %}" title="{{ order.order_number }}">
+                {{ order.order_number|truncatechars:6 }}
+            </a>
+        </td>
+        <td>{{ order.date }}</td>
+        <td>
+            {% for item in order.lineitems.all %}
+                <li class="small" name="unique_product" value="{{ item.product.id }}">
+                    {{ item.product.name }}
+                </li>
+            {% endfor %}
+        </td>
+        <td>{{ order.order_total }} €</td>
+    </tr>
+{% endfor %}
+
 
 {% endblock %}

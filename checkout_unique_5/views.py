@@ -100,7 +100,7 @@ def checkout_unique(request, item_id):
                 product=product,
             )
             order_line_item.save()
-            return redirect(reverse('checkout_success_unique', args=[order.order_number]))
+            return redirect(reverse('checkout_success_unique', args=[order.order_number, product.id]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
@@ -126,13 +126,17 @@ def checkout_unique(request, item_id):
             return redirect(reverse('product_details', args=[item_id]))
 
 
-def checkout_success_unique(request, order_number):
+def checkout_success_unique(request, order_number, product_id):
     """
     Handle successful checkouts
     """
 
     order = get_object_or_404(OrderUnique, order_number=order_number)
-    product = request.POST.get('product_id')
+    product = get_object_or_404(Product, id=product_id)
+
+    print('------- Testas product_data---------')
+    print(product_id)
+    print('-----------------------')
 
     if request.user.is_authenticated:
         profile = UserInventory.objects.get(user=request.user)

@@ -48,11 +48,12 @@ class StripeWHHandlerUnique:
         """
 
         intent = event.data.object
-        product = intent.metadata.product
         pid = intent.id
+        product = intent.metadata.product
+        item = Product.objects.get(id=product)
 
         billing_details = intent.charges.data[0].billing_details
-        order_total = round(intent.charges.data[0].amount / 100, 2)
+        order_total = round(item.price / 100, 2)
 
         # # Update profile information if save_info was checked
         profile = None
@@ -65,6 +66,7 @@ class StripeWHHandlerUnique:
             try:
                 order = OrderUnique.objects.get(
                     username__iexact=billing_details.name,
+                    user_inventory__iexact=profile,
                     email__iexact=billing_details.email,
                     order_total=order_total,
                     stripe_pid=pid,
@@ -82,10 +84,6 @@ class StripeWHHandlerUnique:
         else:
             order = None
             try:
-                item = Product.objects.get(id=product)
-                print('------testas--------')
-                print('--------------------')
-
                 order = OrderUnique.objects.create(
                     username=billing_details.name,
                     user_inventory=profile,
