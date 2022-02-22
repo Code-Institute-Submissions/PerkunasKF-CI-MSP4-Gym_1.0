@@ -10,54 +10,60 @@
         <div class="row">
             <div class="col">
                 <hr>
-                <h2 class="logo-font mb-4">My Inventory</h2>
+                <h2 class="logo-font mb-4">{{ username }} Inventory</h2>
                 <hr>
             </div>
         </div>
-        
+
         <div class="row">
-            <div class="col-12 col-lg-6">
-                <p class="text-muted">User Information</p>
-                <form action="" method="POST" id="profile-update-form" class="mt-3">
-                    {% csrf_token %}
-                    {{ form.username | as_crispy_field }}
-                </form>
-            </div>
-            <div class="col-12 col-lg-6">
-                <p class="text-muted">Order History</p>
-                <div class="order-history table-responsive">
-                    <table class="table table-sm table-borderless">
-                        <thead>
-                            <tr>
-                                <th>Order Number</th>
-                                <th>Date</th>
-                                <th>Items</th>
-                                <th>Order Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for order in orders %}
-                                <tr>
-                                    <td>
-                                        <a href="{% url 'order_history_unique' order %}" title="{{ order.order_number }}">
-                                            {{ order.order_number|truncatechars:6 }}
+            {% if orders %}
+                {% for order in orders %}
+                    {% for item in order.lineitems_unique.all %}
+                        <div class="col-12 col-xl-3 col-md-4 col-sm-6">
+                            <div class="card product-card">
+                                <!-- Card/Product image Container -->
+                                <div class="card-img-container">
+                                    {% if item.product.image %}
+                                        <a href="{% url 'order_history_unique' order %}">
+                                            <img src="{{ item.product.image.url }}" class="card-img-top" alt="{{ item.product.name }}">
                                         </a>
-                                    </td>
-                                    <td>{{ order.date }}</td>
-                                    <td>
-                                        {% for item in order.lineitems_unique.all %}
-                                            <li class="small">
-                                                {{ item.product.name }}
-                                            </li>
-                                        {% endfor %}
-                                    </td>
-                                    <td>{{ order.order_total }} €</td>
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+                                    {% else %}
+                                        <a href="{% url 'order_history_unique' order %}">
+                                            <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top" alt="{{ item.product.name }}">
+                                        </a>
+                                    {% endif %}
+                                </div>
+                                <!-- Card/Product name, price, category container -->
+                                <div class="card-body">
+                                    {% if item.product.category %}
+                                        <div class="row">
+                                            <div class="col text-right">
+                                                <a class="text-small-black" href="#"><i
+                                                        class="fas fa-tag"></i>
+                                                    {{ item.product.category.friendly_name }}</a>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                    <p class="card-text text-right text-small-black">
+                                        Purchest on :
+                                        <br>
+                                        {{ order.date }}
+                                    </p>
+                                    <h5 class="card-title feuter-title-text">{{ item.product.name }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+            {% else %}
+                <div class="row w-100">
+                    <div class="col">
+                        <hr>
+                        <h5 class="logo-font mb-4" style="margin-left:10px;">Your inventory is empty</h5>
+                        <hr>
+                    </div>
                 </div>
-            </div>
+            {% endif %}
         </div>
 
 {% endblock %}

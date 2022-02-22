@@ -14,17 +14,13 @@ def user_inventory(request):
     if request.user.is_authenticated:
         inventory = get_object_or_404(UserInventory, user=request.user)
 
-        form_data = {
-            'username': request.user,
-        }
-
-        form = UserInventoryForm(form_data)
+        username = request.user
         orders = inventory.orders_unique.all()
 
         template = 'user_inventory/inventory.html'
         context = {
-            'form': form,
             'orders': orders,
+            'username': username,
         }
 
         return render(request, template, context)
