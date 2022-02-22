@@ -54,9 +54,10 @@ class StripeWHHandlerUnique:
         billing_details = intent.charges.data[0].billing_details
         order_total = round(intent.charges.data[0].amount / 100, 2)
 
-        # Update profile information if save_info was checked
+        # # Update profile information if save_info was checked
         profile = None
         username = intent.metadata.username
+        profile = UserInventory.objects.get(user__username=username)
 
         order_exists = False
         attempt = 1
@@ -82,6 +83,9 @@ class StripeWHHandlerUnique:
             order = None
             try:
                 item = Product.objects.get(id=product)
+                print('------testas--------')
+                print('--------------------')
+
                 order = OrderUnique.objects.create(
                     username=billing_details.name,
                     user_inventory=profile,
@@ -93,6 +97,7 @@ class StripeWHHandlerUnique:
                 order_line_item = OrderLineItemUnique(
                     order=order,
                     product=item,
+                    lineitem_total=item.price,
                 )
                 order_line_item.save()
             except Exception as e:

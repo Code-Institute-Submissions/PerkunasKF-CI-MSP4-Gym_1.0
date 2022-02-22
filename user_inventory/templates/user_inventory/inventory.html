@@ -46,7 +46,7 @@
                                     <td>{{ order.date }}</td>
                                     <td>
                                         {% for item in order.lineitems.all %}
-                                            <li class="small" name="{{ item.product.id }}">
+                                            <li class="small" name="{{ item.product.id }}" id="inventory-itme-{{ item.product.id }}">
                                                 {{ item.product.name }}
                                             </li>
                                         {% endfor %}
