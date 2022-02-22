@@ -20,8 +20,10 @@ def cache_checkout_data_unique(request):
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
+
         stripe.PaymentIntent.modify(pid, metadata={
             'username': request.user,
+            'product': request.POST.get('product_data'),
         })
         return HttpResponse(status=200)
     except Exception as e:
@@ -130,9 +132,9 @@ def checkout_success_unique(request, order_number):
     """
 
     order = get_object_or_404(OrderUnique, order_number=order_number)
+    product = request.POST.get('product_id')
 
     if request.user.is_authenticated:
-        print('-------testas-------')
         profile = UserInventory.objects.get(user=request.user)
         # Attach the user's profile to the order
         order.user_inventory = profile
@@ -145,6 +147,7 @@ def checkout_success_unique(request, order_number):
     template = 'checkout_unique_5/checkout_success.html'
     context = {
         'order': order,
+        'product': product,
     }
 
     return render(request, template, context)

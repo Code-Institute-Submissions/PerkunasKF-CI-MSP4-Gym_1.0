@@ -37,11 +37,13 @@ form.addEventListener('submit', function(ev) {
     $('#payment-form-unique').fadeToggle(100);
     $('#loading-overlay-unique').fadeToggle(100);
 
+    var product_data = $('input[name="product_data"]').val();
     // From ussing {% csrf_token %} in the form
     var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
     var postData = {
         'csrfmiddlewaretoken': csrfToken,
         'client_secret': clientSecret,
+        'product_data': product_data,
     };
     var url = '/checkout_unique_5/cache_checkout_data_unique/';
     $.post(url, postData).done(function() {
@@ -55,7 +57,6 @@ form.addEventListener('submit', function(ev) {
             },
         }).then(function(result) {
             if (result.error) {
-                console.log('---------error---------') //----------------
                 var errorDiv = document.getElementById('card-errors-unique');
                 var html = `
                     <span role="alert">
@@ -68,9 +69,8 @@ form.addEventListener('submit', function(ev) {
                 card.update({ 'disabled': false});
                 $('#submit-button-unique').attr('disabled', false);
             } else {
-                console.log('--------succeeded----------') //---------------------------------
                 if (result.paymentIntent.status === 'succeeded') {
-                    form.submit();
+                    // form.submit();
                 }
             }
         });

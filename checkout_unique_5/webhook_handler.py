@@ -5,7 +5,7 @@ from django.conf import settings
 
 from .models import OrderUnique, OrderLineItemUnique
 from products.models import Product
-from profiles.models import UserProfile
+from user_inventory.models import UserInventory
 
 import json
 import time
@@ -48,25 +48,15 @@ class StripeWHHandlerUnique:
         """
 
         intent = event.data.object
+        product = intent.metadata.product
         pid = intent.id
 
         billing_details = intent.charges.data[0].billing_details
         order_total = round(intent.charges.data[0].amount / 100, 2)
 
-    #     # Update profile information if save_info was checked
+        # Update profile information if save_info was checked
         profile = None
-    #     username = intent.metadata.username
-    #     if username != 'AnonymousUser':
-    #         profile = UserProfile.objects.get(user__username=username)
-    #         if save_info:
-    #             profile.default_phone_number = shipping_details.phone
-    #             profile.default_country = shipping_details.address.country
-    #             profile.default_postcode = shipping_details.address.postal_code
-    #             profile.default_town_or_city = shipping_details.address.city
-    #             profile.default_street_address1 = shipping_details.address.line1
-    #             profile.default_street_address2 = shipping_details.address.line2
-    #             profile.default_county = shipping_details.address.state
-    #             profile.save()
+        username = intent.metadata.username
 
         order_exists = False
         attempt = 1
@@ -91,18 +81,18 @@ class StripeWHHandlerUnique:
         else:
             order = None
             try:
+                item = Product.objects.get(id=product)
                 order = OrderUnique.objects.create(
                     username=billing_details.name,
-                    user_profile=profile,
+                    user_inventory=profile,
                     email=billing_details.email,
                     stripe_pid=pid,
+                    order_total=item.price,
                 )
                 
-                # item_id = intent.product.id
-                product = Product.objects.get(id=product_id)
                 order_line_item = OrderLineItemUnique(
                     order=order,
-                    product=product,
+                    product=item,
                 )
                 order_line_item.save()
             except Exception as e:

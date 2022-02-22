@@ -48,7 +48,7 @@ class OrderUnique(models.Model):
 class OrderLineItemUnique(models.Model):
     """ Dummy Tag """
 
-    order = models.ForeignKey(OrderUnique, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
+    order = models.ForeignKey(OrderUnique, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems_unique')
     product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
 

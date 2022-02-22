@@ -73,6 +73,7 @@
                         <div class="mb-3 text-danger" id="card-errors-unique" role="alert"></div>
                         <!-- Pass the client secret to the view so we can get the payment intent id -->
                         <input type="hidden" value="{{ client_secret }}" name="client_secret_unique">
+                        <input type="text" value="{{ item.id }}" id="product-id" name="product_data">
                     </fieldset>
 
                     <div class="submit-button text-right mt-5 mb-2">                    
@@ -82,7 +83,6 @@
 							</span>
 							<span class="font-weight-bold">Item Details</span>
 						</a>
-                        <input type="hidden" value="{{ item.id }}" name="product_id">
                         <!-- <input id="submit-button-unique" class="btn colored-bbtn" type="submit" value="Complete Order"> -->
                         <button id="submit-button-unique" class="btn colored-bbtn">
 							<span class="font-weight-bold">Complete Order</span>
