@@ -11,22 +11,25 @@ from .forms import UserInventoryForm
 def user_inventory(request):
     """ Displays users inventory """
 
-    inventory = get_object_or_404(UserInventory, user=request.user)
+    if request.user.is_authenticated:
+        inventory = get_object_or_404(UserInventory, user=request.user)
 
-    form_data = {
-        'username': request.user,
-    }
+        form_data = {
+            'username': request.user,
+        }
 
-    form = UserInventoryForm(form_data)
-    orders = inventory.orders_unique.all()
+        form = UserInventoryForm(form_data)
+        orders = inventory.orders_unique.all()
 
-    template = 'user_inventory/inventory.html'
-    context = {
-        'form': form,
-        'orders': orders,
-    }
+        template = 'user_inventory/inventory.html'
+        context = {
+            'form': form,
+            'orders': orders,
+        }
 
-    return render(request, template, context)
+        return render(request, template, context)
+    else:
+        return render(request, 'home/index.html')
 
 
 def order_history_unique(request, order):
