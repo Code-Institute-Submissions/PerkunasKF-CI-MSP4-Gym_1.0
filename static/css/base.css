@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 
+/*-------------------------------------------------------------------------------------------------------------------------*/
+/*                                                 General styles                                                          */
+/*-------------------------------------------------------------------------------------------------------------------------*/
+
 html, body {
     height: 100%;
     margin: 0px;
@@ -118,6 +122,43 @@ body {
     border-color: #fca311;
 }
 
+.black-bbtn {
+	/* btn */
+	display: inline-block;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #000;
+    border: 2px solid #fca311;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 5px;
+    min-height: 50px;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.black-bbtn:hover:hover {	
+	color: #000;
+    background-color: #fca311;
+    border-color: #000;
+}
+
+.big-bbt {
+    font-size: 2.5rem;
+    min-height: 75px;
+    min-width: 35%;
+}
+
 /* General Form Style */
 
 .fform {
@@ -141,12 +182,49 @@ body {
 /* --- --- */
 
 /*-------------------------------------------------------------------------------------------------------------------------*/
+/*                                                 Hero Image                                                              */
+/*-------------------------------------------------------------------------------------------------------------------------*/
+
+#hero-images {
+    width: 100%;
+    height: 75%;
+}
+
+#hero-images img {
+    height: 75%;
+    width: 100%;
+    object-fit:  cover;
+    filter: brightness(50%);
+}
+
+.cover-text {
+    min-width: 50%;
+    height: 225px;
+    top: 25%;
+    right: 15px;
+    position: absolute;
+}
+
+.cover-text h2 {
+    color: #ffffff;
+    -webkit-text-fill-color: fff; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #000;
+
+    font-size: 48px;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 4px;
+    font-weight: 900;
+}
+
+
+/*-------------------------------------------------------------------------------------------------------------------------*/
 /*                                                 Navigation Bar Styles                                                   */
 /*-------------------------------------------------------------------------------------------------------------------------*/
 
 #main-navigation-bar {
     background-color: #000;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     z-index: 3000;
 }
 
@@ -624,8 +702,6 @@ a {
 .plan-details {
     min-height: 125px;
 }
-
-/*-------------------------------------------------------------------------------------------------------------------------*/
 
 
 /*-------------------------------------------------------------------------------------------------------------------------*/

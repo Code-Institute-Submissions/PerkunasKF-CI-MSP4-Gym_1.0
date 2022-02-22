@@ -5,4 +5,27 @@
 {% endblock %}
 
 {% block content %}
+
+    <!-- Hero image -->
+    <section id="hero-images">
+        <img src="{{ MEDIA_URL }}hero-image_pexels-estudio-polaroid-3112004.jpg" alt="Hero image">
+        <div class="row cover-text">
+            <div class="col">
+                <div class="text-right">
+                    <!-- Cover text -->
+                    {% if request.user.is_authenticated %}
+                        <h2 class="uppercase">Check out our products!</h2>
+                        <a href="{% url 'products' %}" class="btn black-bbtn big-bbt">To Products</a>
+                    {% else %}
+                        <h2 class="uppercase">Register and get Free Workout plan Today!</h2>
+                        <a href="{% url 'account_signup' %}" class="btn black-bbtn big-bbt">Register</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </section>
+
 {% endblock %}
