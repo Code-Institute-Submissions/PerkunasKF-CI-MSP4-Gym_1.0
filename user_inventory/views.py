@@ -34,19 +34,11 @@ def order_history_unique(request, order):
     Gets order numbers checkout_unique app
     """
 
-    print('------ Testas -----------')
-    print(order)
-    print('-------------------------')  
-
     order = get_object_or_404(OrderUnique, order_number=order)
 
-    print('------ Testas -----------')
     for item in order.lineitems_unique.all():
         product_data = item.product.id
-        print(product_data)
     product = get_object_or_404(Product, id=product_data)
-    print(product)
-    print('-------------------------')    
 
     messages.info(request, (
         f'This is a past confirmatio for order number {order.order_number}. '

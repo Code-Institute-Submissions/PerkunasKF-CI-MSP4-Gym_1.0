@@ -64,11 +64,39 @@ def product_detail(request, product_id):
     """ A view to show specific product """
 
     product = get_object_or_404(Product, pk=product_id)
-    # inventory = get_object_or_404(UserInventory, user=request.user)
-    # orders = inventory.orders_unique.all()
+
+    # Testing
+    inventory = get_object_or_404(UserInventory, user=request.user)
+    orders = inventory.orders_unique.all()
+    inventory_products = []
+
+    # var = 7
+    # array = [1,2,3,4,5,6]
+    # array.insert(0,var)
+    # print(array)
+    # # [7, 1, 2, 3, 4, 5, 6]
+
+    print('-------- Testas --------')
+    for order in orders:
+        for item in order.lineitems_unique.all():
+            # print(item.product.name)
+            inventory_products.insert(0, item.product.id)
+            # print(inventory_products)
+    for item in inventory_products:
+        if item == product.id:
+            product_check = item
+            print('tikrina ar yra bent vienas items inventoriuje')
+            print(item)
+            break
+        else:
+            product_check = None
+        
+    print('------------------------')
+    # Testing
 
     context = {
         'product': product,
+        'product_check': product_check,
         # 'orders': orders,
     }
     
