@@ -61,23 +61,32 @@
 
      <!-- Sort by price buttons -->
      <div class="row">
-        <div class="col sort-buttons">
-            <ul style="list-style-type:none;">
-                <br>
-                <li data-toggle="tooltip" data-placement="right" title="Sort by price ascending">
-                    <a href="{% url 'products' %}?sort=price&direction=asc">
-                        <i class="fas fa-euro-sign"></i>
-                        <i class="fas fa-chevron-up"></i>
-                    </a>
-                </li>
-                <br>
-                <li data-toggle="tooltip" data-placement="right" title="Sort by price descending">
-                    <a href="{% url 'products' %}?sort=price&direction=desc">
-                        <i class="fas fa-euro-sign"></i>
-                        <i class="fas fa-chevron-down"></i>
-                    </a>
-                </li>
-            </ul>
+        <div class="col sort-buttons text-center">
+            <p>
+                <button class="btn " type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </p>
+            <div style="min-height: 120px;">
+                <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                    <div class="card card-body" style="min-width: 400px;">
+                        <ul style="list-style-type:none;" class="text-left">
+                            <br>
+                            <li data-toggle="tooltip" data-placement="right" title="Sort by price ascending">
+                                <a href="{% url 'products' %}?sort=price&direction=asc">
+                                    Sort By price: ascending <i class="fas fa-euro-sign"></i>
+                                </a>
+                            </li>
+                            <br>
+                            <li data-toggle="tooltip" data-placement="right" title="Sort by price descending">
+                                <a href="{% url 'products' %}?sort=price&direction=desc">
+                                    Sort By price: descending <i class="fas fa-euro-sign"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

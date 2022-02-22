@@ -6,40 +6,43 @@
 <head>
 
     {% block meta %}
-        <!-- Required meta tags -->
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Required meta tags -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% endblock %}
 
     {% block extra_meta %}
     {% endblock %}
 
     {% block corecss %}
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <script src="https://kit.fontawesome.com/4c53668ab7.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="{% static 'css/base.css' %}">
-        <link rel="stylesheet" href="{% static 'css/mobal.css' %}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/4c53668ab7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mobal.css' %}">
     {% endblock %}
 
     {% block extra_css %}
     {% endblock %}
 
     {% block corejs %}
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-            crossorigin="anonymous"></script>
-        <!-- Stripe -->
-        <script src="https://js.stripe.com/v3/"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <!-- Stripe -->
+    <script src="https://js.stripe.com/v3/"></script>
     {% endblock %}
 
     {% block extra_js %}
@@ -60,60 +63,66 @@
                     <div class="col-4 col-md-2 d-flex justify-content-beggining align-items-center">
                         <!-- Image for logo made on https://www.freelogodesign.org/ -->
                         <!-- Muscle Gym Logo -->
-                        <a href="{% url 'home' %}"><img id="header-gym-logo" src="{{ MEDIA_URL }}muscle-gym-logo-full-yelow.png"
-                                alt="Muscle gym logo"></a>
+                        <a href="{% url 'home' %}"><img id="header-gym-logo"
+                                src="{{ MEDIA_URL }}muscle-gym-logo-full-yelow.png" alt="Muscle gym logo"></a>
                     </div>
 
                     <!-- Navigation links -->
-                    <div id="navigation-links" class="col col-md-6 d-none d-md-flex justify-content-end align-items-center">
+                    <div id="navigation-links"
+                        class="col col-md-6 d-none d-md-flex justify-content-end align-items-center">
                         <ul class="list-inline text-center">
-                            <li class="list-inline-item"><a class="navigation-link-text" href="{% url 'home' %}">Home</a></li>
-                            <li class="list-inline-item"><a class="navigation-link-text" href="{% url 'products' %}">Products</a>
+                            <li class="list-inline-item"><a class="navigation-link-text"
+                                    href="{% url 'home' %}">Home</a></li>
+                            <li class="list-inline-item"><a class="navigation-link-text"
+                                    href="{% url 'products' %}">Products</a>
                             </li>
-                            <li class="list-inline-item"><a class="navigation-link-text" href="{% url 'user_inventory' %}">Inventory</a></li>
-                            
+                            <li class="list-inline-item"><a class="navigation-link-text"
+                                    href="{% url 'user_inventory' %}">Inventory</a></li>
+
                         </ul>
                     </div>
 
                     <!-- My account button -->
                     <div class="col-2 d-none d-md-flex justify-content-end align-items-center my-account">
-                            <!-- Drop down menu button for user tools -->
-                            <a class="navigation-link-text btn-group dropleft" href="#" id="user-options" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                <div class="text-center">
-                                    <div><i class="fas fa-user fa-lg"></i></div>
-                                    <p>My Account</p>
-                                </div>
-                            </a>
-
-                            <!-- User tools -->
-                            <div class="dropdown-menu burger-menu-items-box" aria-labelledby="user-options">
-                                {% if request.user.is_authenticated %}
-                                    {% if request.user.is_superuser %}
-                                        <!-- Admin Tools -->
-                                        <a href="{% url 'add_product' %}" class="dropdown-item burger-menu-text">Product Management</a>
-                                    {% endif %}
-                                    <!-- Login user tools -->
-                                    <a href="{% url 'profile' %}" class="dropdown-item burger-menu-text">My Profile</a>
-                                    <a href="{% url 'account_logout' %}" class="dropdown-item burger-menu-text">Logout</a>
-                                {% else %}
-                                    <!-- New User tools -->
-                                    <a href="{% url 'account_signup' %}" class="dropdown-item burger-menu-text">Register</a>
-                                    <a href="{% url 'account_login' %}" class="dropdown-item burger-menu-text">Login</a>
-                                {% endif %}
+                        <!-- Drop down menu button for user tools -->
+                        <a class="navigation-link-text btn-group dropleft" href="#" id="user-options"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="text-center">
+                                <div><i class="fas fa-user fa-lg"></i></div>
+                                <p>My Account</p>
                             </div>
+                        </a>
+
+                        <!-- User tools -->
+                        <div class="dropdown-menu burger-menu-items-box" aria-labelledby="user-options">
+                            {% if request.user.is_authenticated %}
+                            {% if request.user.is_superuser %}
+                            <!-- Admin Tools -->
+                            <a href="{% url 'add_product' %}" class="dropdown-item burger-menu-text">Product
+                                Management</a>
+                            {% endif %}
+                            <!-- Login user tools -->
+                            <a href="{% url 'profile' %}" class="dropdown-item burger-menu-text">My Profile</a>
+                            <a href="{% url 'account_logout' %}" class="dropdown-item burger-menu-text">Logout</a>
+                            {% else %}
+                            <!-- New User tools -->
+                            <a href="{% url 'account_signup' %}" class="dropdown-item burger-menu-text">Register</a>
+                            <a href="{% url 'account_login' %}" class="dropdown-item burger-menu-text">Login</a>
+                            {% endif %}
+                        </div>
                     </div>
 
                     <!-- Shopping cart button -->
                     <div class="col-2 d-none d-md-flex justify-content-center align-items-center">
-                        <a class="{% if grand_total %} navigation-link-text-white {% else %} navigation-link-text {% endif %}" href="{% url 'view_bag' %}">
+                        <a class="{% if grand_total %} navigation-link-text-white {% else %} navigation-link-text {% endif %}"
+                            href="{% url 'view_bag' %}">
                             <div class="text-center">
                                 <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                                 <p class="my-0">
                                     {% if grand_total %}
-                                        {{ grand_total|floatformat:2 }} €
+                                    {{ grand_total|floatformat:2 }} €
                                     {% else %}
-                                        0.00 €
+                                    0.00 €
                                     {% endif %}
                                 </p>
                             </div>
@@ -121,7 +130,7 @@
                     </div>
 
                     {% include 'includes/mobale-nav-bar.html' %}
-                    
+
                 </div>
             </div>
 
@@ -130,8 +139,7 @@
                 <div class="col-md-4 offset-md-8">
                     <form class="search-form" method="GET" action="{% url 'products' %}">
                         <div class="input-group">
-                            <input class="form-control" type="text" name="q"
-                                placeholder="Search for Products">
+                            <input class="form-control" type="text" name="q" placeholder="Search for Products">
                             <div class="input-group-append">
                                 <button class="form-control btn" type="submit">
                                     <span class="navigation-link-text search-icon">
@@ -142,27 +150,27 @@
                         </div>
                     </form>
                 </div>
-            </div>            
+            </div>
 
         </header>
 
         <!-- Message container -->
         {% if messages %}
-            <div class="message-container">
-                {% for message in messages %}
-                    {% with message.level as level %}
-                        {% if level == 40 %}
-                            {% include 'includes/toasts/toast_error.html' %}
-                        {% elif level == 30 %}
-                            {% include 'includes/toasts/toast_warning.html' %}
-                        {% elif level == 25 %}
-                            {% include 'includes/toasts/toast_success.html' %}
-                        {% else %}
-                            {% include 'includes/toasts/toast_info.html' %}
-                        {% endif %}
-                    {% endwith %}
-                {% endfor %}
-            </div>
+        <div class="message-container">
+            {% for message in messages %}
+            {% with message.level as level %}
+            {% if level == 40 %}
+            {% include 'includes/toasts/toast_error.html' %}
+            {% elif level == 30 %}
+            {% include 'includes/toasts/toast_warning.html' %}
+            {% elif level == 25 %}
+            {% include 'includes/toasts/toast_success.html' %}
+            {% else %}
+            {% include 'includes/toasts/toast_info.html' %}
+            {% endif %}
+            {% endwith %}
+            {% endfor %}
+        </div>
         {% endif %}
 
         {% block page_header %}
@@ -173,14 +181,14 @@
 
         {% block postloadjs %}
 
-            <script type="text/javascript">
-                 // Bootstrap script for tooltips
-                 $(function () {
-                    $('[data-toggle="tooltip"]').tooltip()
-                })
+        <script type="text/javascript">
+            // Bootstrap script for tooltips
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
 
-                $('.toast').toast('show');
-            </script>
+            $('.toast').toast('show');
+        </script>
 
         {% endblock %}
 
