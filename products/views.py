@@ -64,40 +64,29 @@ def product_detail(request, product_id):
     """ A view to show specific product """
 
     product = get_object_or_404(Product, pk=product_id)
+    product_check = None
+    user_autheticated = False
 
-    # Testing
-    inventory = get_object_or_404(UserInventory, user=request.user)
-    orders = inventory.orders_unique.all()
-    inventory_products = []
-
-    # var = 7
-    # array = [1,2,3,4,5,6]
-    # array.insert(0,var)
-    # print(array)
-    # # [7, 1, 2, 3, 4, 5, 6]
-
-    print('-------- Testas --------')
-    for order in orders:
-        for item in order.lineitems_unique.all():
-            # print(item.product.name)
-            inventory_products.insert(0, item.product.id)
-            # print(inventory_products)
-    for item in inventory_products:
-        if item == product.id:
-            product_check = item
-            print('tikrina ar yra bent vienas items inventoriuje')
-            print(item)
-            break
-        else:
-            product_check = None
-        
-    print('------------------------')
-    # Testing
-
+    if request.user.is_authenticated:
+        inventory = get_object_or_404(UserInventory, user=request.user)
+        orders = inventory.orders_unique.all()
+        inventory_products = []
+        user_autheticated = True
+        for order in orders:
+            for item in order.lineitems_unique.all():
+                inventory_products.insert(0, item.product.id)
+        for item in inventory_products:
+            if item == product.id:
+                product_check = item
+                print('tikrina ar yra bent vienas items inventoriuje')
+                break
+            else:
+                product_check = None
+    
     context = {
         'product': product,
         'product_check': product_check,
-        # 'orders': orders,
+        'user_autheticated': user_autheticated,
     }
     
     return render(request, 'products/product_detail.html', context)

@@ -64,15 +64,22 @@
                                                         <input type="submit" class="btn colored-bbtn" value="Add to bag">
                                                     </li>
                                                     {% else %}
-                                                        {% if product_check != product.id %}
-                                                            <!-- Add to bag button -->
-                                                            <li class="col-sm-12 col-ld-3 list-inline-item text-right">
-                                                                <a href="{% url 'checkout_unique' product.id %}" class="btn colored-bbtn" >Add to Inventory</a>
-                                                            </li>
+                                                        {% if user_autheticated %}
+                                                            {% if product_check != product.id %}
+                                                                <!-- Add to bag button -->
+                                                                <li class="col-sm-12 col-ld-3 list-inline-item text-right">
+                                                                    <a href="{% url 'checkout_unique' product.id %}" class="btn colored-bbtn" >Add to Inventory</a>
+                                                                </li>
+                                                            {% else %}
+                                                                <!-- Add to bag button -->
+                                                                <li class="col-sm-12 col-ld-3 list-inline-item text-right">
+                                                                    <a href="" class="btn colored-bbtn" >This item is in your Inventory</a>
+                                                                </li>
+                                                            {% endif %}
                                                         {% else %}
-                                                            <!-- Add to bag button -->
-                                                            <li class="col-sm-12 col-ld-3 list-inline-item text-right">
-                                                                <a href="" class="btn colored-bbtn" >This item is in your Inventory</a>
+                                                                <!-- Add to bag button -->
+                                                                <li class="col-sm-12 col-ld-3 list-inline-item text-right">
+                                                                <a href="" class="btn colored-bbtn" >Register if you want to purches this item</a>
                                                             </li>
                                                         {% endif %}
                                                     {% endif %}
