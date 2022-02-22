@@ -20,7 +20,7 @@
         <!-- Shopping bag items list -->
         <div class="container-fluid">
             <div class="row">
-                <div class="col col-md-4 offset-md-8 text-center">
+                <div class="col col-md-4 offset-md-8 text-center text-center text-md-right">
                     <a class="btn return-bbtn" href="{% url 'products' %}">
                         Keep Shopping
                     </a>
@@ -28,7 +28,7 @@
             </div>
             <br>
             {% if bag_items %}
-                <div class="d-block d-md-none">
+                <div class="d-block d-md-none text-center text-md-right">
                     <div class="row">
                         <div class="col">
                             {% include "shoppingBag/bag_total.html" %}

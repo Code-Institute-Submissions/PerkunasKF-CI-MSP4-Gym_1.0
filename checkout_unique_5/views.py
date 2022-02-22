@@ -106,19 +106,48 @@ def checkout_unique(request, item_id):
                 Please double check your information.')
     else:
         if request.user.is_authenticated:
-            profile = UserProfile.objects.get(user=request.user)
-            order_form = OrderFormUnique(initial={
-                'username': profile.user.username,
-                'email': profile.user.email,
-            })
+            inventory = get_object_or_404(UserInventory, user=request.user)
+            username = request.user
+            email = username.email
+            orders = inventory.orders_unique.all()
+            inventory_products = []
 
-            template = 'checkout_unique_5/checkout_unique.html'
-            context = {
-                'item': item,
-                'order_form': order_form,
-                'stripe_public_key': stripe_public_key,
-                'client_secret': intent.client_secret,
-            }
+            for order in orders:
+                for item in order.lineitems_unique.all():
+                    inventory_products.insert(0, item.product.id)
+            if not inventory_products:
+
+                form_data = {
+                    'username': username,
+                    'email': email,
+                }
+                
+                order_form = OrderFormUnique(form_data)
+                if order_form.is_valid():
+                    order = order_form.save(commit=False)
+                    order.order_total = 0
+                    order.save()
+                    product = Product.objects.get(id=item_id)
+                    order_line_item = OrderLineItemUnique(
+                        order=order,
+                        product=product,
+                    )
+                    order_line_item.save()
+                    return redirect(reverse('checkout_success_unique', args=[order.order_number, product.id]))
+            else:
+                profile = UserProfile.objects.get(user=request.user)
+                order_form = OrderFormUnique(initial={
+                    'username': profile.user.username,
+                    'email': profile.user.email,
+                })
+
+                template = 'checkout_unique_5/checkout_unique.html'
+                context = {
+                    'item': item,
+                    'order_form': order_form,
+                    'stripe_public_key': stripe_public_key,
+                    'client_secret': intent.client_secret,
+                }
 
             return render(request, template, context)
         else:

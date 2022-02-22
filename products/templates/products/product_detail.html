@@ -39,8 +39,8 @@
                                                 <ul class="list-inline">
                                                     {% if not product.unique %}
                                                         {% if s %}
-                                                            <li class="col-sm-6 col-md-4 col-ld-2 list-inline-item"><p><strong>Size:</strong></p></li>
-                                                            <li class="col-sm-6 col-md-4 col-ld-2 list-inline-item">
+                                                            <li class="col-sm-6 col-md-3 col-ld-2 list-inline-item text-center">
+                                                                <p><strong>Size</strong></p>
                                                                 <select name="product_size" id="id_product_size" class="form-control">
                                                                     <option value="xs">SX</option>
                                                                     <option value="s">S</option>
@@ -50,36 +50,37 @@
                                                                 </select>
                                                             </li>
                                                         {% endif %}
-                                                    <li class="col-sm-6 col-md-4 col-ld-2 list-inline-item">
+                                                    <!-- <li class="col-sm-6 col-md-3 col-ld-2 text-center list-inline-item">
                                                         <p><strong>Quantity:</strong></p>
-                                                    </li>
-                                                    <li class="col-sm-6 col-md-4 col-ld-2 list-inline-item form-group">
+                                                    </li> -->
+                                                    <li class="col-sm col-md-3 col-ld-2 list-inline-item text-center form-group">
+                                                        <p><strong>Quantity</strong></p>
                                                         <div class="input-group quantaty-container">
                                                             <input class="form-control text-center" type="number" name="quantity" value="1" min="1" max="99"
                                                                 data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
                                                         </div>
                                                     </li>
                                                     <!-- Add to bag button product -->
-                                                    <li class="col-sm-12 col-ld-3 list-inline-item text-right">
+                                                    <li class="col-sm-12 col-ld-3 list-inline-item text-center text-md-right">
                                                         <input type="submit" class="btn colored-bbtn" value="Add to bag">
                                                     </li>
                                                     {% else %}
                                                         {% if user_autheticated %}
                                                             {% if product_check != product.id %}
                                                                 <!-- Add to bag button -->
-                                                                <li class="col-sm-12 col-ld-3 list-inline-item text-right">
+                                                                <li class="col-sm-12 col-ld-3 list-inline-item text-right bbt-aligntment-center ">
                                                                     <a href="{% url 'checkout_unique' product.id %}" class="btn colored-bbtn" >Add to Inventory</a>
                                                                 </li>
                                                             {% else %}
                                                                 <!-- Add to bag button -->
-                                                                <li class="col-sm-12 col-ld-3 list-inline-item text-right">
-                                                                    <a href="" class="btn colored-bbtn" >This item is in your Inventory</a>
+                                                                <li class="col-sm-12 col-ld-3 list-inline-item text-right bbt-aligntment-center">
+                                                                    <a href="{% url 'user_inventory' %}" class="btn colored-bbtn" >This item is in your Inventory</a>
                                                                 </li>
                                                             {% endif %}
                                                         {% else %}
                                                                 <!-- Add to bag button -->
-                                                                <li class="col-sm-12 col-ld-3 list-inline-item text-right">
-                                                                <a href="" class="btn colored-bbtn" >Register if you want to purches this item</a>
+                                                                <li class="col-sm-12 col-ld-3 list-inline-item text-right bbt-aligntment-center">
+                                                                <a href="{% url 'account_signup' %}" class="btn colored-bbtn" >Register if you want to purches this item</a>
                                                             </li>
                                                         {% endif %}
                                                     {% endif %}
@@ -139,7 +140,7 @@
                 <!-- Keep shopping button -->
                 <br>
                 <div class="row">
-                    <div class="col col-md-4 offset-md-8">
+                    <div class="col col-md-4 offset-md-8 text-center">
                         <a href="{% url 'products' %}" class="btn transparent-bbtn">
                             <span>Keep Shopping</span>
                         </a>

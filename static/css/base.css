@@ -743,6 +743,10 @@ a {
         object-fit:  cover;
     }
     /* --- --- */
+
+    .bbt-aligntment-center {
+        text-align: center;
+    }
 }
 
 @media (max-width: 355px) {
