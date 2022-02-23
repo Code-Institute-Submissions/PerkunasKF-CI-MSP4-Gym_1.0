@@ -28,4 +28,5 @@ urlpatterns = [
     path('checkout_unique_5/', include('checkout_unique_5.urls')),
     path('profile/', include('profiles.urls')),
     path('user_inventory/', include('user_inventory.urls')),
+    path('comunity/', include('comunity.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
