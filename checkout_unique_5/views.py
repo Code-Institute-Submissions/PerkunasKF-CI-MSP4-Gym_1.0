@@ -116,7 +116,6 @@ def checkout_unique(request, item_id):
                 for item in order.lineitems_unique.all():
                     inventory_products.insert(0, item.product.id)
             if not inventory_products:
-
                 form_data = {
                     'username': username,
                     'email': email,
@@ -133,8 +132,10 @@ def checkout_unique(request, item_id):
                         product=product,
                     )
                     order_line_item.save()
+                    
                     return redirect(reverse('checkout_success_unique', args=[order.order_number, product.id]))
             else:
+                item = get_object_or_404(Product, pk=item_id)
                 profile = UserProfile.objects.get(user=request.user)
                 order_form = OrderFormUnique(initial={
                     'username': profile.user.username,
@@ -148,7 +149,9 @@ def checkout_unique(request, item_id):
                     'stripe_public_key': stripe_public_key,
                     'client_secret': intent.client_secret,
                 }
-
+                print('-------- Testas item products -------')
+                print(item)
+                print('-------------------------')
             return render(request, template, context)
         else:
             messages.error(request, 'Only registered users can purches this item')

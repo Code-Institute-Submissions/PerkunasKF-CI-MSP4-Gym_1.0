@@ -23,8 +23,6 @@
 5. [Testing](#Testing) ☞ **[Testing.md](TESTING.md)**
 6. [Deployment](#Deployment)
 7. [Credits](#Credits)
-     1. [Audio](#Audio)
-     2. [Code](#Code)
 ***
 
 ![Blank! Responsiveness](media/am-i-responsive.png)
@@ -60,9 +58,8 @@ The Developer is looking to:
 3. As a current client, I want to be able access my unique item inventory.
 
 #### Owner Goals:
-1. As an owner, I want to be able access all order information.
-2. As an owner, I want to be able to add new products.
-3. As an owner, I want to be able to edit existing products.
+1. As an owner, I want to be able to add new products.
+2. As an owner, I want to be able to edit existing products.
 3. As an owner, I want to be able to delete items.
 
 ### Development Planes
@@ -86,7 +83,6 @@ The website needs to enable the **user** to:
      - All users: Any product details
      - Registered user: all order history
      - Registered user: any single purchase history
-     - Owner: all order shipping details
 
 The website needs to enable the **Shop** to:
 - Develop an online presence 
@@ -265,6 +261,9 @@ The developer ran into a number of issues during the development of the game, wi
 
 **Checkout would not complit**
 - After filling in the form and pressing complete order button, the checkout function would not work. The error was that the url gets an unexpected value, "}". After carefully looking true the code there was an extra} witch cast the bug. Removing the } bug was fixed.
+
+**Product data not showing**
+- After ordering unique item product data not showing in checkout_unique page. At function checkout unique item variable was assigned later in the code and change to order information not product information. After the remaining item in the product information bug was fixed.
 
 [Back to top ⇧](#table-of-contents)
 

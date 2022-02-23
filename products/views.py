@@ -71,13 +71,12 @@ def product_detail(request, product_id):
         inventory = get_object_or_404(UserInventory, user=request.user)
         orders = inventory.orders_unique.all()
         inventory_products = []
-        user_autheticated = True
         for order in orders:
             for item in order.lineitems_unique.all():
                 inventory_products.insert(0, item.product.id)
-        for item in inventory_products:
-            if item == product.id:
-                product_check = item
+        for object in inventory_products:
+            if object == product.id:
+                product_check = object
                 print('tikrina ar yra bent vienas items inventoriuje')
                 break
             else:
@@ -86,7 +85,6 @@ def product_detail(request, product_id):
     context = {
         'product': product,
         'product_check': product_check,
-        'user_autheticated': user_autheticated,
     }
     
     return render(request, 'products/product_detail.html', context)

@@ -65,7 +65,7 @@
                                                         <input type="submit" class="btn colored-bbtn" value="Add to bag">
                                                     </li>
                                                     {% else %}
-                                                        {% if user_autheticated %}
+                                                        {% if request.user.is_authenticated %}
                                                             {% if product_check != product.id %}
                                                                 <!-- Add to bag button -->
                                                                 <li class="col-sm-12 col-ld-3 list-inline-item text-right bbt-aligntment-center ">
