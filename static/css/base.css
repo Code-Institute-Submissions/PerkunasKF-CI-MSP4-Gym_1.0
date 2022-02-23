@@ -142,7 +142,11 @@ body {
 }
 
 .center-item {
-    margin-left: 14.5%;
+    margin-left: 20%;
+}
+
+.width-ajustment {
+    width: 75%;
 }
 
 /* General Form Style */
@@ -782,6 +786,14 @@ a {
 
     .bbt-aligntment-center {
         text-align: center;
+    }
+
+    .width-ajustment {
+        width: 100%;
+    }
+
+    .center-item {
+        margin-left: 5%;
     }
 }
 

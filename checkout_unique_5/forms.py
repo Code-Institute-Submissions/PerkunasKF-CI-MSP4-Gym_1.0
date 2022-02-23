@@ -9,7 +9,7 @@ class OrderFormUnique(forms.ModelForm):
         """ Dummy Tag """
 
         model = OrderUnique
-        fields = ('username', 'email',)
+        fields = ('username', 'email')
 
     def __init__(self, *args, **kwargs):
         """

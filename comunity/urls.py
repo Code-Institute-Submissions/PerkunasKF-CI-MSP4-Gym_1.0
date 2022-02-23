@@ -3,5 +3,6 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.comunity, name='comunity')
+    path('', views.comunity, name='comunity'),
+    path('<username>', views.comunity, name='comunity'),
 ]
