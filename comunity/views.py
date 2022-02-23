@@ -11,17 +11,14 @@ def comunity(request):
     """
 
     title = ComunityMessages.objects.all()
-    data = []
 
-    user = 'Anonymous'
-
-    if request.user.is_authenticated:
-        user = get_object_or_404(UserProfile, user=request.user)
+    username = get_object_or_404(UserProfile, user=request.user)
 
     template = 'comunity/comunity.html'
 
     context = {
         'title': title,
+        'username': username,
     }
 
     return render(request, template, context)

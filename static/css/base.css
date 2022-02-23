@@ -701,30 +701,6 @@ a {
     border-color: #dc3545;
 }
 
-/* --- --- */
-
-
-/*-------------------------------------------------------------------------------------------------------------------------*/
-/*                                                Subscriptions plans styles                                               */
-/*-------------------------------------------------------------------------------------------------------------------------*/
-
-.bronze-background {
-    background-color: #b08d57;
-}
-
-.silver-background {
-    background-color: #c2bdb0;
-}
-
-.gold-background {
-    background-color: #e7bd42;
-}
-
-.plan-details {
-    min-height: 125px;
-}
-
-
 /*-------------------------------------------------------------------------------------------------------------------------*/
 /*                                                Comunity styles                                                          */
 /*-------------------------------------------------------------------------------------------------------------------------*/
@@ -736,6 +712,36 @@ a {
 
 #collapseForm {
     margin-left: 10%;
+}
+
+.message-form-input {
+    width: 75%;
+    height: 35px;
+    margin-bottom: 10px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    padding-left: 15px;
+}
+
+.message-form-input-textarea {
+    width: 75%;
+    height: 250px;
+    margin-bottom: 10px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.message-information {
+    background-color: #aab7c4;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.messagee-container {
+    background-color: #d9dbdd;
+    padding-top: 10px;
 }
 
 
