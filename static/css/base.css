@@ -141,6 +141,10 @@ body {
     z-index: 999999999;
 }
 
+.center-item {
+    margin-left: 14.5%;
+}
+
 /* General Form Style */
 
 .fform {
@@ -325,7 +329,8 @@ body {
     text-decoration: none;
 }
 
-.card-container .card {
+.card-container .card,
+.card-container-plain .card {
     border: 3px solid #000;
     border-radius: 5px;
     margin-bottom: 15px;
@@ -717,6 +722,20 @@ a {
 
 .plan-details {
     min-height: 125px;
+}
+
+
+/*-------------------------------------------------------------------------------------------------------------------------*/
+/*                                                Comunity styles                                                          */
+/*-------------------------------------------------------------------------------------------------------------------------*/
+
+.message-form-bbtn {
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+#collapseForm {
+    margin-left: 10%;
 }
 
 
