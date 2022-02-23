@@ -23,9 +23,8 @@
         </button>
         <!-- "Toggle" icon drop down menu links -->
         <div class="dropdown-menu dropleft burger-menu-items-box">
-            <a class="dropdown-item burger-menu-text" href="{% url 'home' %}"><i class="fas fa-home"></i><span>Home</span></a>
-            <a class="dropdown-item burger-menu-text" href="{% url 'products' %}"><i class="far fa-money-bill-alt"></i><span>Products</span></a>
-            <a class="dropdown-item burger-menu-text" href="#"><i class="fas fa-phone"></i><span>Contacts</span></a>
+            <a class="dropdown-item burger-menu-text" href="{% url 'home' %}"><span>Home</span></a>
+            <a class="dropdown-item burger-menu-text" href="{% url 'products' %}"><span>Products</span></a>
             <!-- Register/Login and my account buttons -->
             {% if request.user.is_authenticated %}
                 {% if request.user.is_superuser %}
@@ -33,6 +32,7 @@
                     <a href="{% url 'add_product' %}" class="dropdown-item burger-menu-text">Product Management</a>
                     <!-- Login user tools -->
                     <a href="{% url 'profile' %}" class="dropdown-item burger-menu-text">My Profile</a>
+                    <a href="{% url 'user_inventory' %}" class="dropdown-item burger-menu-text">Inventory</a>
                     <a href="{% url 'account_logout' %}" class="dropdown-item burger-menu-text">Logout</a>
                 {% else %}
                     <!-- Login user tools -->

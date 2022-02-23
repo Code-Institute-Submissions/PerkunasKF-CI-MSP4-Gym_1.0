@@ -1,108 +1,363 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<h1 align="center">
+  THE GYM
+</h1>
+  
+<div align="center">
+  Find and buy product for your fitness life.
 
-Welcome PerkunasKF,
+[View the live project here ADD LATTER](#)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+</div>
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+## Table of contents
+1. [UX](#UX)
+    1. [Project Goals](#Project-Goals)
+    2. [User Stories](#User-Stories)
+    3. [Development Planes](#Development-Planes)
+2. [Features](#Features)
+3. [Issues and Bugs](#Issues-and-Bugs)
+4. [Admin User Information](#Admin-User-Information)
+4. [Technologies Used](#Technologies-Used)
+     1. [Main Languages Used](#Main-Languages-Used)
+     2. [Frameworks, Libraries & Programs Used](#Frameworks-Libraries-&-Programs-Used)
+5. [Testing](#Testing) ☞ **[Testing.md](TESTING.md)**
+6. [Deployment](#Deployment)
+7. [Credits](#Credits)
+     1. [Audio](#Audio)
+     2. [Code](#Code)
+***
 
-## Gitpod Reminders
+![Blank! Responsiveness](media/am-i-responsive.png)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+***
 
-`python3 -m http.server`
+## UX 
+### Project Goals
+This website was designed for a fictional fitness market place, "Muscle Gym". The purpose of this website was to establish an online presents for people to buy products and workout plans.
 
-A blue button should appear to click: _Make Public_,
+This is the final Milestone Project from necessary for the project to complete the Full Stack Web Development Program at The Code Institute.
 
-Another blue button should appear to click: _Open Browser_.
+The main requirement was to make a website using **HTML**, **CSS**, **JavaScript**, **Python+Django**.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+#### Developer Goals
+The Developer is looking to:
+- Create a web page for user to share recipes.
+- Create a web page for owner to upload products.
+- Demonstrate their skills in software development, using newly learned languages and libraries.
+- Deploy a project on their portfolio.
 
-A blue button should appear to click: _Make Public_,
+### User Stories
+#### New/Potential clients:
+1. As a new customer, I want to easily navigate through the website to find the relevant content, effortlessly.
+2. As a new customer, I want to see all products I can purchase on the website.
+3. As a new customer, I want to be able to buy an item without registering.
+4. As a new customer, I want to be able to register to the website.
+5. As a new customer, I want to be able to search for desired items on the website.
 
-Another blue button should appear to click: _Open Browser_.
+#### Current Clients Goals:
+1. As a current client, I want to be able change my shipping information.
+2. As a current client, I want to be able to find all my purchase history of products.
+3. As a current client, I want to be able access my unique item inventory.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+#### Owner Goals:
+1. As an owner, I want to be able access all order information.
+2. As an owner, I want to be able to add new products.
+3. As an owner, I want to be able to edit existing products.
+3. As an owner, I want to be able to delete items.
 
-To log into the Heroku toolbelt CLI:
+### Development Planes
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+In order to create a comprehensive and informative website, the developer gathered information from social forums to add required functionality to the site and how would it answer user stories, as described above.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+<strong>1. <u>Strategy</u></strong>
 
-------
+Broken into two categories, the website will focus on the following target audiences:
+- **Roles:**
+     - New users
+     - Current users
+     - Owner
 
-## Release History
+- **Demographic:**
+     - 16 and plus year olds
+     - People interested in fitness
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+The website needs to enable the **user** to:
+     - All users: What products does the website sell
+     - All users: Any product details
+     - Registered user: all order history
+     - Registered user: any single purchase history
+     - Owner: all order shipping details
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+The website needs to enable the **Shop** to:
+- Develop an online presence 
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+With these goals in mind, a strategy table was created:
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+![Strategy Table](media/strategic-plan.png)
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+<strong>2. <u>Scope</u></strong>
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+A scope was defined to clearly identify what needed to be done to align features with the strategy:
+- **Content Requirements**
+     - The user will be looking for:
+          - Easy to find products
+          - See their own purchase history
+          - See their own unique item inventory
+          
+- **Functionality Requirements**
+     - The user will be able to:
+          - Be able to register to web page easily
+          - Easily find wanted products
+          - Easily navigate through the pages
+          - Edit there shipping information
+          - Edit/Delete products (for admin)
+          - Create new products (for admin)
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+<strong>3. <u>Structure</u></strong>
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+The web page content is divided through multiple pages in a tree like pattern for easy navigating and distinguishing content. The **hierarchial tree structure**:
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+![Site Map](media/page-layot-plan.png)
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+<strong>4. <u>Skeleton</u></strong>
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+Wireframe mockups were created in a [Figma Workspace](https://www.figma.com/file/rdJw2ceG1dKdHpPGlHHl01/Home-Page?node-id=0%3A1)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+[Back to top ⇧](#table-of-contents)
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+## Features
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+**Main Navigation Bar**
+    <dd>
+        <ul>
+            <li>
+                <strong>Logo</strong> - Logo on hover is framed in borders. On clicking user is redirected to the home page.
+            </li>
+            <li>
+                <strong>Navigation lins</strong> - Two navigation links: "Home" and "Products". Home redirects user to the home page. Products redirects users to the product page.
+            </li>
+            <li>
+                <strong>My Account</strong> - After clicking the icon a drop down apears with user navigations:
+                <ul>
+                    <li>
+                        Non registered users:
+                            Register: redirects user to register form.
+                            Login: redirects user to log in page.
+                    </li>
+                    <li>
+                        Registered user:
+                            My profile: redirects user to my profile page.
+                            Inventory: redirects user to inventory page.
+                            Logout: redirects user to logout page.
+                    </li>
+                    <li>
+                        Admin user:
+                            All of the above
+                            Manage product: redirects user to add product form.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <strong>Shopping bag Icon</strong> After clicking the shopping bag icon user is redirected to the shopping bag page. Is there are any items in the shopping under the shopping bag icon the total price is shown and the icon color changes to white.
+            </li>
+            <li>
+                <strong>Search</strong> Search bar allows user to search for any product true the website.
+            </li>
+        </ul>
+    </dd>
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+**Home Page**
+    <dd>
+        <ul>
+            <li>
+                <strong>Register Button</strong> Non registered users to click are redirected to register form page. Registered users are redirected to the product page.
+            </li>
+        </ul>
+    </dd>
 
-------
+**Products Page**
+    <dd>
+        <ul>
+            <li>
+                <strong>Product Categories</strong> On top of the page is places a category list bar. After clicking any of the items, products will be filtered to show only that category. 
+            </li>
+            <li>
+                <strong>Sort Bar Button</strong> Sort Bar Button sits on the left side of the screen. After clicking the icon an sorting option box appears to sort items by price, ascending or descending.
+            </li>
+             <li>
+                <strong>Back to Top</strong> Back to top button is placed at the bottom right corner of the screen so the user can easily return to the top of the page.
+            </li>
+            <li>
+                <strong>Product Cards</strong> A card element is created for every product. The card contains product image, product category if it has one, product price, name and info button which redirects user to the product details page. Admin tools to edit or delete product appears only if supper user is connected.
+            </li>
+        </ul>
+    </dd>
 
-## FAQ about the uptime script
+**Product Details Page**
+     <dd>
+          Products page contains of product image witch is placed on the left side of the screen. Products' name witch is placed on top of the page. Product price. Products' category. Quantity appear only for non unique items, so the user can choose how many items can be added to their shopping bag. Add to bag button will add selected item to the shopping bag and a success message will appear with a brief information what is in the shopping bag. Keep shopping button will retur user to the products page. Admin tools to edit or delete product appears only if supper user is connected.
+     </dd>
 
-**Why have you added this script?**
+**Shopping Bag**
+    <dd>
+        <ul>
+            <li>
+                <strong>Page Layout</strong> Page consists of page title, which is at the top of the page. For every item in the shopping a row is generated with consist of product image, product quantity, product information, product price and product price times quantity. At the bottom of the page user can see total price, shipping costs' ant grant total of the order. At the top of the page there is a button to return to products page. At the bottom of the page there is a button to go to a checkout form page. 
+            </li>
+            <li>
+                <strong>Quantyti</strong> Quantities can be adjusted at the shopping bag page page, entering a different number.
+            </li>
+             <li>
+                <strong>Remuve</strong> Any item can be removed from the shopping bag page by clicking remove button.
+            </li>
+        </ul>
+    </dd>
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+**Checkout**
+     <dd>
+          On top of the page there is a checkout page title. Page is divided by half: left side is for user information for shipping details, right side is a quick summer of the items to be processed. At the bottom of the page are two buttons: just bag and complete order. August bag returns the user to the shopping bag page and complete order redirects user to order success page.
+     </dd>
 
-**How will this affect me?**
+**Product Management**
+     <dd>
+          Product management holds a form witch after filled up will add or edit a product. The form consists of product category, sku, product name, description, has or not a size (for cloths), image url, select image button, and unique check box. To button at the end of the form: cancel, which will cancel the product management, and add product, or edit product witch will complete the product management and will redirect user to the product detail page.
+     </dd>
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+**My Profile**
+     <dd>
+          My profile page consists of user default shipping information witch after filling up will save any changes to user shipping information. On the right side of the screen there is a complete summary of the user purchase history. Clicking on any order item will redirect the user so success purchase pages with all the shipping and charging information.
+     </dd>
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+**Inventory**
+     <dd>
+          At inventory page user can see their unique item inventory. These items are information based so having more than one unnecessary. Page title is at the top of the page. For every item a card is created. Card consist of product image, category, purchase date and name. Clicking on the card image user is redirected to purchase success page.
+     </dd>
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+[Back to top ⇧](#table-of-contents)
 
-**So….?**
+## Admin User Information
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+**GitHub**
+     <dd>
+          Username - Admin
+          Password - Silorak1990 (key sensitive)
+     </dd>
+**Heroku**
+     <dd>
+          Username - Admin
+          Password - silorak1990 (key sensitive)
+     </dd>
 
-**Can I opt out?**
+## Issues and Bugs 
+The developer ran into a number of issues during the development of the game, with the noteworthy ones listed below, along with solutions.
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+**User  reciving two orders per one purches**
+- When user completed a purchase he would receive two orders. Two functions where named the same witch cast the bug. Simply after change one function the bug was fixed.
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+**No item info in inventory**
+- Inventory items would not be populated with the specific item's information only order information would appear. After careful examination the bug was that wrong name attribute was used. Instead of using the unique item name "listitem_unique", a "listitem" was used. Changing the name fixed the bug.
 
-**Anything more?**
+**No info on succes purches**
+- The success purchase page information would not be populated with product information, only order information would be populate. This occurred because no purchase item information was past on to the view. Specifically sending information to the function and passing it to view fixed the bug.
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+**Heroku app not uploading page**
+- Herroku would not upload the page because of 500 errors. After attempting to push the code herroku would not upload the page. Git push would be successful. After checking multiple possible causes, found the problem. One of the email values was misspelled and herroku could not get the correct value. After changing the name bug was fixed.
 
----
+**Checkout would not complit**
+- After filling in the form and pressing complete order button, the checkout function would not work. The error was that the url gets an unexpected value, "}". After carefully looking true the code there was an extra} witch cast the bug. Removing the } bug was fixed.
 
-Happy coding!
+[Back to top ⇧](#table-of-contents)
+
+## Technologies Used
+### Main Languages Used
+- [HTML5](https://en.wikipedia.org/wiki/HTML5 "Link to HTML Wiki")
+- [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets "Link to CSS Wiki")
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript "Link to JavaScript Wiki")
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language) "Link to Python Wiki")
+
+### Frameworks, Libraries & Programs Used
+- [Bootstrap](https://getbootstrap.com/ "Link to Boootstrap page")
+     - Materialize was used to implement the responsiveness of the site, using materialize classes.
+- [jQuery](https://jquery.com/download/ "Link to jQuery page")
+     - jQuery was used to simplify the JavaScript code used.
+- [Django](https://www.djangoproject.com/ "Link to Django page")
+     - Django was used to siplify the project build up.
+- [Google Fonts](https://fonts.google.com/ "Link to Google Fonts")
+    - Google fonts was used to import the fonts "Open Sans" and "Lobster".
+- [Font Awesome](https://fontawesome.com/ "Link to FontAwesome")
+     - Font Awesome was used for graphical indication of features buttons.
+- [Git](https://git-scm.com/ "Link to Git homepage")
+     - Git was used for version control by utilizing the GitPod terminal to commit to Git and push to GitHub.
+- [GitHub](https://github.com/ "Link to GitHub")
+     - GitHub was used to store the project after pushing.
+- [jQuery Validation](https://jqueryvalidation.org/ "Link to jQuery Validation page")
+     - jQuery Validation was used to simplify form validation for the **Feedback Form**.
+- [Am I Responsive?](http://ami.responsivedesign.is/# "Link to Am I Responsive Homepage")
+     - Am I Responsive was used in order to validate the responsiveness of the design.
+
+[Back to top ⇧](#table-of-contents)
+
+## Testing
+
+Testing information can be found in a separate testing file [TESTING.md](TESTING.md) Prideti testing fila
+
+## Deployment
+
+This project was developed using [Visual GitHub](https://github.com/ "Link to GitHub site").
+
+### Deploying on Heroku Pages
+To deploy this page to Heroku Pages from GitHub repository, the following steps were taken:
+
+**Enabling GitHub integration**
+
+1. You can configure GitHub integration in the Deploy tab of apps in the [Heroku Dashboard](https://dashboard.heroku.com/apps "Link to Herocku Dashboaard").
+
+2. To configure GitHub integration, you have to authenticate with GitHub. You only have to do this once per Heroku account.
+
+3. After you link your Heroku app to a GitHub repo, you can selectively deploy from branches or configure auto-deploys.
+
+**Automatic deploys**
+
+1. When you enable automatic deploys for a GitHub branch, Heroku builds and deploys all pushes to that branch. If, for example, you have a development app on Heroku, you can configure pushes to your GitHub development branch to be automatically built and deployed to that app.
+
+2. If you’ve configured your GitHub repo to use automated Continuous Integration (with Travis CI, for example), you can check the “Wait for CI to pass before deploy” checkbox. When enabled, Heroku will only auto-deploy after all the commit statuses of the relevant commit show success.
+This commit won’t auto-deploy because one of the checks shows a pending status.
+
+3. This commit will auto-deploy because all of the checks show a status of success.
+
+**Review apps**
+
+With review apps enabled for a Heroku app, Heroku will create temporary test apps for each pull request that’s opened on the GitHub repo that’s connected to the parent app. Review apps are great if you’re using GitHub Flow to propose, discuss, and merge changes to your code base. Because pull request branches are deployed to new apps on Heroku, it’s very simple for you and your collaborators to test and debug code branches. You can also run automated integration tests on the Heroku app representing a GitHub branch.
+
+See the [Review apps article](https://devcenter.heroku.com/articles/github-integration-review-apps "Link for app article") for details.
+
+**Heroku CI**
+
+Once you’ve connected your GitHub repo to your Pipeline, you can turn on [Heroku CI](https://devcenter.heroku.com/articles/heroku-ci "Link to Heroku CI"), our visual, low-configuration test runner that integrates easily with Heroku Pipelines (and so complements Review apps, existing Heroku apps, and our GitHub integrations). Any Heroku Pipeline is already Heroku CI ready – just turn it on in the Pipeline’s Settings tab.
+
+**Links to diffs**
+
+For apps that are linked to GitHub repos, releases in the Dashboard Activity tab will include a “View Diff” link. Following the link will take you to the GitHub comparison view, showing the changes made since the last release.
+
+**Disconnecting from GitHub**
+
+Individual apps can be disconnected in the GitHub pane of the Deploy tab for the app.
+
+
+[Back to top ⇧](#table-of-contents)
+
+## Credits 
+
+### Images and Recipes
+All images were uploaded from [Pexels](https://www.pexels.com/ "Link to Pexels page")
+
+All image author names are at the user image file names.
+
+### Code 
+The developer consulted multiple sites in order to better understand the code they were trying to implement. For code that was copied and edited, the developer made sure to reference this within the code. The following sites were used on a more regular basis:
+- [Stack Overflow](https://stackoverflow.com/ "Link to Stack Overflow page")
+- [W3Schools](https://www.w3schools.com/ "Link to W3Schools page")
+- [Bootstrap](https://getbootstrap.com/ "Link to BootStrap page")
+- [Code Institute Ejucation Material](https://codeinstitute.net/global/ "Link to Coudinary page")
+
+[Back to top ⇧](#table-of-contents)

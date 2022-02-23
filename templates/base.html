@@ -76,9 +76,6 @@
                             <li class="list-inline-item"><a class="navigation-link-text"
                                     href="{% url 'products' %}">Products</a>
                             </li>
-                            <li class="list-inline-item"><a class="navigation-link-text"
-                                    href="{% url 'user_inventory' %}">Inventory</a></li>
-
                         </ul>
                     </div>
 
@@ -103,6 +100,7 @@
                             {% endif %}
                             <!-- Login user tools -->
                             <a href="{% url 'profile' %}" class="dropdown-item burger-menu-text">My Profile</a>
+                            <a href="{% url 'user_inventory' %}" class="dropdown-item burger-menu-text">Inventory</a>
                             <a href="{% url 'account_logout' %}" class="dropdown-item burger-menu-text">Logout</a>
                             {% else %}
                             <!-- New User tools -->
