@@ -328,7 +328,6 @@ body {
 .card-container .card {
     border: 3px solid #000;
     border-radius: 5px;
-    min-height: 450px;
     margin-bottom: 15px;
 }
 
@@ -344,6 +343,14 @@ body {
 .card-img-container img {
     height: 200px;
     object-fit:  cover;
+}
+
+.card-title-text {
+    text-overflow: ellipsis;
+    overflow: hidden; 
+    width: 160px; 
+    height: 1.2em; 
+    white-space: nowrap;
 }
 
 @media (min-width: 960px) {
