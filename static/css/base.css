@@ -137,6 +137,10 @@ body {
     min-width: 35%;
 }
 
+.modal {
+    z-index: 999999999;
+}
+
 /* General Form Style */
 
 .fform {
