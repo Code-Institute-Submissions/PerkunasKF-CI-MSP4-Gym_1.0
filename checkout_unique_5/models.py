@@ -1,17 +1,12 @@
 import uuid
 
 from django.db import models
-from django.db.models import Sum
-from django.conf import settings
-
-from django_countries.fields import CountryField
-
 from products.models import Product
 from user_inventory.models import UserInventory
 
 
 class OrderUnique(models.Model):
-    """ Dummy Tag """
+    """ Model for unique products  """
 
     order_number = models.CharField(max_length=32, null=False, editable=False)
     user_inventory = models.ForeignKey(UserInventory, on_delete=models.SET_NULL,
@@ -46,7 +41,7 @@ class OrderUnique(models.Model):
 
 
 class OrderLineItemUnique(models.Model):
-    """ Dummy Tag """
+    """ Model for product configuriations in admin view """
 
     order = models.ForeignKey(OrderUnique, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems_unique')
     product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
