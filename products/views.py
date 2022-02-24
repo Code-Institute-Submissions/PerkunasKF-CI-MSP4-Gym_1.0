@@ -65,8 +65,9 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     product_check = None
-    user_autheticated = False
 
+    # Code to check if specifick item is in registered user
+    # inventory
     if request.user.is_authenticated:
         inventory = get_object_or_404(UserInventory, user=request.user)
         orders = inventory.orders_unique.all()
@@ -74,9 +75,9 @@ def product_detail(request, product_id):
         for order in orders:
             for item in order.lineitems_unique.all():
                 inventory_products.insert(0, item.product.id)
-        for object in inventory_products:
-            if object == product.id:
-                product_check = object
+        for a_think in inventory_products:
+            if a_think == product.id:
+                product_check = a_think
                 print('tikrina ar yra bent vienas items inventoriuje')
                 break
             else:
