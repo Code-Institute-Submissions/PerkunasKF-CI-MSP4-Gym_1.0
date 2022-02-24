@@ -34,37 +34,6 @@ def cache_checkout_data_unique(request):
 
 def checkout_unique(request, item_id):
     """ Dummy Tag """
-
-    # stripe_public_key = settings.STRIPE_PUBLIC_KEY
-    # stripe_secret_key = settings.STRIPE_SECRET_KEY
-
-    # item = get_object_or_404(Product, pk=item_id)
-    # total = item.price
-    # stripe_total = round(total * 100)
-    # stripe.api_key = stripe_secret_key
-    # intent = stripe.PaymentIntent.create(
-    #     amount=stripe_total,
-    #     currency=settings.STRIPE_CURRENCY,
-    # )
-
-    # form_data = {
-    #     'username': request.POST['username'],
-    #     'email': request.POST['email'],
-    # }
-
-    # order_form = OrderFormUnique(form_data)
-
-    # order = order_form.save(commit=False)
-    # pid = request.POST.get('client_secret_unique').split('_secret_unique')[0]
-    # order.stripe_pid = pid
-    # order.save()
-    # product = Product.objects.get(id=item_id)
-    # order_line_item = OrderLineItemUnique(
-    #     order=order,
-    #     product=product,
-    # )
-    # order_line_item.save()
-    # print(order_line_item)
     
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
@@ -81,6 +50,7 @@ def checkout_unique(request, item_id):
         amount=stripe_total,
         currency=settings.STRIPE_CURRENCY,
     )
+    # Submits form information after confirming purches
     if request.method == 'POST':
         form_data = {
             'username': request.POST['username'],
@@ -88,6 +58,7 @@ def checkout_unique(request, item_id):
         }
         
         order_form = OrderFormUnique(form_data)
+        # Checks is form is valid
         if order_form.is_valid():
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret_unique').split('_secret_unique')[0]
@@ -105,6 +76,7 @@ def checkout_unique(request, item_id):
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
     else:
+        # Checks if user is registered
         if request.user.is_authenticated:
             inventory = get_object_or_404(UserInventory, user=request.user)
             username = request.user
@@ -112,6 +84,9 @@ def checkout_unique(request, item_id):
             orders = inventory.orders_unique.all()
             inventory_products = []
 
+            # Checks if user hase any unique items in inventory
+            # If inventory is empty first itme is put to user inventory
+            # without charging
             for order in orders:
                 for item in order.lineitems_unique.all():
                     inventory_products.insert(0, item.product.id)
@@ -134,6 +109,7 @@ def checkout_unique(request, item_id):
                     order_line_item.save()
                     
                     return redirect(reverse('checkout_success_unique', args=[order.order_number, product.id]))
+            # User is charged if user inventory has atleas one itme
             else:
                 item = get_object_or_404(Product, pk=item_id)
                 profile = UserProfile.objects.get(user=request.user)
@@ -149,9 +125,6 @@ def checkout_unique(request, item_id):
                     'stripe_public_key': stripe_public_key,
                     'client_secret': intent.client_secret,
                 }
-                print('-------- Testas item products -------')
-                print(item)
-                print('-------------------------')
             return render(request, template, context)
         else:
             messages.error(request, 'Only registered users can purches this item')
@@ -165,10 +138,6 @@ def checkout_success_unique(request, order_number, product_id):
 
     order = get_object_or_404(OrderUnique, order_number=order_number)
     product = get_object_or_404(Product, id=product_id)
-
-    print('------- Testas product_data---------')
-    print(product_id)
-    print('-----------------------')
 
     if request.user.is_authenticated:
         profile = UserInventory.objects.get(user=request.user)
