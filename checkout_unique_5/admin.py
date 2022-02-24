@@ -5,14 +5,14 @@ from .models import OrderUnique, OrderLineItemUnique
 
 
 class OrderLineItemAdminInlineUnique(admin.TabularInline):
-    """ Dummy Tag """
+    """ Class to show items in unique products admin view """
 
     model = OrderLineItemUnique
     readonly_fields = ('lineitem_total',)
 
 
 class OrderAdminUnique(admin.ModelAdmin):
-    """ Dummy Tag """
+    """ Class to show order information for unique checkouts """
     
     inlines = (OrderLineItemAdminInlineUnique,)
 
