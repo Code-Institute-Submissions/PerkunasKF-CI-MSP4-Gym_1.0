@@ -11,7 +11,9 @@ from profiles.models import UserProfile
 
 
 class Order(models.Model):
-    """ Dummy Tag """
+    """
+    Order models
+    """
 
     order_number = models.CharField(max_length=32, null=False, editable=False)
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
