@@ -17,7 +17,7 @@ class StripeWHHandlerUnique:
     def __init__(self, request):
         self.request = request
 
-    def _send_confirmation_email(self, order):
+    def _send_confirmation_email_unique(self, order):
         """Send the user a confirmation email"""
         cust_email = order.email
         subject = render_to_string(
@@ -42,7 +42,7 @@ class StripeWHHandlerUnique:
             content=f'Unhandled webhook received: {event["type"]}',
             status=200)
 
-    def handle_payment_intent_succeeded(self, event):
+    def handle_payment_intent_succeeded_unique(self, event):
         """
         Handle the payment_intent.succeeded webhook from Stripe
         """
@@ -77,7 +77,7 @@ class StripeWHHandlerUnique:
                 attempt += 1
                 time.sleep(1)
         if order_exists:
-            self._send_confirmation_email(order)
+            self._send_confirmation_email_unique(order)
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
                 status=200)
@@ -104,7 +104,7 @@ class StripeWHHandlerUnique:
                 return HttpResponse(
                     content=f'Webhook received: {event["type"]} | ERROR: {e}',
                     status=500)
-        self._send_confirmation_email(order)
+        self._send_confirmation_email_unique(order)
         return HttpResponse(
             content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
             status=200)
