@@ -16,7 +16,7 @@ from .models import Order, OrderLineItem
 
 @require_POST
 def cache_checkout_data(request):
-    """ Dummy Tag """
+    """ Dummy tag """
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -38,6 +38,7 @@ def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
+    # If checkout form is submited make the purches
     if request.method == 'POST':
         bag = request.session.get('bag', {})
 
@@ -54,6 +55,7 @@ def checkout(request):
         }
 
         order_form = OrderForm(form_data)
+        # Checks if the form is valid
         if order_form.is_valid():
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
@@ -93,6 +95,7 @@ def checkout(request):
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
+    # Bag is emty
     else:
         bag = request.session.get('bag', {})
         if not bag:
