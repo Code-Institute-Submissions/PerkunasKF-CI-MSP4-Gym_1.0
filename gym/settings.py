@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['silorka-ci-thegym.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['miles-stone-project-4-the-gym.herokuapp.com', 'localhost']
 
 
 # Application definition
