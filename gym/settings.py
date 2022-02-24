@@ -97,7 +97,7 @@ TEMPLATES = [
 ]
 
 
-SITE_ID = 1
+# SITE_ID = 1
 
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
