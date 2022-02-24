@@ -37,6 +37,7 @@
                 {% else %}
                     <!-- Login user tools -->
                     <a href="{% url 'profile' %}" class="dropdown-item burger-menu-text">My Profile</a>
+                    <a href="{% url 'user_inventory' %}" class="dropdown-item burger-menu-text">Inventory</a>
                     <a href="{% url 'account_logout' %}" class="dropdown-item burger-menu-text">Logout</a>
                 {% endif %}
             {% else %}
