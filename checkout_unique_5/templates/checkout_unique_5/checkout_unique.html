@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block content %}
+    <!-- Page title -->
     <div class="container-fluid card-container">
         <div class="row">
             <div class="col">
@@ -16,6 +17,7 @@
         </div>
 
         <div class="row">
+            <!-- Order summmary -->
             <div class="col-12 col-lg-6 order-lg-last mb-5" style="padding-right: 25px;">
                 <p class="text-muted">Order Summary</p>
                 <div class="row">
@@ -56,6 +58,7 @@
                 </div>
             </div>
 
+            <!-- Form for unique checkout -->
             <div class="col-12 col-lg-6">
                 <form action="{% url 'checkout_unique' item.id %}" method="POST" id="payment-form-unique">
                     {% csrf_token %}
@@ -101,6 +104,8 @@
             </div>
         </div>
     </div>
+
+    <!-- Loading owerlay -->
     <div id="loading-overlay-unique">
         <h1 class="text-light logo-font loading-spinner">
             <span class="icon">
