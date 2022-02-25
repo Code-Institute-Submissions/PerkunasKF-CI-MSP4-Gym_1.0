@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import render, get_object_or_404
 
 
 from profiles.models import UserProfile
@@ -12,7 +12,7 @@ def comunity(request):
     """ 
     Renders comunity page
     """
-    
+
     title = ComunityMessages.objects.all()
 
     if request.method == "POST":
@@ -59,4 +59,3 @@ def comunity(request):
             }
 
             return render(request, template, context)
-

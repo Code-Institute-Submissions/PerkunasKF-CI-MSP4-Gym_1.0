@@ -5,7 +5,7 @@ from .models import Order, OrderLineItem
 
 
 class OrderLineItemAdminInline(admin.TabularInline):
-    """ 
+    """
     Displays for admin order items, also alow edit them
     """
 
@@ -14,10 +14,10 @@ class OrderLineItemAdminInline(admin.TabularInline):
 
 
 class OrderAdmin(admin.ModelAdmin):
-    """ 
+    """
     Order history display layout for admin
     """
-    
+
     inlines = (OrderLineItemAdminInline,)
 
     readonly_fields = ('order_number', 'date',
@@ -37,5 +37,6 @@ class OrderAdmin(admin.ModelAdmin):
                     'grand_total',)
 
     ordering = ('-date',)
+
 
 admin.site.register(Order, OrderAdmin)
