@@ -1,62 +1,62 @@
-        /*---------------------------------------------- Burger menu -----------------------------------------------*/
+/*---------------------------------------------- Burger menu -----------------------------------------------*/
 
-        #burger-menu-icon {
-            color: #fca311;
-            font-size: 32px;
-        
-            box-shadow: none;
-            background-color: transparent;
-        
-            border: none;
-            margin-left: 25px;
-        }
-        
-        #burger-menu-icon:hover, #burger-menu-icon:focus {
-            color: #000;
-            background-color: #fca311;
-        }
-        
-        .burger-menu-items-box {
-            background-color: #000000;
-            border: 2px solid #fca311;
-            border-radius: 5px;
-        }
-        
-        .burger-menu-text {
-            color: #fca311;
-            font-family: 'Roboto', sans-serif;
-            font-size: 20px;
-            font-weight: 500;
-        }
-        
-        .burger-menu-items-box a:hover {
-            background-color: #fca311;
-            color: #000000;    
-        }
-        
-        .burger-menu-items-box i {
-            margin-right: 10px;
-        }
-        
-        #burger-login {
-            border-top: 2px solid #fca311;
-            text-align: center;
-            padding-top: 5px;
-        }
-        
-        .margin-top {
-            margin-top: 25px;
-        }
+#burger-menu-icon {
+    color: #fca311;
+    font-size: 32px;
 
-        .admin-tools {
-            margin: 5px;
-            border-top: 2px solid #fff;
-            border-bottom: 2px solid #fff;
-        }
-        
-        @media (max-width: 355px) {
-            .burger-menu-text {
-                font-size: 15px;
-                letter-spacing: 0;
-            }
-        }
+    box-shadow: none;
+    background-color: transparent;
+
+    border: none;
+    margin-left: 25px;
+}
+
+#burger-menu-icon:hover, #burger-menu-icon:focus {
+    color: #000;
+    background-color: #fca311;
+}
+
+.burger-menu-items-box {
+    background-color: #000000;
+    border: 2px solid #fca311;
+    border-radius: 5px;
+}
+
+.burger-menu-text {
+    color: #fca311;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.burger-menu-items-box a:hover {
+    background-color: #fca311;
+    color: #000000;    
+}
+
+.burger-menu-items-box i {
+    margin-right: 10px;
+}
+
+#burger-login {
+    border-top: 2px solid #fca311;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.margin-top {
+    margin-top: 25px;
+}
+
+.admin-tools {
+    margin: 5px;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+
+@media (max-width: 355px) {
+    .burger-menu-text {
+        font-size: 15px;
+        letter-spacing: 0;
+    }
+}

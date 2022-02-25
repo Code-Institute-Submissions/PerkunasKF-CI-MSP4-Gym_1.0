@@ -3,14 +3,13 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
-from django_countries.fields import CountryField
-
 
 class UserInventory(models.Model):
     """
-    A user inventory model for maintaining user 
+    A user inventory model for maintaining user
     unique item inventory and order history
     """
+
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     username = models.CharField(max_length=50, null=False, blank=False)
 

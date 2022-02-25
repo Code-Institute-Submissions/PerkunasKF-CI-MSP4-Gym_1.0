@@ -7,7 +7,6 @@ from .models import Order, OrderLineItem
 class OrderLineItemAdminInline(admin.TabularInline):
     """ 
     Displays for admin order items, also alow edit them
-    
     """
 
     model = OrderLineItem
