@@ -5,7 +5,6 @@ from checkout_unique_5.models import OrderUnique
 
 from products.models import Product
 from .models import UserInventory
-from .forms import UserInventoryForm
 
 
 def user_inventory(request):

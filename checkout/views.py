@@ -1,10 +1,11 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (render, redirect, reverse, get_object_or_404,
+                              HttpResponse)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
 
-import stripe
 import json
+import stripe
 
 from products.models import Product
 from profiles.forms import UserProfileForm
@@ -174,8 +175,8 @@ def checkout_success(request, order_number):
                 user_profile_form.save()
 
     messages.success(request, f'Order successfully processed! \
-        Your order number is {order_number}. A confirmation \
-        email will be sent to {order.email}.')
+                     Your order number is {order_number}. A confirmation \
+                     email will be sent to {order.email}. ')
 
     if 'bag' in request.session:
         del request.session['bag']

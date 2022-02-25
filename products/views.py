@@ -20,6 +20,7 @@ def all_products(request):
     sort = None
     direction = None
 
+    # Product sorting code
     if request.GET:
         if 'sort' in request.GET:
             sortkey = request.GET['sort']

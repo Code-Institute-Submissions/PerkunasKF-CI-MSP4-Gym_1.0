@@ -7,7 +7,6 @@ from .models import OrderUnique, OrderLineItemUnique
 from products.models import Product
 from user_inventory.models import UserInventory
 
-import json
 import time
 
 

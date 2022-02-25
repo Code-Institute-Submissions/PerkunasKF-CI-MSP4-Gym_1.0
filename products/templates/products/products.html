@@ -34,7 +34,7 @@
 
         <div class="col d-flex d-md-none justify-content-center">
             <!-- Drop down menu button for Categories -->
-            <a class="navigation-link-text-black btn-group dropleft" href="#" id="user-options" data-toggle="dropdown"
+            <a class="navigation-link-text-black btn-group dropleft" href="#" id="products-options" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <div class="text-center">
                     <p>Choose a Category</p>
@@ -42,7 +42,7 @@
             </a>
 
             <!-- Dropdown items, product categories -->
-            <div class="dropdown-menu burger-menu-items-box w-100" aria-labelledby="user-options">
+            <div class="dropdown-menu burger-menu-items-box w-100" aria-labelledby="products-options">
                 <ul class="navigation-link-text">
                     <li><a class="navigation-link-text" href="{% url 'products' %}">All Products</a></li>
                     <li><a class="navigation-link-text" href="{% url 'products' %}?category=workout_plans">Workout Plans</a>
@@ -71,13 +71,11 @@
                 <div class="collapse collapse-horizontal" id="collapseWidthExample">
                     <div class="card card-body" style="min-width: 400px;">
                         <ul style="list-style-type:none;" class="text-left">
-                            <br>
                             <li data-toggle="tooltip" data-placement="right" title="Sort by price ascending">
                                 <a href="{% url 'products' %}?sort=price&direction=asc">
                                     Sort By price: ascending <i class="fas fa-euro-sign"></i>
                                 </a>
                             </li>
-                            <br>
                             <li data-toggle="tooltip" data-placement="right" title="Sort by price descending">
                                 <a href="{% url 'products' %}?sort=price&direction=desc">
                                     Sort By price: descending <i class="fas fa-euro-sign"></i>
@@ -121,7 +119,7 @@
                                         |
                                         <a id="deleteInput" class="text-danger cursor-fix" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</a>
 
-                                        <!-- Modal for delte confimation -->
+                                        <!-- Modal for delete confimation -->
                                         <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
@@ -142,6 +140,7 @@
                                 </div>
                             </div>
                             {% endif %}
+                            <!-- Product category -->
                             {% if product.category %}
                                 <div class="row">
                                     <div class="col text-right">
@@ -151,24 +150,22 @@
                                     </div>
                                 </div>
                             {% endif %}
+                            <!-- Product price -->
                             <p class="card-text text-right text-small-black">
-                                {% if product.price != 0 %}
-                                    {{ product.price }} €
-                                {% else %}
-                                    Free for registered users!
-                                {% endif %}
+                                {{ product.price }} €
                             </p>
+                            <!-- Product name -->
                             <div class="row">
                                 <div class="col">
-                                    <h6 class="card-title card-title-text" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="{{ product.name }}">
+                                    <p class="card-title card-title-text" data-bs-toggle="tooltip" data-bs-placement="top" title="{{ product.name }}">
                                         {{ product.name }}
-                                    </h6>
+                                    </p>
                                 </div>
                             </div>
                             <hr>
                             <div class="row">
                                 <div class="col text-center">
-                                    <a href="{% url 'product_detail' product.id %}" class="btn transparent-bbtn w-75 more-info-bbt"><strong>INFO</strong></a>
+                                    <a href="{% url 'product_detail' product.id %}" class="btn transparent-bbtn w-75 more-info-bbt"><strong>Details</strong></a>
                                 </div>
                             </div>
                         </div>

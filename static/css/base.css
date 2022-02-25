@@ -10,9 +10,6 @@ html, body {
     margin: 0px;
 }
 
-/*  Images copied from [https://www.pexels.com/photo/blur-chains-chrome-close-up-220237/]
-    on 2021-05-11
-    Author: Pixabay */
 body {
     background: url('/media/pexels-pixabay-220237.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -358,8 +355,11 @@ body {
     text-overflow: ellipsis;
     overflow: hidden; 
     width: 160px; 
-    height: 1.2em; 
+    height: 1.4em; 
     white-space: nowrap;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
 }
 
 @media (min-width: 960px) {
@@ -624,7 +624,6 @@ a {
 }
 
 .allauth-form-inner-content p {
-    margin-top: 1.5erm; /* mt-4 */
     color: #6c757d; /* text-secondary */
 }
 
@@ -769,7 +768,6 @@ a {
     /* Shopping bag image */
     .sb-img {
         height: 150px;
-        max-width: auto;
         object-fit:  cover;
     }
     /* --- --- */
@@ -779,7 +777,6 @@ a {
     /* Shopping bag image */
     .sb-img {
         height: 100px;
-        max-width: auto;
         object-fit:  cover;
     }
     /* --- --- */

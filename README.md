@@ -5,7 +5,7 @@
 <div align="center">
   Find and buy product for your fitness life.
 
-[View the live project here ADD LATTER](#)
+[View the live project here](https://miles-stone-project-4-the-gym.herokuapp.com/ "Link to Live project")
 
 </div>
 
@@ -25,7 +25,7 @@
 7. [Credits](#Credits)
 ***
 
-![Blank! Responsiveness](media/am-i-responsive.png)
+![Blank! Responsiveness](images-readme/am-i-responsive.png)
 
 ***
 
@@ -36,6 +36,15 @@ This website was designed for a fictional fitness market place, "Muscle Gym". Th
 This is the final Milestone Project from necessary for the project to complete the Full Stack Web Development Program at The Code Institute.
 
 The main requirement was to make a website using **HTML**, **CSS**, **JavaScript**, **Python+Django**.
+
+#### User Goals
+The user is looking for:
+- Products to improve their fitness levels.
+- Workout plans to improve their fitness levels.
+- Share opinions and tips about products and workout plans.
+- A place where could easily access workout plans.
+- Place to see my order history.
+- Secure way to purchase products from the website.
 
 #### Developer Goals
 The Developer is looking to:
@@ -56,6 +65,7 @@ The Developer is looking to:
 1. As a current client, I want to be able change my shipping information.
 2. As a current client, I want to be able to find all my purchase history of products.
 3. As a current client, I want to be able access my unique item inventory.
+4. As a current client, I want to share my opinion on the website products.
 
 #### Owner Goals:
 1. As an owner, I want to be able to add new products.
@@ -89,7 +99,7 @@ The website needs to enable the **Shop** to:
 
 With these goals in mind, a strategy table was created:
 
-![Strategy Table](media/strategic-plan.png)
+![Strategy Table](images-readme/strategic-plan.png)
 
 <strong>2. <u>Scope</u></strong>
 
@@ -113,7 +123,7 @@ A scope was defined to clearly identify what needed to be done to align features
 
 The web page content is divided through multiple pages in a tree like pattern for easy navigating and distinguishing content. The **hierarchial tree structure**:
 
-![Site Map](media/page-layot-plan.png)
+![Site Map](images-readme/page-layot-plan.png)
 
 <strong>4. <u>Skeleton</u></strong>
 
@@ -227,6 +237,11 @@ Wireframe mockups were created in a [Figma Workspace](https://www.figma.com/file
 **Inventory**
      <dd>
           At inventory page user can see their unique item inventory. These items are information based so having more than one unnecessary. Page title is at the top of the page. For every item a card is created. Card consist of product image, category, purchase date and name. Clicking on the card image user is redirected to purchase success page.
+     </dd>
+
+**Comunyt**
+     <dd>
+          Community page allows registered users to leave messages for every website visitor. The page has a message button at the top of the page which is seen only by registered users. At the left bottom corner there is a return to top button which allows users to scroll back to the top of the page.
      </dd>
 
 [Back to top ⇧](#table-of-contents)

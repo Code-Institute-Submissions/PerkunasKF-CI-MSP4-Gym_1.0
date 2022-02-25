@@ -4,10 +4,8 @@ from django.contrib import messages
 from django.conf import settings
 
 import stripe
-import json
 
 from products.models import Product
-from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
 from user_inventory.models import UserInventory
 from .forms import OrderFormUnique
@@ -16,7 +14,7 @@ from .models import OrderUnique, OrderLineItemUnique
 
 @require_POST
 def cache_checkout_data_unique(request):
-    """ Dummy Tag """
+    """ Adding values to checkout data """
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -42,6 +40,7 @@ def checkout_unique(request, item_id):
         messages.warning(request, 'Stripe public key is missing. \
             Did you forget to set it in your environment?')
 
+    # Getting basik values for checkout
     item = get_object_or_404(Product, pk=item_id)
     total = item.price
     stripe_total = round(total * 100)

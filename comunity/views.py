@@ -23,12 +23,9 @@ def comunity(request):
         }
 
         message_form = MessageForm(form_data)
+        # saves the message
         if message_form.is_valid():
             message = message_form.save(commit=False)
-            # pid = request.POST.get('client_secret_unique').split('_secret_unique')[0]
-            # order.stripe_pid = pid
-            # order.order_total = item.price
-            # order.save()
             message.save()
 
             username = get_object_or_404(UserProfile, user=request.user)
@@ -42,6 +39,7 @@ def comunity(request):
 
             return render(request, template, context)
     else:
+        # if user is registered poasses user name
         if request.user.is_authenticated:
             username = get_object_or_404(UserProfile, user=request.user)
 
