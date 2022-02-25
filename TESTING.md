@@ -59,6 +59,45 @@
 
 ## Manual Testing
 
+- Hovering over navigation element will change their styles:
+
+    ![Hovering over the navigationbar elements](gifs/ms4-navbar.gif)
+
+
+- Clicking on category names on the product page shows only selected category:
+
+    ![Selecting categories](gifs/ms4-product-categories.gif)
+
+
+- Clicking on the bar icon on the right side of the screen opens a box and there products can be filtered by the price:
+
+    ![Filtering products](gifs/ms4-product-filtering.gif)
+
+
+- Clicking back to top button returns to the top of the screen:
+
+    ![Return to top](gifs/ms4-product-returntotop.gif)
+
+
+- Selecting content restriction from below 1 and a bow 99:
+
+    ![Quantity restrictions](gifs/ms4-productdetails.gif)
+
+
+- Sending purchase verification for clients email:
+
+    ![Order verification](gifs/ms4-purches-werification.gif)
+
+
+- Registering a user and sending verification email:
+
+    ![User register in, email verification](gifs/ms4-registering-user.gif)
+
+
+- Posting a message:
+
+    ![Posting a message](gifs/ms4-posting-a-message.gif)
+
 ### Code Validation
 
 #### [W3C Markup Validator](https://validator.w3.org/ "Link to W3C Markup Validator") was used to validate the `HTML` code used:

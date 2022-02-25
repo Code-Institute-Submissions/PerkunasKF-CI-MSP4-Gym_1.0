@@ -49,13 +49,10 @@
                                                                 </select>
                                                             </li>
                                                         {% endif %}
-                                                    <!-- <li class="col-sm-6 col-md-3 col-ld-2 text-center list-inline-item">
-                                                        <p><strong>Quantity:</strong></p>
-                                                    </li> -->
                                                     <li class="col-sm col-md-3 col-ld-2 list-inline-item text-center form-group">
                                                         <p><strong>Quantity</strong></p>
                                                         <div class="input-group quantaty-container">
-                                                            <input class="form-control text-center" type="number" name="quantity" value="1" min="1" max="99"
+                                                            <input class="form-control text-center quantity input" type="number" name="quantity" value="1" min="1" max="99"
                                                                 data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
                                                         </div>
                                                     </li>
@@ -95,11 +92,7 @@
                         <div class="row details-price">
                             <div class="col">
                                 <p class="text-right detail-price">
-                                    {% if product.price != 0 %}
-                                        {{ product.price }} €
-                                    {% else %}
-                                        Free for registered users!
-                                    {% endif %}
+                                    {{ product.price }} €
                                 </p>
                             </div>
                         </div>
@@ -168,13 +161,6 @@
             </div>
         </div>
     </div>
-
-    {% for order in orders %}
-        {% for item in order.lineitems.all %}
-            {% if product.id == item.product.id %}
-            {% endif %}
-        {% endfor %}
-    {% endfor %}
 
     {% for order in orders %}
     <tr>

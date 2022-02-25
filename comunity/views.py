@@ -1,4 +1,5 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import (render, redirect, reverse,
+                              get_object_or_404)
 
 
 from profiles.models import UserProfile
@@ -14,6 +15,9 @@ def comunity(request):
     """
 
     title = ComunityMessages.objects.all()
+    dates = []
+    for date in title:
+        dates.insert(0, date.date)
 
     if request.method == "POST":
         form_data = {
@@ -28,16 +32,17 @@ def comunity(request):
             message = message_form.save(commit=False)
             message.save()
 
-            username = get_object_or_404(UserProfile, user=request.user)
+            # username = get_object_or_404(UserProfile, user=request.user)
 
-            template = 'comunity/comunity.html'
+            # template = 'comunity/comunity.html'
 
-            context = {
-                'title': title,
-                'username': username,
-            }
+            # context = {
+            #     'title': title,
+            #     'username': username,
+            # }
 
-            return render(request, template, context)
+            return redirect(reverse('comunity'))
+            # return render(request, template, context)
     else:
         # if user is registered poasses user name
         if request.user.is_authenticated:
@@ -48,6 +53,7 @@ def comunity(request):
             context = {
                 'title': title,
                 'username': username,
+                'dates': dates
             }
 
             return render(request, template, context)
@@ -56,6 +62,7 @@ def comunity(request):
 
             context = {
                 'title': title,
+                'dates': dates
             }
 
             return render(request, template, context)

@@ -50,23 +50,28 @@
             {% endif %}
             
             <div class="row width-ajustment center-item" {% if not request.user.is_authenticated %} style="margin-top: 15px;"{% endif %}>
-                {% for message in title %}
-                    <div class="card width-ajustment">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-12 col-md-4 text-center message-information">
-                                    <p class="card-subtitle mb-2 text-general">{{ message.username }}</p>
-                                    <hr>
-                                    <p class="card-text text-muted"><small>{{ message.date }}</small></p>
-                                </div>
-                                <div class="col-12 col-md-8 messagee-container">
-                                    <h5 class="card-title"><strong>{{ message.title }}</strong></h5>
-                                    <hr>
-                                    <p class="card-text text-general">{{ message.message_content }}</p>
+
+                {% for date in dates  %}
+                    {% for message in title %}
+                        {% if message.date == date %}
+                            <div class="card width-ajustment">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12 col-md-4 text-center message-information">
+                                            <p class="card-subtitle mb-2 text-general"><strong>{{ message.username }}</strong></p>
+                                            <hr>
+                                            <p class="card-text text-general"><small>{{ message.date }}</small></p>
+                                        </div>
+                                        <div class="col-12 col-md-8 messagee-container">
+                                            <h5 class="card-title"><strong>{{ message.title }}</strong></h5>
+                                            <hr>
+                                            <p class="card-text text-general">{{ message.message_content }}</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        {% endif %}
+                    {% endfor %}
                 {% endfor %}
             </div>
 
