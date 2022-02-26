@@ -79,9 +79,13 @@
     ![Return to top](gifs/ms4-product-returntotop.gif)
 
 
-- Selecting content restriction from below 1 and a bow 99:
+- Selecting product quantity and ading to the bag:
 
-    ![Quantity restrictions](gifs/ms4-productdetails.gif)
+    ![Quantity selection](gifs/ms4-selecting-qty.gif)
+
+
+- Ajusting shopping bag content:
+    ![Ajusting shopping bag](gifs/ms4-shopping-bag-quantity.gif)
 
 
 - Sending purchase verification for clients email:
@@ -97,6 +101,16 @@
 - Posting a message:
 
     ![Posting a message](gifs/ms4-posting-a-message.gif)
+
+
+- Creating and editing a product:
+
+    ![Creating and editing a product](gifs/ms4-creating-edidting-product.gif)
+
+
+- Searching and deleting a product:
+
+    ![Searching and deleting a product](gifs/ms4-searching-deleting-product.gif)
 
 ### Code Validation
 
