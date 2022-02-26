@@ -192,7 +192,7 @@
 {% endfor %}
 
 {% endblock %}
-
+{{ block.super }}
 {% block postloadjs %}
     {% include 'products/includes/incrementes_script.html' %}
 {% endblock %}

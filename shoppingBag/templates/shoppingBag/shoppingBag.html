@@ -111,6 +111,7 @@
 {% endblock %}
 
 {% block postloadjs %}
+    {{ block.super }}
     {% include 'products/includes/incrementes_script.html' %}
 
     <script>
