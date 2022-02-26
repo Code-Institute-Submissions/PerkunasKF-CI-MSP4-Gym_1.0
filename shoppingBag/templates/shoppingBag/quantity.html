@@ -1,22 +1,32 @@
-<form class="form update-form" action="{% url 'adjust_bag' item.item_id %}" method="POST">
+<form id="update-form" class="form update-form" action="{% url 'adjust_bag' item.item_id %}" method="POST">
     {% csrf_token %}
-        <ul class="list-inline">
-            <li class="list-inline-item form-group">
-                <div class="input-group quantaty-container">
-                    <input class="form-control text-center" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99"
-                        data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+    <ul class="list-inline">
+        <li class="list-inline-item form-group input-grupe text-center">
+            <div class="row">
+                <div class="col">
+                    <div class="col-12 increment-bbt plus-bbt cursor-fix text-center"><i class="fas fa-plus"></i></div>
                 </div>
-            </li>
-            {% if item.product.has_sizes %}
-                <input type="hidden" name="product_size" value="{{ item.size }}">
-            {% endif %}
-        </ul>
+            </div>
+            <div class="input-group quantaty-container">
+                <input class="col-12 form-control text-center qty" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99"
+                    data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="col-12 increment-bbt minus-bbt cursor-fix text-center"><i class="fas fa-minus"></i></div>
+                </div>
+            </div>
+        </li>
+        {% if item.product.has_sizes %}
+            <input type="hidden" name="product_size" value="{{ item.size }}">
+        {% endif %}
+    </ul>
+    <ul class="list-inline">
+        <li class="list-inline-item">
+            <input type="submit" id="submit-override" value="Update" class="btn">
+        </li>
+        <li class="list-inline-item cursor-fix">
+            <a class="remove-item text-danger" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small>Remove</small></a>
+        </li>
+    </ul>
 </form>
-<ul class="list-inline">
-    <li class="list-inline-item">
-        <a class="update-link text-info cursor-fix"><small>Update</small></a>
-    </li>
-    <li class="list-inline-item cursor-fix">
-        <a class="remove-item text-danger" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small>Remove</small></a>
-    </li>
-</ul>

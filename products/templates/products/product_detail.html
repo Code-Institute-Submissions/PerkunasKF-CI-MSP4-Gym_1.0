@@ -49,11 +49,21 @@
                                                                 </select>
                                                             </li>
                                                         {% endif %}
-                                                    <li class="col-sm col-md-3 col-ld-2 list-inline-item text-center form-group">
-                                                        <p><strong>Quantity</strong></p>
-                                                        <div class="input-group quantaty-container">
-                                                            <input class="form-control text-center quantity input" type="number" name="quantity" value="1" min="1" max="99"
-                                                                data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                                                    <li class="col-sm col-md-4 col-ld-2 list-inline-item text-center input-grupe form-group">
+                                                        <div class="row">
+                                                            <div class="col-6 text-center">
+                                                                <p><strong>Quantity</strong></p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-6 increment-bbt plus-bbt cursor-fix"><i class="fas fa-plus"></i></div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <input class=" col-12 col-md-6 text-centerform-control text-center quantity input qty" type="number" name="quantity" value="1" min="1" max="99"
+                                                            data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}" readonly>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-6 increment-bbt minus-bbt cursor-fix"><i class="fas fa-minus"></i></div>
                                                         </div>
                                                     </li>
                                                     <!-- Add to bag button product -->
@@ -181,4 +191,8 @@
     </tr>
 {% endfor %}
 
+{% endblock %}
+
+{% block postloadjs %}
+    {% include 'products/includes/incrementes_script.html' %}
 {% endblock %}

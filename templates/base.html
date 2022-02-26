@@ -181,16 +181,15 @@
         {% endblock %}
 
         {% block postloadjs %}
+            {% include 'products/includes/incrementes_script.html' %}
+            <script>
+                // Bootstrap script for tooltips
+                $(function () {
+                    $('[data-toggle="tooltip"]').tooltip()
+                })
 
-        <script>
-            // Bootstrap script for tooltips
-            $(function () {
-                $('[data-toggle="tooltip"]').tooltip()
-            })
-
-            $('.toast').toast('show');
-        </script>
-
+                $('.toast').toast('show');
+            </script>
         {% endblock %}
 
     </div>

@@ -56,6 +56,7 @@ def adjust_bag(request, item_id):
 
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
+    print(quantity)
     size = None
     if 'product_size' in request.POST:
         size = request.POST['product_size']
@@ -82,6 +83,8 @@ def adjust_bag(request, item_id):
             messages.success(request, f'Removed {product.name} from your bag')
 
     request.session['bag'] = bag
+    print('----- testas 1 ---------')
+    print(bag)
     return redirect(reverse('view_bag'))
 
 

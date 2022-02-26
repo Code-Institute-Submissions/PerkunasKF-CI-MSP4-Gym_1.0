@@ -280,6 +280,9 @@ The developer ran into a number of issues during the development of the game, wi
 **Product data not showing**
 - After ordering unique item product data not showing in checkout_unique page. At function checkout unique item variable was assigned later in the code and change to order information not product information. After the remaining item in the product information bug was fixed.
 
+**Quantity incremation buttons don't work**
+- After adjusting the value on the shopping bag page and submitting the form the values would not update. Newest posted values would not pass to the view function. The workaround for this particular problem was to change the location of the quantity editing buttons to in the form.
+
 [Back to top ⇧](#table-of-contents)
 
 ## Technologies Used

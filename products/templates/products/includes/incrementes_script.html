@@ -1,0 +1,30 @@
+<script>
+
+    $('.plus-bbt').click(function(e) {
+       e.preventDefault();
+       var quantityElement = $(this).closest('.input-grupe').find('.qty')[0];
+       var quantityNumber = quantityElement.value;
+            if (quantityNumber >= 99) {
+                quantityNumber = 99;
+                quantityElement.setAttribute("value", `${quantityNumber}`)
+            } else {
+                quantityNumber ++
+                quantityElement.setAttribute("value", `${quantityNumber}`)
+            }
+    });
+
+
+    $('.minus-bbt').click(function(e) {
+       e.preventDefault();
+       var quantityElement = $(this).closest('.input-grupe').find('.qty')[0];
+       var quantityNumber = quantityElement.value;
+       if (quantityNumber <= 1) {
+                quantityNumber = 1;
+                quantityElement.setAttribute("value", `${quantityNumber}`)
+            } else {
+                quantityNumber --
+                quantityElement.setAttribute("value", `${quantityNumber}`)
+            }
+    });
+
+</script>
